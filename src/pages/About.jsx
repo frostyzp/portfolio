@@ -74,7 +74,7 @@ const About = () => {
           loading="lazy"
         />
         <p>
-       I explore technologically mediated experiences and tools through interfaces and creative technologies, grounded in curiosity, speculation, and critical inquiry.
+       Arin explores technologically mediated experiences and tools through interfaces and creative technologies, grounded in curiosity, speculation, and critical inquiry.
        <br/><br/>
        
         </p>
