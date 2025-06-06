@@ -68,6 +68,7 @@ const RosterMonster = () => {
         <p className="section-lead">This led to manual, time consuming workarounds when evaluating if a generated roster is good and fair enough</p>
         <p>The automation process leaves the roster planner completely out of the loop when creating a roster.</p>
         <img src="/ogp/ogp_roster_diagram.png" alt="Roster diagram" className="rounded-img" />
+        <hr className="divider" />
       </section>
 
       <section className="section">
@@ -75,10 +76,10 @@ const RosterMonster = () => {
         <p className="supportingText">The Design Solution</p>
         <p className="section-lead">A generated roster summary view of rule violations</p>
         <p>Roster planners can now look, identify, and assess the severity of roster planner defined rules (constraints) that have not been met in the generated roster.</p>
-        <img src="/ogp/ogp_solution.gif" alt="Final animation" className="solution-video rounded-img" />
+        <video src="/ogp/ogp_solution.mov" autoPlay loop muted playsInline className="solution-video rounded-img" />
         <p className="section-lead">Animated loading state for E2E workflow</p>
         <p>In addition to the summary view, I added transparency to the generation time, time estimate, and a simple loading animation, exported as a Lottie file.</p>
-        <img src="/ogp/ogp_animation.gif" alt="Loading animation" className="solution-video rounded-img" />
+        <video src="/ogp/ogp_animation.mov" autoPlay loop muted playsInline className="solution-video rounded-img" />
       </section>
 
       <section className="section">
@@ -161,22 +162,21 @@ const RosterMonster = () => {
         <p className="section-lead">Bringing clarity to the backend roster generation process</p>
         <p>Generating a roster can take up to 5 minutes, conveyed through the spinning circle of death. I spared an hour to quickly create a pop-up modal with a simple animation using After Effects and additional copywriting, which my engineer could easily implement in minutes.</p>
         <img src="/ogp/ogp_time.png" alt="Time estimation" className="solution-video rounded-img" />
-        <img src="/ogp/ogp_animation_iteration.gif" alt="Loading animation iteration" className="solution-video rounded-img" />
+        <video src="/ogp/ogp_loading_iterations.mov" autoPlay loop muted playsInline className="solution-video rounded-img" />
+        
       </section>
 
       <section className="section">
         <hr className="divider" />
         <p className="supportingText">Thoughts, Reflection</p>
-        <div className="learning-cards">
           <div className="learning-card">
             <p className="section-lead">Catering to everyone meant catering to no one</p>
             <p>During the initial part of my internship, we faced a lot of issues during testing and research of people not understanding our product. Upon reflection, this taught me to being judicious about what and who to prioritise for. In this case, we decided to focus on tech savvy roster planners for the time being.</p>
           </div>
           <div className="learning-card">
             <p className="section-lead">Conducting group design critiques when it's hard to hear directly from users</p>
-            <p>Often times hearing from the user is ideal, but I don't always have access to them especially with a small user base. I learnt how to prepare and present my work amongst designers which gave me invaluable feedback on explorations, design details, and other considerations. This taught me to organise types of feedback given and build confidence to share designs in various types of fidelity.</p>
+            <p>I learnt how to prepare and present my work amongst designers which gave me invaluable feedback on explorations, design details, and other considerations. This taught me to organise types of feedback given and build confidence to share designs in various types of fidelity.</p>
           </div>
-        </div>
         <img src="/ogp/ogp_inperson.png" alt="In-person testing" className="solution-video rounded-img" />
       </section>
       

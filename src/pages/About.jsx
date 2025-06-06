@@ -62,7 +62,6 @@ const About = () => {
      <Link to="/" className="sticky-back-btn" aria-label="Back to home">
        ← Back
      </Link>
-        <BodyParagraph>Work</BodyParagraph>
         <GridIllustration>
           {/* Add your work grid items here */}
         </GridIllustration>
@@ -84,7 +83,6 @@ const About = () => {
         <workExperience>
           <span>Kura Kura</span>
           <span className='work-experience-role'>Product Lead</span>
-
           <span>– Present</span>
         </workExperience>      
 <br/>
@@ -92,6 +90,18 @@ const About = () => {
           <a href="https://www.open.gov.sg/" target="_blank" rel="noopener noreferrer">Open Govt Products</a>
           <span className='work-experience-role'>Product Designer</span>
           <span>2024</span>
+        </workExperience> 
+
+        <workExperience>
+          <a href="https://www.open.gov.sg/" target="_blank" rel="noopener noreferrer">Design Bridge & Partners</a>
+          <span className='work-experience-role'>Motion Designer</span>
+          <span>2023</span>
+        </workExperience> 
+
+        <workExperience>
+          <a href="https://www.open.gov.sg/" target="_blank" rel="noopener noreferrer">Grab</a>
+          <span className='work-experience-role'>Product Designer</span>
+          <span>2022</span>
         </workExperience> 
       
       <AboutDiv>

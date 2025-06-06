@@ -14,7 +14,7 @@ import LoadingOverlay from "./components/LoadingOverlay";
 const AppContainer = styled.div`
   display: flex;
   min-height: 100vh;
-  padding-top: 8vh;
+  padding-top: 4vh;
   background: none;
   z-index: 0;
 `;

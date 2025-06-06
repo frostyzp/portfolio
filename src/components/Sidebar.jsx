@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { keyframes, Global, css } from '@emotion/react';
 import { useState } from 'react';
 import { motion } from "framer-motion";
+import DraggablePaperPad from './DraggablePaperPad';
 
 
 const glowAnimation = keyframes`
@@ -120,7 +121,7 @@ const KaomojiLink = styled(Link)`
 
 const SidebarContainer = styled.div`
   position: fixed;
-  margin-top: 8vh;
+  margin-top: 4vh;
   left: 0;
   top: 0;
   width: 18vw;
@@ -130,14 +131,25 @@ const SidebarContainer = styled.div`
   padding: 2rem;
   border-right: 1px solid #eee;
   z-index: 100;
+  background: #fff;
   @media (max-width: 900px) {
-    position: relative;
-    width: 25vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
     min-width: unset;
     max-width: unset;
     height: auto;
     border-right: none;
     border-bottom: 1px solid #eee;
+    padding: 0.7rem 0.7rem 0.7rem 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: auto;
+    margin-top: 0;
+    box-sizing: border-box;
     padding: 1rem;
   }
 `;
@@ -254,6 +266,20 @@ const fadeIn = {
 
 const MotionHeaders = motion(Headers);
 
+// Hide INTERACTION DESIGN header and links on mobile
+const HideOnMobile = styled.div`
+  @media (max-width: 900px) {
+    display: none !important;
+  }
+`;
+
+// Hide DraggablePaperPad on mobile
+const HidePaperOnMobile = styled.div`
+  @media (max-width: 900px) {
+    display: none !important;
+  }
+`;
+
 const Sidebar = () => {
   const [kaomojiHovered, setKaomojiHovered] = useState(false);
   return (
@@ -263,7 +289,14 @@ const Sidebar = () => {
         <defs>
           <filter id="distort">
             <feTurbulence type="fractalNoise" baseFrequency="0.1" numOctaves="6" result="noise">
-              <animate attributeName="baseFrequency" values="0.02;0.06" keyTimes="0;1" dur="4s" repeatCount="indefinite" />
+              <animate
+                attributeName="baseFrequency"
+                values="0.02;0.03;0.04;0.05;0.06;0.05;0.04;0.03;0.02"
+                keyTimes="0;0.125;0.25;0.375;0.5;0.625;0.75;0.875;1"
+                dur="2s"
+                repeatCount="indefinite"
+                calcMode="discrete"
+              />
             </feTurbulence>
             <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G" />
           </filter>
@@ -311,11 +344,13 @@ const Sidebar = () => {
           variants={fadeIn}
           initial="hidden"
           animate="visible"
+          style={{ fontSize: "1rem" }}
         >Arin is a product & motion designer that crafts interfaces, interactions, and playful experiences ツ</motion.p>
         <motion.p
           variants={fadeIn}
           initial="hidden"
-          animate="visible"
+          animate="visible" 
+          style={{ fontSize: "1rem" }}
         >Currently based in NYC.</motion.p>
 
       
@@ -324,42 +359,44 @@ const Sidebar = () => {
 
         <hr className="divider2" />
 
-        <MotionHeaders
-          variants={fadeIn}
-          initial="hidden"
-          animate="visible"
-        >INTERACTION DESIGN</MotionHeaders>
-        <motion.ul
-          style={{ listStyle: "none", padding: 0, margin: 0 }}
-          variants={listVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.li variants={itemVariants}>
-            <StyledLink to="/roster-monster">
-              <span className="link-text">Roster Monster</span>
-              <span className="link-image">
-                <img src="doodles/arrow.gif" alt="icon" style={{width: '24px', height: '24px'}} />
-              </span>
-            </StyledLink>
-          </motion.li>
-          <motion.li variants={itemVariants}>
-            <StyledLink to="/kura-kura">
-              <span className="link-text">Kura Kura</span>
-              <span className="link-image">
-                <img src="doodles/arrow.gif" alt="icon" style={{width: '24px', height: '24px'}} />
-              </span>
-            </StyledLink>
-          </motion.li>
-          <motion.li variants={itemVariants}>
-            <StyledLink to="/ogp-illustration-guidelines">
-              <span className="link-text">Illustration Guidelines</span>
-              <span className="link-image">
-                <img src="doodles/arrow.gif" alt="icon" style={{width: '24px', height: '24px'}} />
-              </span>
-            </StyledLink>
-          </motion.li>
-        </motion.ul>
+        <HideOnMobile>
+          <MotionHeaders
+            variants={fadeIn}
+            initial="hidden"
+            animate="visible"
+          >INTERACTION DESIGN</MotionHeaders>
+          <motion.ul
+            style={{ listStyle: "none", padding: 0, margin: 0 }}
+            variants={listVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.li variants={itemVariants}>
+              <StyledLink to="/roster-monster">
+                <span className="link-text">Roster Monster</span>
+                <span className="link-image">
+                  <img src="doodles/arrow.gif" alt="icon" style={{width: '24px', height: '24px'}} />
+                </span>
+              </StyledLink>
+            </motion.li>
+            <motion.li variants={itemVariants}>
+              <StyledLink to="/kura-kura">
+                <span className="link-text">Kura Kura</span>
+                <span className="link-image">
+                  <img src="doodles/arrow.gif" alt="icon" style={{width: '24px', height: '24px'}} />
+                </span>
+              </StyledLink>
+            </motion.li>
+            <motion.li variants={itemVariants}>
+              <StyledLink to="/ogp-illustration-guidelines">
+                <span className="link-text">Illustration Guidelines</span>
+                <span className="link-image">
+                  <img src="doodles/arrow.gif" alt="icon" style={{width: '24px', height: '24px'}} />
+                </span>
+              </StyledLink>
+            </motion.li>
+          </motion.ul>
+        </HideOnMobile>
 
         {/* <Headers>WEB / CODE</Headers> */}
         <ul
@@ -405,21 +442,21 @@ const Sidebar = () => {
           variants={fadeIn}
           initial="hidden"
           animate="visible"
-        >ABOUT</MotionHeaders>
+        >ETC.</MotionHeaders>
         <motion.ul
           style={{ listStyle: "none", padding: 0, margin: 0 }}
           variants={listVariants}
           initial="hidden"
           animate="visible"
         >
-                    <motion.li variants={itemVariants}>
+                    {/* <motion.li variants={itemVariants}>
             <StyledLink to="/about">
               <span className="link-text">About Me</span>
               <span className="link-image">
                 <img src="doodles/arrow.gif" alt="icon" style={{width: '24px', height: '24px'}} />
               </span>
             </StyledLink>
-          </motion.li>
+          </motion.li> */}
 
 
           <motion.li variants={itemVariants}>
@@ -455,6 +492,12 @@ const Sidebar = () => {
             </StyledAnchor>
           </motion.li>
         </motion.ul>
+        {/* Draggable lined paper at the very bottom of the sidebar */}
+        <HidePaperOnMobile>
+          <div style={{ position: 'relative', width: '100%', minHeight: '360px', marginTop: '2rem' }}>
+            <DraggablePaperPad imgSrc="/doodles/connectTheDot01.png" />
+          </div>
+        </HidePaperOnMobile>
       </SidebarContainer>
     </>
   );

@@ -60,7 +60,7 @@ const KuraKura = () => {
             <div className="design-intervention-left">
 
             <div className="design-intervention-image-block">
-              <img src="/kurakura/final.gif" alt="Kura Kura phone UI" className="design-intervention-phone" />
+              <img src="/kurakura/final_nobg.gif" alt="Kura Kura phone UI" className="design-intervention-phone" />
               {/* <div className="design-intervention-caption">Final re-design</div> */}
             </div>
           </div>
