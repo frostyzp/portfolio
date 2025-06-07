@@ -11,7 +11,7 @@ const RosterMonster = () => {
         ← Back
       </Link>
       <section className="section hero-section">
-        <video src="/case-studies/ogp_cs.mp4" autoPlay loop muted playsInline />
+        <video src="/assets/case-studies/ogp_cs.mp4" autoPlay loop muted playsInline />
       </section>
 
       <section className="section project-info">

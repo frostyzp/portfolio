@@ -554,7 +554,7 @@ const Home = () => {
         <ImageTextContainerGrid columns={isMobile ? "1fr" : "2fr 1fr"} noHover>
           <InteractiveLink>
             <ImageText to="">
-              <video src="/case-studies/tcsc.mp4" autoPlay loop muted />
+              <video src="/assets/case-studies/tcsc.mp4" autoPlay loop muted />
               <TextRow>
                 {/* <p>TCSC</p>
                 <p>CMS built website </p> */}
@@ -563,7 +563,7 @@ const Home = () => {
           </InteractiveLink>
           <InteractiveLink>
             <ImageText to="">
-            <img src="/case-studies/cuddly.gif" />
+            <img src="/assets/case-studies/cuddly.gif"></img>
             <TextRow>
                 {/* <p>Pha Lai Nam Lhai</p>
                 <p>Translating a traditional Thai weaving pattern into a color font</p> */}
@@ -576,7 +576,7 @@ const Home = () => {
             <ImageText to="">
               <TextRow>
               </TextRow>
-              <img src="/case-studies/ddr lite.gif" />
+              <img src="/assets/case-studies/ddr lite.gif" />
             </ImageText>
           </InteractiveLink>
           <InteractiveLink>
