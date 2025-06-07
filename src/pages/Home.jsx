@@ -523,7 +523,7 @@ const Home = () => {
                       title="Roster Monster"
                       description="Reducing 1 week's worth of effort into hours of roster planning through automation feedback"
                       mediaType="video"
-                      mediaSrc="/public/assets/case-studies/ogp_main.mp4"
+                      mediaSrc="/assets/case-studies/ogp_main.mp4"
                     />
                   </motion.div>
                   <motion.div variants={itemVariants}>
