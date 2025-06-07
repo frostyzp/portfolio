@@ -523,7 +523,7 @@ const Home = () => {
                       title="Roster Monster"
                       description="Reducing 1 week's worth of effort into hours of roster planning through automation feedback"
                       mediaType="video"
-                      mediaSrc="/assets/case-studies/ogp_main.MP4"
+                      mediaSrc="/public/assets/case-studies/ogp_main.mp4"
                     />
                   </motion.div>
                   <motion.div variants={itemVariants}>
@@ -541,7 +541,7 @@ const Home = () => {
                       title="Illustration Guidelines"
                       description="Streamlining illustration craft through guidelines for Singapore government products"
                       mediaType="image"
-                      mediaSrc="/assets/byos/byos_main.PNG"
+                      mediaSrc="/assets/byos/byos_main.png"
                     />
                   </motion.div>
                 </motion.div>
@@ -582,7 +582,7 @@ const Home = () => {
           <InteractiveLink>
             <ImageText to="">
             <TextRow>
-            <video src="/case-studies/nam_lhai.mp4" autoPlay loop muted />
+            <video src="/assets/case-studies/nam_lhai.mp4" autoPlay loop muted />
               </TextRow>
             </ImageText>
           </InteractiveLink>
@@ -590,21 +590,21 @@ const Home = () => {
         <ImageTextContainerGrid columns={isMobile ? "1fr" : "1fr 1fr 1fr"} noHover={isMobile}>
           <InteractiveLink>
             <ImageText to="">
-            <video src="/case-studies/oracle 2.mov" autoPlay loop muted />
+            <video src="/assets/case-studies/oracle 2.mov" autoPlay loop muted />
               <TextRow>
               </TextRow>
             </ImageText>
           </InteractiveLink>
           <InteractiveLink>
             <ImageText to="">
-            <video src="/case-studies/skipping 3.mov" autoPlay loop muted />
+            <video src="/assets/case-studies/skipping 3.mov" autoPlay loop muted />
             <TextRow>
               </TextRow>
             </ImageText>
           </InteractiveLink>
           <InteractiveLink>
             <ImageText to="">
-            <video src="/case-studies/graveyard 2.mov" autoPlay loop muted />
+            <video src="/assets/case-studies/graveyard 2.mov" autoPlay loop muted />
             <TextRow>
               </TextRow>
             </ImageText>
