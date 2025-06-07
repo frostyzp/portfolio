@@ -10,12 +10,12 @@ const LinedDraggableDiv = styled.div`
     /* Paper SVG texture */
     url('data:image/svg+xml;utf8,<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><filter id="noise" x="0" y="0"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/></filter><rect width="120" height="120" fill="white"/><rect width="120" height="120" filter="url(%23noise)" opacity="0.08"/></svg>') repeat,
     repeating-linear-gradient(
-      to bottom,
-      #fff 0px,
+    to bottom,
+    #fff 0px,
       #fff 10px
-      // #e55 10px,
-      // #fff 10.7px
-    );
+    // #e55 10px,
+    // #fff 10.7px
+  );
   border-radius: 0;
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
   border: 1px solidrgb(103, 103, 103);

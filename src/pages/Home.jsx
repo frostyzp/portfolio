@@ -8,102 +8,7 @@ import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import LoadingOverlay from '../components/LoadingOverlay';
 
-// Cloud movement keyframes with 3 different speeds
-const cloudSlow = keyframes`
-  from {
-    transform: translateX(-200px);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  to {
-    transform: translateX(calc(100vw + 200px));
-    opacity: 0;
-  }
-`;
-
-const cloudMedium = keyframes`
-  from {
-    transform: translateX(-200px);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  to {
-    transform: translateX(calc(100vw + 200px));
-    opacity: 0;
-  }
-`;
-
-const cloudFast = keyframes`
-  from {
-    transform: translateX(-200px);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  to {
-    transform: translateX(calc(100vw + 200px));
-    opacity: 0;
-  }
-`;
-
-const CloudContainer = styled.div`
-  position: fixed;
-  top: ${props => props.top}%;
-  left: 0;
-  width: 100%;
-  height: auto;
-  pointer-events: none;
-  z-index: 1;
-  font-family: monospace;
-  font-size: 12px;
-  line-height: 1;
-  color: rgba(150, 150, 150, 0.6);
-  white-space: pre;
-  animation: ${props => {
-    switch(props.speed) {
-      case 'slow': return cloudSlow;
-      case 'medium': return cloudMedium;
-      case 'fast': return cloudFast;
-      default: return cloudMedium;
-    }
-  }} ${props => {
-    switch(props.speed) {
-      case 'slow': return '45s';
-      case 'medium': return '35s';
-      case 'fast': return '25s';
-      default: return '18s';
-    }
-  }} linear infinite;
-`;
-
-const CloudComponent = ({ cloud }) => (
-  <CloudContainer top={cloud.top} speed={cloud.speed} key={cloud.id}>
-    {cloud.ascii}
-  </CloudContainer>
-);
-
 const SIDEBAR_WIDTH = '18vw';
-
-const ImageTextContainerTitle = styled.div`
-  margin-bottom: 0.4rem;
-  font-family: 'CommitMono';
-  text-transform: uppercase;
-  font-size: 0.7rem;
-`;
 
 const Content = styled.div`
   margin-left: calc(${SIDEBAR_WIDTH} + 2rem);
@@ -116,43 +21,6 @@ const Content = styled.div`
   @media (max-width: 900px) {
     margin-left: 1rem;
     margin-right: 1rem;
-  }
-`;
-
-const ImageTextContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 3.5rem 2rem;
-  margin-bottom: 0.8rem;
-
-  // img, video {
-  //   width: 100%;
-  //   height: 40vh;
-  //   object-fit: cover;
-  //   display: block;
-  //   border-radius: 8px;
-  //   border: 1px solid var(--border-color);
-  //   scale: 1;
-  //   opacity: 1;
-  //   transition: 500ms cubic-bezier(0.1, 1, 0.2, 1);
-  //   @media (max-width: 600px) {
-  //     height: 10rem;
-  //   }
-  // }
-
-  // a:hover {
-  //   img, video {
-  //     scale: 1.02;
-  //     opacity: 0.75;
-  //     rotate: 1deg;
-  //     box-shadow: 15px 0 15px rgba(191, 187, 197, 0.15),
-  //                 -15px 0 15px rgba(233, 205, 255, 0.15);
-  //     transform: perspective(1000px) 
-  //               rotateY(calc(var(--mouse-x, 0) * 4deg))
-  //               rotateX(calc(var(--mouse-y, 0) * -4deg))
-  //               skew(calc(var(--mouse-x, 0) * 1deg), 
-  //                    calc(var(--mouse-y, 0) * 1deg));
-  //   }
   }
 `;
 
@@ -175,46 +43,6 @@ const TextRow = styled.div`
   p:last-of-type {
     flex: 0 0 80%;
   }
-`;
-
-const MasonryGrid = styled.div`
-  column-count: 3;
-  column-gap: 2rem;
-  width: 100%;
-  margin: 3rem 0;
-  @media (max-width: 1100px) {
-    column-count: 2;
-  }
-  @media (max-width: 700px) {
-    column-count: 1;
-  }
-`;
-
-const MasonryImg = styled.img`
-  width: 100%;
-  display: block;
-  border-radius: 8px 8px 0 0;
-  object-fit: cover;
-  height: 16rem;
-`;
-
-const MasonryText = styled.p`
-  padding: 1rem;
-  font-size: 1rem;
-  margin: 0;
-`;
-
-const MasonryItem = styled(Link)`
-  display: inline-block;
-  width: 100%;
-  margin-bottom: 2rem;
-  break-inside: avoid;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  text-decoration: none;
-  color: inherit;
-  overflow: hidden;
 `;
 
 // Helper for hover styles
@@ -319,7 +147,6 @@ const CaseStudyRowContainer = styled(Link)`
 const CaseStudyCell = styled.div`
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   height: 100%;
 `;
 
@@ -342,16 +169,16 @@ function ResponsiveCaseStudyRow({ to, title, description, mediaType, mediaSrc })
           </div>
           {/* Text below */}
           <CaseStudyCell>
-            <p>{title}</p>
-            <p style={{ fontSize: '1rem' }}>{description}</p>
+            <p className="case-study-title">{title}</p>
+            <p className="case-study-desc" style={{ fontSize: '1rem' }}>{description}</p>
           </CaseStudyCell>
         </>
       ) : (
         <>
           {/* Text left, media right (desktop) */}
           <CaseStudyCell>
-            <p>{title}</p>
-            <p style={{ fontSize: '1rem' }}>{description}</p>
+            <p className="case-study-title">{title}</p>
+            <p className="case-study-desc" style={{ fontSize: '1rem' }}>{description}</p>
           </CaseStudyCell>
           <div>
             {mediaType === 'video' ? (
@@ -579,6 +406,12 @@ function useIsMobile() {
   return isMobile;
 }
 
+// Add fadeIn animation variant
+const fadeIn = {
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
+};
+
 const Home = () => {
   usePageTitle('Arin Pantja');
 
@@ -592,27 +425,6 @@ const Home = () => {
   const [canAnimateRows, setCanAnimateRows] = useState(false);
   const isMobile = useIsMobile();
   
-//   const cloudAsciiArt = [
-//     `     (  ).                   _           
-//              (     ).              .:(  ).       
-// )           _(       \`.          :(   .    )      
-//         .=((      .   )     .--  \`.  (    ) )      
-//        ((    (..__.:'-'`,
-//     `       _   _   _   _
-//      ( '-' ) ( '-' ) ( '-' )
-//     o_)   (_o_)   (_o_)   (_
-//       ~~~     ~~~     ~~~`,
-//     `        .~.
-//        ( o o )
-//       (   ^   )
-//        \`-----'`,
-//     `    ___     ___     ___
-//    (   )   (   )   (   )
-//   (  ___) (  ___) (  ___)
-//    \\___/   \\___/   \\___/`
-//   ];
-
-  const speeds = ['slow', 'medium', 'fast'];
 
   useEffect(() => {
     if (isLoading) {
@@ -670,10 +482,9 @@ const Home = () => {
       {clouds.map(cloud => (
         <CloudComponent key={cloud.id} cloud={cloud} />
       ))}
-      <Content>
-        {/* Show Interaction Design (case studies) on all screen sizes */}
+      <Content>  
+        {/* Custom heading and intro above case studies */}
         <>
-          {/* Framer Motion staggered fade-in for CaseStudyRows */}
           {(() => {
             const containerVariants = {
               hidden: { opacity: 1 },
@@ -687,39 +498,54 @@ const Home = () => {
               visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } }
             };
             return (
-              <motion.div
-                variants={containerVariants}
-                initial="hidden"
-                animate={canAnimateRows ? "visible" : "hidden"}
-              >
-                <motion.div variants={itemVariants}>
-                  <ResponsiveCaseStudyRow
-                    to="/roster-monster"
-                    title="Roster Monster"
-                    description="Reducing 1 week's worth of effort into hours of roster planning through automation feedback"
-                    mediaType="video"
-                    mediaSrc="/case-studies/ogp_main.mp4"
-                  />
+              <>
+                <motion.p
+                  variants={fadeIn}
+                  initial="hidden"
+                  animate="visible"
+                  style={{ fontSize: "1rem" }}
+                >Arin Pantja – a product & motion designer that crafts interfaces, interactions, and playful experiences ツ</motion.p>
+                <motion.p
+                  variants={fadeIn}
+                  initial="hidden"
+                  animate="visible" 
+                  style={{ fontSize: "1rem" }}
+                >Currently based in NYC.</motion.p>
+                <hr className="divider2" />
+                <motion.div
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate={canAnimateRows ? "visible" : "hidden"}
+                >
+                  <motion.div variants={itemVariants}>
+                    <ResponsiveCaseStudyRow
+                      to="/roster-monster"
+                      title="Roster Monster"
+                      description="Reducing 1 week's worth of effort into hours of roster planning through automation feedback"
+                      mediaType="video"
+                      mediaSrc="/case-studies/ogp_main.mp4"
+                    />
+                  </motion.div>
+                  <motion.div variants={itemVariants}>
+                    <ResponsiveCaseStudyRow
+                      to="/kura-kura"
+                      title="Kura Kura"
+                      description="A playful, localised AI-driven journaling tool for emotional wellness amongst youths"
+                      mediaType="video"
+                      mediaSrc="/assets/case-studies/kurakura_main.mp4"
+                    />
+                  </motion.div>
+                  <motion.div variants={itemVariants}>
+                    <ResponsiveCaseStudyRow
+                        to="/ogp-illustration-guidelines"
+                      title="Illustration Guidelines"
+                      description="Streamlining illustration craft through guidelines for Singapore government products"
+                      mediaType="image"
+                      mediaSrc="/assets/byos/byos_main.png"
+                    />
+                  </motion.div>
                 </motion.div>
-                <motion.div variants={itemVariants}>
-                  <ResponsiveCaseStudyRow
-                    to="/kura-kura"
-                    title="Kura Kura"
-                    description="A playful, localised AI-driven journaling tool for emotional wellness amongst youths"
-                    mediaType="video"
-                    mediaSrc="/main_img/kurakura_main.mp4"
-                  />
-                </motion.div>
-                <motion.div variants={itemVariants}>
-                  <ResponsiveCaseStudyRow
-                      to="/ogp-illustration-guidelines"
-                    title="Illustration Guidelines"
-                    description="Streamlining illustration craft through guidelines for Singapore government products"
-                    mediaType="image"
-                    mediaSrc="/byos/byos_main.png"
-                  />
-                </motion.div>
-              </motion.div>
+              </>
             );
           })()}
           <hr className="divider2" />
@@ -761,7 +587,7 @@ const Home = () => {
             </ImageText>
           </InteractiveLink>
         </ImageTextContainerGrid>
-        <ImageTextContainerGrid columns="1fr" noHover={isMobile}>
+        <ImageTextContainerGrid columns={isMobile ? "1fr" : "1fr 1fr 1fr"} noHover={isMobile}>
           <InteractiveLink>
             <ImageText to="">
             <video src="/case-studies/oracle 2.mov" autoPlay loop muted />
@@ -784,6 +610,10 @@ const Home = () => {
             </ImageText>
           </InteractiveLink>
         </ImageTextContainerGrid>
+
+
+
+        
         <ImageTextContainerGrid columns={isMobile ? "1fr" : "2fr 1fr"} noHover>
           <InteractiveLink>
             <ImageText to="">

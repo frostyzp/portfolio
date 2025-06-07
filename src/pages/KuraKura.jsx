@@ -12,7 +12,7 @@ const KuraKura = () => {
       </Link>
 
       <section className="section hero-section">
-        <img src="/kurakura/main.png" autoPlay loop muted playsInline />
+        <img src="/assets/kurakura/main.png" autoPlay loop muted playsInline />
       </section>
 
       <section className="section project-info">
@@ -46,7 +46,7 @@ const KuraKura = () => {
         <p className="section-lead">A lack of foundational mental health support systems for Singaporean youths        </p>
         <p>In Singaporean schools and Asian cultures, we're not specifically encouraged to open up – suppressing, hiding, and stifling your emotions are very common. When we open up, it can also be difficult to navigate such situations.</p>
         <p>76% of youths are not comfortable being vulnerable in their current digital support channels, and efforts to build external support systems don't directly support youths themselves.</p>
-        <img src="/kurakura/kura_problem.png" alt="Problem statement" className="rounded-img" />
+        <img src="/assets/kurakura/kura_problem.png" alt="Problem statement" className="rounded-img" />
       </section>
 
 
@@ -60,7 +60,7 @@ const KuraKura = () => {
             <div className="design-intervention-left">
 
             <div className="design-intervention-image-block">
-              <img src="/kurakura/final_nobg.gif" alt="Kura Kura phone UI" className="design-intervention-phone" />
+              <img src="/assets/kurakura/final_nobg.gif" alt="Kura Kura phone UI" className="design-intervention-phone" />
               {/* <div className="design-intervention-caption">Final re-design</div> */}
             </div>
           </div>
@@ -85,11 +85,11 @@ const KuraKura = () => {
         <p>The RULER framework is an evidence-based approach to social and emotional learning that focuses on key steps to regulate emotions in order to promote emotional intelligence and well-being.
 
 </p>
-        <img src="/kurakura/ixd-1.png" alt="Loading animation" className="solution-video rounded-img" />
+        <img src="/assets/kurakura/ixd-1.png" alt="Loading animation" className="solution-video rounded-img" />
         <p className="section-lead">Make a local, ice kachang dessert through journaling with kura!        </p>
         <p>Our users already liked the idea of feeding their kura by checking in their emotions, so I concepted the idea of creating an ice kachang – meaning "bean ice", a Malaysian dessert which is common in Malaysia, Singapore and Brunei.</p>
-        <img src="/kurakura/ice kachang 2.png" alt="Loading animation" className="solution-video rounded-img" />
-        <img src="/kurakura/ixd.png" alt="Loading animation" className="solution-video rounded-img" />
+        <img src="/assets/kurakura/ice kachang 2.png" alt="Loading animation" className="solution-video rounded-img" />
+        <img src="/assets/kurakura/ixd.png" alt="Loading animation" className="solution-video rounded-img" />
       </section>
       {/* Add more sections as needed */}
 

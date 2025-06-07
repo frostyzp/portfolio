@@ -6,10 +6,30 @@
   font-style: normal;
 }
 
+
+
 @font-face {
   font-family: 'ABCMonumentGrotesk';
-  src: url('/fonts/ABCMonumentGrotesk-Medium-Trial.otf') format('opentype');
+  src: url('/fonts/ABCMonumentGrotesk-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ABCMonumentGrotesk';
+  src: url('/fonts/ABCMonumentGrotesk-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ABCMonumentGrotesk';
+  src: url('/fonts/ABCMonumentGrotesk-Medium.otf') format('opentype');
   font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ABCMonumentGrotesk';
+  src: url('/fonts/ABCMonumentGrotesk-Bold.otf') format('opentype');
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -22,7 +42,7 @@
 
 /* Global typography and colors */
 :root {
-  --text-color: rgb(26, 26, 26);
+  --text-color: #666;
   --background-color: #fff;
   --accent-color: #646cff;
   --grey-color: grey;
@@ -45,12 +65,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   line-height: 1.2;
   margin-bottom: 0.5em;
-
 }
 
 h3, h4 {
   font-size: 1.1rem;
-  font-weight: 600;
 }
 
 hr.divider2 {
@@ -59,21 +77,9 @@ hr.divider2 {
   margin: 1rem 0;
 }
 
-
-/* h3 {
-  font-family: 'CommitMono', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--grey-color);
-  text-transform: uppercase;
-  line-height: 1.2;
-  margin-bottom: 0.5em;
-} */
-
 p {
-  font-size: 0.9rem;
-  line-height: 1.1;
-  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.2;
   color: var(--text-color);
   margin-bottom: 1em;
 }
@@ -95,6 +101,23 @@ img, video {
   height: auto;
   display: block;
 }
+
+.case-study-desc {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: black;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+  padding-right: 1rem;
+}
+
+.case-study-title {
+  font-size: inherit;
+  line-height: 1.2;
+  margin-bottom: 0.4em;
+}
+
+
 
 /* Utility classes */
 .contact {
@@ -123,17 +146,23 @@ img, video {
   text-transform: uppercase;     /* optional, for heading style */
 }
 
+
 .section-lead {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   line-height: 1.2;
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 1rem;
-  color: var(--text-color);
+  color: black;
   width: 80%;
 }
 
 .section {
   margin-bottom: 1rem;
+}
+
+.section p {
+  width: 80%;
+  line-height: 1.4;
 }
 
 .hero-section video {
@@ -189,7 +218,7 @@ img, video {
 .concept-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 1rem;
   margin: 2rem 0;
 }
 
@@ -210,6 +239,10 @@ img, video {
 .concept-card.green {
   /* background-color: rgb(248, 253, 247); */
   border: px dashed #93cd95 16; 
+}
+
+.concept-card p {
+  width: 100%;
 }
 
 .dark-section {

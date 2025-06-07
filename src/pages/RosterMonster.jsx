@@ -23,7 +23,7 @@ const RosterMonster = () => {
           </div>
           <div className="info-item">
             <p className="supportingText">Collaborators</p>
-            <p>1 Engineer<br />1 Product Manager<br />1 Design Manager</p>
+            <p>Enyi Leong / Eng<br />Limin Tan / PM<br />Sufyan Selamet / Design</p>
           </div>
           <div className="info-item">
             <p className="supportingText">Constraints</p>
@@ -72,7 +72,6 @@ const RosterMonster = () => {
       </section>
 
       <section className="section">
-        <hr className="divider" />
         <p className="supportingText">The Design Solution</p>
         <p className="section-lead">A generated roster summary view of rule violations</p>
         <p>Roster planners can now look, identify, and assess the severity of roster planner defined rules (constraints) that have not been met in the generated roster.</p>

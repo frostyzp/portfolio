@@ -131,7 +131,7 @@ const SidebarContainer = styled.div`
   padding: 2rem;
   border-right: 1px solid #eee;
   z-index: 100;
-  background: #fff;
+  // background: #fff;
   @media (max-width: 900px) {
     position: fixed;
     top: 0;
@@ -311,7 +311,7 @@ const Sidebar = () => {
             onMouseEnter={() => setKaomojiHovered(true)}
             onMouseLeave={() => setKaomojiHovered(false)}
           >
-            <span style={{ opacity: kaomojiHovered ? 0 : 1, transition: 'opacity 0.1s' }}>( ദ്ദി ˙ᗜ˙ )</span>
+            <span style={{ opacity: kaomojiHovered ? 0 : 1, transition: 'opacity 0.1s' }}>( ദ്ദി ˙ᗜ˙ )' \\ ←</span>
             <span style={{
               position: 'absolute',
               left: 0,
@@ -340,25 +340,19 @@ const Sidebar = () => {
             </span>
           )}
         </div>
+
+
+        {/* <hr className="divider2" /> */}
         <motion.p
           variants={fadeIn}
           initial="hidden"
           animate="visible"
           style={{ fontSize: "1rem" }}
-        >Arin is a product & motion designer that crafts interfaces, interactions, and playful experiences ツ</motion.p>
-        <motion.p
-          variants={fadeIn}
-          initial="hidden"
-          animate="visible" 
-          style={{ fontSize: "1rem" }}
-        >Currently based in NYC.</motion.p>
-
+        >Arin Pantja</motion.p>
+ 
       
-        <Contact>
+ <Contact>
         </Contact>
-
-        <hr className="divider2" />
-
         <HideOnMobile>
           <MotionHeaders
             variants={fadeIn}
@@ -375,7 +369,7 @@ const Sidebar = () => {
               <StyledLink to="/roster-monster">
                 <span className="link-text">Roster Monster</span>
                 <span className="link-image">
-                  <img src="doodles/arrow.gif" alt="icon" style={{width: '24px', height: '24px'}} />
+                  <img src="/assets/doodles/arrow.gif" alt="icon" style={{width: '24px', height: '24px'}} />
                 </span>
               </StyledLink>
             </motion.li>
@@ -383,7 +377,7 @@ const Sidebar = () => {
               <StyledLink to="/kura-kura">
                 <span className="link-text">Kura Kura</span>
                 <span className="link-image">
-                  <img src="doodles/arrow.gif" alt="icon" style={{width: '24px', height: '24px'}} />
+                  <img src="/assets/doodles/arrow.gif" alt="icon" style={{width: '24px', height: '24px'}} />
                 </span>
               </StyledLink>
             </motion.li>
@@ -391,7 +385,7 @@ const Sidebar = () => {
               <StyledLink to="/ogp-illustration-guidelines">
                 <span className="link-text">Illustration Guidelines</span>
                 <span className="link-image">
-                  <img src="doodles/arrow.gif" alt="icon" style={{width: '24px', height: '24px'}} />
+                  <img src="/assets/doodles/arrow.gif" alt="icon" style={{width: '24px', height: '24px'}} />
                 </span>
               </StyledLink>
             </motion.li>
@@ -463,7 +457,7 @@ const Sidebar = () => {
             <StyledAnchor href="https://www.linkedin.com/in/arin-pantja/" target="_blank" rel="noopener noreferrer">
               <span className="link-text">Linkedin</span>
               <span className="link-image">
-                <img src="doodles/linkedin.gif" alt="icon" style={{width: '24px', height: '24px'}} />
+                <img src="/assets/doodles/linkedin.gif" alt="icon" style={{width: '24px', height: '24px'}} />
               </span>
             </StyledAnchor>
           </motion.li>
@@ -471,7 +465,7 @@ const Sidebar = () => {
             <StyledAnchor href="mailto:your@email.com">
               <span className="link-text">Email</span>
               <span className="link-image">
-                <img src="doodles/email.gif" alt="icon" style={{width: '24px', height: '24px'}} />
+                <img src="/assets/doodles/email.gif" alt="icon" style={{width: '24px', height: '24px'}} />
               </span>
             </StyledAnchor>
           </motion.li>
@@ -479,7 +473,7 @@ const Sidebar = () => {
             <StyledAnchor href="https://x.com/arin_pantja" target="_blank" rel="noopener noreferrer">
               <span className="link-text">Twitter/X</span>
               <span className="link-image">
-                <img src="doodles/x.gif" alt="icon" style={{width: '24px', height: '24px'}} />
+                <img src="/assets/doodles/x.gif" alt="icon" style={{width: '24px', height: '24px'}} />
               </span>
             </StyledAnchor>
           </motion.li>
@@ -487,7 +481,7 @@ const Sidebar = () => {
             <StyledAnchor href="https://www.are.na/arin-p/channels" target="_blank" rel="noopener noreferrer">
               <span className="link-text">Are.na</span>
               <span className="link-image">
-                <img src="doodles/arena.gif" alt="icon" style={{width: '24px', height: '24px'}} />
+                <img src="/assets/doodles/arena.gif" alt="icon" style={{width: '24px', height: '24px'}} />
               </span>
             </StyledAnchor>
           </motion.li>
@@ -495,7 +489,7 @@ const Sidebar = () => {
         {/* Draggable lined paper at the very bottom of the sidebar */}
         <HidePaperOnMobile>
           <div style={{ position: 'relative', width: '100%', minHeight: '360px', marginTop: '2rem' }}>
-            <DraggablePaperPad imgSrc="/doodles/connectTheDot01.png" />
+            <DraggablePaperPad imgSrc="/assets/doodles/connectTheDot01.png" />
           </div>
         </HidePaperOnMobile>
       </SidebarContainer>
