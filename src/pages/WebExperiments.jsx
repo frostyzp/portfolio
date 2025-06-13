@@ -61,7 +61,7 @@ const gridItems = [
   },
   {
     type: 'video',
-    src: '/assets/creative/LG_archive_compressed.mov',
+    src: '/assets/creative/lg_archive.mov',
     to: '',
     key: 'graveyard',
     labelLeft: 'MATERIALITY OF PAPER',
