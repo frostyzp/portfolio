@@ -61,7 +61,7 @@ const gridItems = [
   },
   {
     type: 'video',
-    src: '/assets/creative/lg_archive.mov',
+    src: '/assets/creative/lg_archive.mp4',
     to: '',
     key: 'graveyard',
     labelLeft: 'MATERIALITY OF PAPER',
@@ -83,14 +83,6 @@ const gridItems = [
     labelLeft: 'GRAVEYARD OF THE UNANSWERED',
     labelRight: 'UNITY, 2023',
   },
-  // {
-  //   type: 'image',
-  //   src: '/assets/case-studies/ddr lite.gif',
-  //   to: '',
-  //   key: 'ddr',
-  //   labelLeft: 'DDR LITE',
-  //   labelRight: 'P5JS, 2023',
-  // },
   {
     type: 'img',
     src: '/assets/creative/ai_dinner.gif',
