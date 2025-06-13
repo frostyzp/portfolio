@@ -1,0 +1,472 @@
+/* Font imports */
+@font-face {
+  font-family: 'CommitMono';
+  src: url('/fonts/CommitMono-400-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ABCMonumentGrotesk';
+  src: url('/fonts/ABCMonumentGrotesk-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ABCMonumentGrotesk';
+  src: url('/fonts/ABCMonumentGrotesk-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ABCMonumentGrotesk';
+  src: url('/fonts/ABCMonumentGrotesk-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'ABCMonumentGrotesk';
+  src: url('/fonts/ABCMonumentGrotesk-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global typography and colors */
+:root {
+  --text-color: #5f5f5f;
+  --background-color: #fff;
+  --accent-color: #646cff;
+  --grey-color: grey;
+  --border-color: #e0e0e0;
+}
+
+body {
+  font-family: 'ABCMonumentGrotesk', sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+h3, h4 {
+  font-size: 1.1rem;
+}
+
+hr.divider2 {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 1rem 0;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.2;
+  color: var(--text-color);
+  margin-bottom: 1em;
+}
+
+/* Default link styles */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+/* Default media styles */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.case-study-desc {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: black;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+  padding-right: 1rem;
+}
+
+.case-study-title {
+  font-size: inherit;
+  line-height: 1.2;
+  margin-bottom: 0.4em;
+}
+
+
+
+/* Utility classes */
+.contact {
+  font-family: 'CommitMono';
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.headers {
+  font-size: 12px;
+  margin-top: 20px;
+  text-align: left;
+  color: var(--grey-color);
+  font-weight: 300;
+  font-family: 'CommitMono';
+  text-transform: uppercase;
+}
+
+/* CASE STUDIES */
+.supportingText {
+  font-size: 0.8rem;
+  /* margin-top: 2rem; */
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+  font-family: 'CommitMono';
+  text-transform: uppercase;     /* optional, for heading style */
+}
+
+
+.section-lead {
+  font-size: 1.4rem;
+  line-height: 1.2;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: black;
+  width: 80%;
+}
+
+.section {
+  margin-bottom: 1rem;
+}
+
+.section p {
+  width: 80%;
+  line-height: 1.4;
+}
+
+.hero-section video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project-info {
+  /* .section-lead is already global */
+}
+
+
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.info-item h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.role-section {
+}
+
+.context-section {
+}
+
+.context-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.context-card {
+  background-color: #ececec;
+  border-radius: 6px;
+  padding: 1rem;
+  gap: 0.4rem;
+}
+.context-card .card-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+}
+
+
+.concept-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.concept-cards.two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.concept-card.supportingText {
+  margin-top: 0;
+}
+
+.concept-card {
+  background-color: #ececec;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.concept-card.green {
+  /* background-color: rgb(248, 253, 247); */
+  border: px dashed #93cd95 16; 
+}
+
+.concept-card p {
+  width: 100%;
+}
+
+.dark-section {
+  background-color: var(--background-color-dark);
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.impact-quote {
+  margin: 2rem 0;
+  padding: 2rem;
+  background-color: var(--background-color-light);
+  border-radius: 8px;
+}
+
+.impact-quote cite {
+  font-style: italic;
+}
+
+.solution-video {
+  width: 100%;
+  height: auto;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+.learning-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.divider {
+  border: 0;
+  height: 1px;
+  background: var(--border-color);
+  margin: 3rem 0;
+}
+
+.rounded-img {
+  width: 100%;
+  margin: 1rem 0;
+
+  height: auto;
+  display: block;
+  border-radius: 8px;
+
+}
+
+.content {
+  position: relative;
+  padding-left: calc(16% + 18vw);
+  padding-right: 16%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1440px) {
+  .content {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: calc(18% + 18vw);
+    padding-right: 18%;
+  }
+}
+
+@media (max-width: 900px) {
+  .content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.7rem;
+  color: var(--grey-color);
+  font-family: 'CommitMono';
+  text-transform: uppercase;
+}
+
+footer p {
+  font-size: 0.7rem;
+}
+
+.sticky-back-btn {
+  position: sticky;
+  top: 1.5rem;
+  left: 0;
+  margin-left: calc(16% - 18vw);
+  display: inline-block;
+  z-index: 200;
+  /* background: #fff; */
+  font-family: 'CommitMono', monospace;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  /* margin-bottom: 1.5rem; */
+  margin-top: 0.5rem;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .sticky-back-btn {
+    position: static;
+    margin-left: 0;
+    padding: 0.4rem 1rem 0.4rem 0.7rem;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+    /* display: block; */
+  }
+}
+
+.design-intervention-section {
+  margin-bottom: 4rem;
+}
+
+.design-intervention-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem 2.5rem;
+  align-items: start;
+  margin-top: 1.5rem;
+}
+
+.design-intervention-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.design-intervention-title {
+  font-size: 2.1rem;
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 2.2rem;
+  color: var(--text-color);
+  font-family: 'ABCMonumentGrotesk', sans-serif;
+}
+
+.design-intervention-image-block {
+  background: #ececec;
+  border-radius: 10px;
+  padding: 2.2rem 2.2rem 1.2rem 2.2rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 340px;
+}
+
+.design-intervention-phone {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  display: block;
+  margin-bottom: 0.7rem;
+}
+
+.design-intervention-caption {
+  font-size: 1rem;
+  color: #888;
+  text-align: center;
+  font-family: 'ABCMonumentGrotesk', sans-serif;
+}
+
+.design-intervention-right {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  justify-content: center;
+}
+
+.design-intervention-feature h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #000000;
+}
+
+.design-intervention-feature p {
+  font-size: 1.05rem;
+  color: #555;
+  margin-bottom: 0.2rem;
+}
+
+@media (max-width: 900px) {
+  .design-intervention-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem 0;
+  }
+  .design-intervention-left, .design-intervention-right {
+    align-items: flex-start;
+  }
+  .design-intervention-title {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+  }
+  .design-intervention-image-block {
+    padding: 1.2rem 1.2rem 0.7rem 1.2rem;
+    max-width: 100%;
+
+  }
+
+
+  .design-intervention-phone {
+    max-width: 180px;
+  }
+  .design-intervention-caption {
+    font-size: 0.9rem;
+  }
+  .design-intervention-feature h3 {
+    font-size: 1.1rem;
+  }
+  .design-intervention-feature p {
+    font-size: 0.98rem;
+  }
+}
+
+.distort-hover:hover {
+  filter: url(#distort);
+}
+
