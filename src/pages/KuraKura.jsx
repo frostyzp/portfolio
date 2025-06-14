@@ -135,7 +135,7 @@ const KuraKura = () => {
         <section className="section">
           <hr className="divider" />
           <p className="supportingText">Localising narratives, design iterations</p>
-          <p className="section-lead">Make a local, ice kachang dessert through journaling <br />with kura!        </p>
+          <p className="section-lead">How do we creeate a more localised and engaging narrative?<br />with kura!        </p>
 
           <div className="concept-cards two">
             <div className="concept-card">
@@ -160,6 +160,7 @@ const KuraKura = () => {
           
 
       <FadeInWhenVisible>
+        <hr className="divider" />
         <section className="section context-section">
           <p className="supportingText">ROADBLOCKS, EDGE CASES, PIVOTS</p>
           <p className="section-lead">Design directions/prototypes that didn't make the cut</p>

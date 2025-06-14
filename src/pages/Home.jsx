@@ -7,6 +7,7 @@ import { keyframes, Global, css } from '@emotion/react';
 import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import LoadingOverlay from '../components/LoadingOverlay';
+import FadeInWhenVisible from '../components/FadeInWhenVisible';
 
 const SIDEBAR_WIDTH = '18vw';
 
@@ -624,39 +625,34 @@ const Home = () => {
           {/* <InlineDogImage src="/assets/doodles/connectTheDot01.png" alt="Connect the Dog" /> */}
         </HeadingIntroFlex>
         <hr className="divider2" />
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={canAnimateRows ? "visible" : "hidden"}
-        >
-          <motion.div variants={itemVariants}>
-            <ResponsiveCaseStudyRow
-              to="/roster-monster"
-              title="Roster Monster"
-              description="Reducing 1 week's worth of effort into hours of roster planning through automation feedback"
-              mediaType="video"
-              mediaSrc="/assets/case-studies/ogp_main.mp4"
-            />
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <ResponsiveCaseStudyRow
-              to="/kura-kura"
-              title="Kura Kura"
-              description="A playful, localised AI-driven journaling tool for emotional wellness amongst youths"
-              mediaType="video"
-              mediaSrc="/assets/case-studies/kurakura_main.mp4"
-            />
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <ResponsiveCaseStudyRow
-                to="/ogp-illustration-guidelines"
-              title="Open Government Products"
-              description="Streamlining illustration craft for Singapore Government products"
-              mediaType="image"
-              mediaSrc="/assets/byos/byos_main.png"
-            />
-          </motion.div>
-        </motion.div>
+        {/* Case Study Rows with consistent fade-in animation */}
+        {[
+          {
+            to: "/roster-monster",
+            title: "Roster Monster",
+            description: "Reducing 1 week's worth of effort into hours of roster planning through automation feedback",
+            mediaType: "video",
+            mediaSrc: "/assets/case-studies/ogp_main.mp4"
+          },
+          {
+            to: "/kura-kura",
+            title: "Kura Kura",
+            description: "A playful, localised AI-driven journaling tool for emotional wellness amongst youths",
+            mediaType: "video",
+            mediaSrc: "/assets/case-studies/kurakura_main.mp4"
+          },
+          {
+            to: "/ogp-illustration-guidelines",
+            title: "Open Government Products",
+            description: "Streamlining illustration craft for Singapore Government products",
+            mediaType: "image",
+            mediaSrc: "/assets/byos/byos_main.png"
+          }
+        ].map((props, idx) => (
+          <FadeInWhenVisible key={props.to} delay={0.08 * idx}>
+            <ResponsiveCaseStudyRow {...props} />
+          </FadeInWhenVisible>
+        ))}
         <hr className="divider2" />
         {/* WEB / CODE sections always visible, but force single column on mobile */}
         <ImageTextContainerGrid columns={isMobile ? "1fr" : "2fr 1fr"} noHover>
@@ -684,7 +680,7 @@ const Home = () => {
             <ImageText to="">
               <TextRow>
               </TextRow>
-              <img src="/assets/case-studies/ddr lite.gif" />
+              <img src="/assets/case-studies/grab_cs.png" />
             </ImageText>
           </InteractiveLink>
           <InteractiveLink>
@@ -719,29 +715,6 @@ const Home = () => {
           </InteractiveLink>
         </ImageTextContainerGrid>
 
-
-
-        
-        <ImageTextContainerGrid columns={isMobile ? "1fr" : "2fr 1fr"} noHover>
-          <InteractiveLink>
-            <ImageText to="">
-              {/* <img src="/case-studies/unity_recorder.gif" /> */}
-              <TextRow>
-                {/* <p>TCSC</p>
-                <p>CMS built website </p> */}
-              </TextRow>
-            </ImageText>
-          </InteractiveLink>
-          <InteractiveLink>
-            <ImageText to="">
-            {/* <video src="/case-studies/campfire_full_2.mov" autoPlay loop muted /> */}
-            <TextRow>
-                {/* <p>Pha Lai Nam Lhai</p>
-                <p>Translating a traditional Thai weaving pattern into a color font</p> */}
-              </TextRow>
-            </ImageText>
-          </InteractiveLink>
-        </ImageTextContainerGrid>
         <Footer />
       </Content>
     </>

@@ -4,11 +4,18 @@ import styled from '@emotion/styled';
 import { useState, useEffect } from 'react';
 import { Content } from './Home';
 import Footer from '../components/Footer';
+import { motion } from 'framer-motion';
+import ResponsiveCaseStudyRow from '../components/ResponsiveCaseStudyRow';
 
+const canAnimateRows = true;
+          
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
-    setIsMobile(window.innerWidth <= 900);
+    const handleResize = () => setIsMobile(window.innerWidth <= 900);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
   return isMobile;
 };
@@ -68,18 +75,10 @@ const gridItems = [
     labelRight: 'WEB, 2025',
   },
   {
-    type: 'video',
-    src: '/assets/creative/haiku_trim_2.mp4',
-    to: '',
-    key: 'skipping',
-    labelLeft: 'HAIKU CHATROOM',
-    labelRight: 'WEB, PRINT, 2023',
-  },
-  {
-    type: 'image',
+    type: 'img',
     src: '/assets/creative/graveyard.gif',
     to: '',
-    key: 'cuddly',
+    key: 'graveyard2',
     labelLeft: 'GRAVEYARD OF THE UNANSWERED',
     labelRight: 'UNITY, 2023',
   },
@@ -87,8 +86,8 @@ const gridItems = [
     type: 'img',
     src: '/assets/creative/ai_dinner.gif',
     to: '',
-    key: 'ai_dinner',
-    labelLeft: 'AI DINNER',
+    key: 'ai_dinner', 
+    labelLeft: 'AI DINNER CONVERSATIONS',
     labelRight: 'UNITY,2023',
   },
   {
@@ -100,11 +99,19 @@ const gridItems = [
     labelRight: 'UNITY, 2023',
   },
   {
-    type: 'image',
+    type: 'img',
     src: '/assets/creative/glitch-font.gif',
     to: '',
-    key: 'cuddly',
+    key: 'glitch_font',
     labelLeft: 'VARIABLE FONT',
+    labelRight: 'GLPYHS, 2024',
+  },
+  {
+    type: 'video',
+    src: '/assets/creative/typing_2.mov',
+    to: '',
+    key: 'typing',
+    labelLeft: 'FONT WEAVING EXPERIMENTS',
     labelRight: 'GLPYHS, 2024',
   }
 ];
@@ -129,19 +136,50 @@ const LabelRight = styled.span`
   color: #888;
 `;
 
-const WebExperiments = () => {
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 }
+};
+
+  const WebExperiments = () => {
   const isMobile = useIsMobile();
   const columns = isMobile ? 1 : 2;
   const total = gridItems.length;
 
   return (
     <Content>
+      {[
+        {
+          to: "",
+          title: "wandering wondering",
+          description: "Rocks as interfaces to dreaming through site specific web(sites)",
+          mediaType: "video",
+          mediaSrc: "/assets/creative/capstone_cs.mp4"
+        },
+        {
+          to: "",
+          title: "Haiku Chatroom",
+          description: "A collaborative, generative chatroom and poem generator with people",
+          mediaType: "video",
+          mediaSrc: "/assets/creative/haiku_trim_2.mp4"
+        }
+      ].map((props, idx) => (
+        <FadeInWhenVisible key={props.to} delay={0.08 * idx}>
+          <ResponsiveCaseStudyRow {...props} />
+        </FadeInWhenVisible>
+      ))}
+
       <MasonryGrid columns={columns}>
         {gridItems.map((item, idx) => (
           <MasonryItem key={item.key}>
             <FadeInWhenVisible delay={0.08 * (total - 1 - idx)}>
               <InteractiveLink to={item.to} style={{display: 'block'}}>
-                <ImageText to={item.to}>
+                <ImageText>
                   {item.type === 'video' ? (
                     <video src={item.src} autoPlay loop muted />
                   ) : (
