@@ -38,11 +38,17 @@ const TextRow = styled.div`
   margin-top: 0.4rem;
 
   p:first-of-type {
-    flex: 0 0 20%;
+    flex: 0 0 60%;
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+
   }
 
   p:last-of-type {
-    flex: 0 0 80%;
+    font-size: 0.9rem;
+    // flex: 0 0 40%;
+    margin-bottom: 0.4rem;
+
   }
 `;
 
@@ -79,7 +85,7 @@ const getHoverStyles = (noHover) => {
 const ImageTextContainerGrid = styled.div`
   display: grid;
   grid-template-columns: ${({ columns }) => columns || '1fr 1fr'};
-  gap: 0.6rem;
+  gap: 1rem;
   margin-bottom: 0.6rem;
   align-items: stretch;
 
@@ -172,7 +178,7 @@ function ResponsiveCaseStudyRow({ to, title, description, mediaType, mediaSrc })
           {/* Media first */}
           <div>
             {mediaType === 'video' ? (
-              <video src={mediaSrc} autoPlay loop muted />
+              <video src={mediaSrc} autoPlay loop muted playsInline />
             ) : (
               <img src={mediaSrc} alt={title} />
             )}
@@ -192,7 +198,7 @@ function ResponsiveCaseStudyRow({ to, title, description, mediaType, mediaSrc })
           </CaseStudyCell>
           <div>
             {mediaType === 'video' ? (
-              <video src={mediaSrc} autoPlay loop muted />
+              <video src={mediaSrc} autoPlay loop muted playsInline />
             ) : (
               <img src={mediaSrc} alt={title} />
             )}
@@ -654,14 +660,17 @@ const Home = () => {
           </FadeInWhenVisible>
         ))}
         <hr className="divider2" />
+
+
+
         {/* WEB / CODE sections always visible, but force single column on mobile */}
         <ImageTextContainerGrid columns={isMobile ? "1fr" : "2fr 1fr"} noHover>
           <InteractiveLink>
             <ImageText to="">
-              <video src="/assets/case-studies/tcsc.mp4" autoPlay loop muted />
+              <video src="/assets/case-studies/tcsc.mp4" autoPlay loop muted playsInline />
               <TextRow>
-                {/* <p>TCSC</p>
-                <p>CMS built website </p> */}
+                <p>Thai Creative Student Collective</p>
+                <p>CMS powered website </p>
               </TextRow>
             </ImageText>
           </InteractiveLink>
@@ -669,8 +678,8 @@ const Home = () => {
             <ImageText to="">
             <img src="/assets/case-studies/cuddly.gif"></img>
             <TextRow>
-                {/* <p>Motion</p>
-                <p>For Various clients</p> */}
+                <p>Motion Client Projects</p>
+                <p></p>
               </TextRow>
             </ImageText>
           </InteractiveLink>
@@ -678,38 +687,51 @@ const Home = () => {
         <ImageTextContainerGrid columns={isMobile ? "1fr" : "1fr 2fr"} noHover>
           <InteractiveLink>
             <ImageText to="">
-              <TextRow>
-              </TextRow>
               <img src="/assets/case-studies/grab_cs.png" />
             </ImageText>
+            <TextRow>
+                <p>Grab Financial Group</p>
+                <p>2022</p>
+              </TextRow>
           </InteractiveLink>
           <InteractiveLink>
+        
             <ImageText to="">
-            <TextRow>
-            <video src="/assets/case-studies/nam_lhai.mp4" autoPlay loop muted />
-              </TextRow>
+            <video src="/assets/case-studies/nam_lhai.mp4" autoPlay loop muted playsInline />
             </ImageText>
+            <TextRow>
+              <p>Nam Lhai Weaving</p>
+              <p>Web, Custom Font</p>
+            </TextRow>
           </InteractiveLink>
         </ImageTextContainerGrid>
-        <ImageTextContainerGrid columns={isMobile ? "1fr" : "1fr 1fr 1fr"} noHover={isMobile}>
+
+        
+        <ImageTextContainerGrid columns={isMobile ? "1fr" : "1fr 1fr 1fr"} noHover>
           <InteractiveLink>
             <ImageText to="">
-            <video src="/assets/case-studies/oracle_2.mov" autoPlay loop muted />
+            <video src="/assets/case-studies/oracle_2.mov" autoPlay loop muted playsInline />
               <TextRow>
+                <p>oracle rock</p>
+                <p>Site specific website</p>
               </TextRow>
             </ImageText>
           </InteractiveLink>
           <InteractiveLink>
             <ImageText to="">
-            <video src="/assets/case-studies/skipping_3.mov" autoPlay loop muted />
+            <video src="/assets/case-studies/skipping_3.mov" autoPlay loop muted playsInline />
             <TextRow>
+            <p>skipping stones</p>
+            <p>Site specific website</p>
               </TextRow>
             </ImageText>
           </InteractiveLink>
           <InteractiveLink>
             <ImageText to="">
-            <video src="/assets/case-studies/graveyard_2.mov" autoPlay loop muted />
+            <video src="/assets/case-studies/graveyard_2.mov" autoPlay loop muted playsInline />
             <TextRow>
+            <p>cemetery of the unanswered</p>
+            <p>Site specific website</p>
               </TextRow>
             </ImageText>
           </InteractiveLink>

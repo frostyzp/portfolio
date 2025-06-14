@@ -166,7 +166,7 @@ const itemVariants = {
           title: "Haiku Chatroom",
           description: "A collaborative, generative chatroom and poem generator with people",
           mediaType: "video",
-          mediaSrc: "/assets/creative/haiku_trim_2.mp4"
+          mediaSrc: "/assets/creative/haiku_chatroom.mp4"
         }
       ].map((props, idx) => (
         <FadeInWhenVisible key={props.to} delay={0.08 * idx}>
@@ -181,7 +181,7 @@ const itemVariants = {
               <InteractiveLink to={item.to} style={{display: 'block'}}>
                 <ImageText>
                   {item.type === 'video' ? (
-                    <video src={item.src} autoPlay loop muted />
+                    <video src={item.src} autoPlay loop muted playsInline />
                   ) : (
                     <img src={item.src} alt={item.key} />
                   )}

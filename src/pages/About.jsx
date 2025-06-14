@@ -2,24 +2,17 @@ import styled from '@emotion/styled';
 import usePageTitle from '../hooks/usePageTitle';
 import { Link } from 'react-router-dom';
 import FadeInWhenVisible from '../components/FadeInWhenVisible';
-
-const AboutContainer = styled.div`
-  margin-left: 300px;
-  padding: 2rem;
-  position: relative;
-`;
-
-const FlexBlock = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-`;
+import DraggablePaperPad from '../components/DraggablePaperPad';
 
 const AboutDiv = styled.div`
-  max-width: 800px;
+  // max-width: 800px;
+  max-width: 100%;
   align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
 `;
-
 
 const GridIllustration = styled.div`
   display: grid;
@@ -40,9 +33,6 @@ const ProfileImage = styled.img`
   margin-right: auto;
   align-items: center;
 `;
-
-
-
 
 const ItemRow = styled.div`
   font-size: 0.9rem;
@@ -89,6 +79,12 @@ const ItemYear = styled.div`
   color: #666;
 `;
 
+const HideOnMobile = styled.div`
+  @media (max-width: 900px) {
+    display: none !important;
+  }
+`;
+
 const About = () => {
   usePageTitle('About - Arin P.');
 
@@ -97,33 +93,42 @@ const About = () => {
      <Link to="/" className="sticky-back-btn" aria-label="Back to home">
        ← Back
      </Link>
-        <GridIllustration>
-          {/* Add your work grid items here */}
-        </GridIllustration>
-      
-        <FadeInWhenVisible>
+
+      <FadeInWhenVisible>
       <AboutDiv>
-        <ProfileImage 
-          src="https://cdn.prod.website-files.com/6379e0162913f9848d3be654/657357a2ed2b085995153385_Screenshot%202023-12-08%20at%2012.51.06%20PM.png"
-          alt="Arin's profile"
-          loading="lazy"
-        />
-        <p>
-       Arin explores technologically mediated experiences and tools through interfaces and creative technologies, grounded in curiosity, speculation, and critical inquiry. He believes in empowering communities, bridging connections, and building tools that are accessible to everyone.
-       <br/><br/>
-        </p>
-
-        <p className="supportingText">
-          CURRENTLY 
-        </p>
-        <p>
-          Watching movies, jamming to 2010s music, taking film photos, and making matcha! 
-        </p>
-
-
-
+        <HideOnMobile>
+          {/* <DraggablePaperPad imgSrc="/assets/doodles/connectTheDot01.png" /> */}
+        </HideOnMobile>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1 }}>
+          <ProfileImage 
+            src="/assets/about/profile.png"
+            alt="Arin's profile"
+            loading="lazy"
+          />
+        </div>
+        <HideOnMobile>
+          <DraggablePaperPad imgSrc="/assets/doodles/connectTheDot02.png" />
+        </HideOnMobile>
       </AboutDiv>
       </FadeInWhenVisible>
+
+
+      <FadeInWhenVisible> 
+      <p className="supportingText">
+            ABOUT 
+          </p>
+        <p>
+        Arin explores technologically mediated experiences and tools through interfaces and creative technologies, grounded in curiosity, speculation, and critical inquiry. He believes in empowering communities, bridging connections, and building tools that are accessible to everyone.
+        <br/><br/>
+        </p>
+          <p className="supportingText">
+            CURRENTLY 
+          </p>
+          <p>
+            Watching movies, jamming to 2010s music, taking film photos, and making matcha! 
+          </p>
+      </FadeInWhenVisible>
+     
 
       <hr className="divider" />
       <FadeInWhenVisible>

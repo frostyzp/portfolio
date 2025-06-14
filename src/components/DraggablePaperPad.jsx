@@ -7,23 +7,40 @@ const LinedDraggableDiv = styled.div`
   min-width: 220px;
   height: 340px;
   background:
-    /* Paper SVG texture */
-    url('data:image/svg+xml;utf8,<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><filter id="noise" x="0" y="0"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/></filter><rect width="120" height="120" fill="white"/><rect width="120" height="120" filter="url(%23noise)" opacity="0.08"/></svg>') repeat,
+    url('data:image/svg+xml;utf8,<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"><filter id="noise" x="0" y="0"><feTurbulence type="fractalNoise" baseFrequency="1" numOctaves="2" stitchTiles="stitch"/></filter><rect width="120" height="120" fill="white"/><rect width="120" height="120" filter="url(%23noise)" opacity="0.08"/></svg>') repeat,
     repeating-linear-gradient(
-    to bottom,
-    #fff 0px,
+      to bottom,
+      #fff 0px,
       #fff 10px
-    // #e55 10px,
-    // #fff 10.7px
-  );
-  border-radius: 0;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-  border: 1px solidrgb(103, 103, 103);
+    );
+  box-shadow: 0 2px 24px rgba(255, 227, 227, 0.1), 0 1.5px 12px rgba(125, 125, 125, 0.06);
   position: relative;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  transform: rotate(-3deg);
+`;
+
+const OverlayImage = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.95;
+  mix-blend-mode: multiply;
+`;
+
+const CanvasStack = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 1;
 `;
 
 function DrawingCanvas() {
@@ -35,7 +52,7 @@ function DrawingCanvas() {
 
   // SVG pencil icon as data URL
   const pencilCursor =
-    "url('data:image/svg+xml;utf8,<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M2 17.25V21h3.75l11.06-11.06-3.75-3.75L2 17.25z\" fill=\"%23000\"/><path d=\"M20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z\" fill=\"%23000\"/></svg>') 0 24, auto";
+    "url('data:image/svg+xml;utf8,<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M2 17.25V21h3.75l11.06-11.06-3.75-3.75L2 17.25z\" fill=\"%23000\"/><path d=\"M20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z\" fill=\"%23000\"/></svg>') 0 24, auto";
 
   // High-DPI support
   const height = 340;
@@ -102,7 +119,7 @@ function DrawingCanvas() {
   const handlePointerUp = () => setDrawing(false);
 
   return (
-    <div ref={containerRef} style={{ position: 'relative', width: '100%', height: height }}>
+    <div ref={containerRef} style={{ position: 'absolute', width: '100%', height: '100%', top: 0, left: 0 }}>
       <canvas
         ref={canvasRef}
         // width and height set in effect for high-DPI
@@ -189,26 +206,13 @@ function DraggablePaper({ children, style }) {
   );
 }
 
-// Main exportable component
 const DraggablePaperPad = ({ imgSrc, style }) => (
   <DraggablePaper style={style}>
-    <LinedDraggableDiv style={{ position: 'relative' }}>
-      {imgSrc && (
-        <img
-          src={imgSrc}
-          alt="doodle"
-          style={{
-            position: 'absolute',
-            left: 0,
-            top: 0,
-            height: '100%',
-            objectFit: 'contain',
-            zIndex: 10,
-            pointerEvents: 'none',
-          }}
-        />
-      )}
-      <DrawingCanvas />
+    <LinedDraggableDiv>
+      <CanvasStack>
+        {imgSrc && <OverlayImage src={imgSrc} alt="doodle" />}
+        <DrawingCanvas />
+      </CanvasStack>
     </LinedDraggableDiv>
   </DraggablePaper>
 );
