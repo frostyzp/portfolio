@@ -63,56 +63,56 @@ const gridItems = [
     src: '/assets/creative/bitsy.gif',
     to: '',
     key: 'tcsc',
-    labelLeft: 'NIGHT OF KANG LIM',
-    labelRight: 'BITSY, 2024',
+    labelLeft: 'Night of kang lim',
+    labelRight: 'Bitsy, 2024',
   },
   {
     type: 'video',
     src: '/assets/creative/lg_archive.mp4',
     to: '',
     key: 'graveyard',
-    labelLeft: 'MATERIALITY OF PAPER',
-    labelRight: 'WEB, 2025',
+    labelLeft: 'Materiality of paper',
+    labelRight: 'web, 2025',
   },
   {
     type: 'img',
     src: '/assets/creative/graveyard.gif',
     to: '',
     key: 'graveyard2',
-    labelLeft: 'GRAVEYARD OF THE UNANSWERED',
-    labelRight: 'UNITY, 2023',
+    labelLeft: 'Graveyard of the unanswered',
+    labelRight: 'Unity, 2023',
   },
   {
     type: 'img',
     src: '/assets/creative/ai_dinner.gif',
     to: '',
     key: 'ai_dinner', 
-    labelLeft: 'AI DINNER CONVERSATIONS',
-    labelRight: 'UNITY,2023',
+    labelLeft: 'AI dinner conversations',
+    labelRight: 'Unity, 2023',
   },
   {
     type: 'img',
     src: '/assets/creative/stroll_basin.gif',
     to: '',
     key: 'oracle',
-    labelLeft: 'STROLL ON BASIN STREET',
-    labelRight: 'UNITY, 2023',
+    labelLeft: 'Stroll on basin street',
+    labelRight: 'Unity, 2023',
   },
   {
     type: 'img',
     src: '/assets/creative/glitch-font.gif',
     to: '',
     key: 'glitch_font',
-    labelLeft: 'VARIABLE FONT',
-    labelRight: 'GLPYHS, 2024',
+    labelLeft: 'Variable font',
+    labelRight: 'Glpyhs, 2024',
   },
   {
     type: 'video',
     src: '/assets/creative/typing_2.mov',
     to: '',
     key: 'typing',
-    labelLeft: 'FONT WEAVING EXPERIMENTS',
-    labelRight: 'GLPYHS, 2024',
+    labelLeft: 'Font weaving experiments',
+    labelRight: 'Glpyhs, 2024',
   }
 ];
 
@@ -120,19 +120,19 @@ const LabelRow = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 0.2rem;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   width: 100%;
 `;
 
 const LabelLeft = styled.span`
   text-align: left;
-  font-family: 'CommitMono', monospace;
+  // font-family: 'CommitMono', monospace;
   color: black;
 `;
 
 const LabelRight = styled.span`
   text-align: right;
-  font-family: 'CommitMono', monospace;
+  // font-family: 'CommitMono', monospace;
   color: #888;
 `;
 

@@ -619,7 +619,7 @@ const Home = () => {
               initial="hidden"
               animate="visible"
               style={{ fontSize: "1rem", marginBottom: "0.5rem" }}
-            ><span style={{ color: "black" }}>Arin Pantja –– </span> Product Designer, Motion & Code  ツ</motion.p>
+            ><span style={{ color: "black" }}>Arin Pantja –– </span> Product Design, Motion & Code  ツ</motion.p>
             <motion.p
               variants={fadeIn}
               initial="hidden"
@@ -628,6 +628,12 @@ const Home = () => {
             >Crafting interfaces, interactions, and playful experiences. Currently based in NYC.</motion.p>
             {useIsMobile() && <MobileEtcLinks />}
           </div>
+
+          {/* RIVE ANIMATION INTERACTIVE STUFF GOES HERE */}
+
+
+
+          
           {/* <InlineDogImage src="/assets/doodles/connectTheDot01.png" alt="Connect the Dog" /> */}
         </HeadingIntroFlex>
         <hr className="divider2" />
@@ -669,8 +675,8 @@ const Home = () => {
             <ImageText to="">
               <video src="/assets/case-studies/tcsc.mp4" autoPlay loop muted playsInline />
               <TextRow>
-                <p>Thai Creative Student Collective</p>
-                <p>CMS powered website </p>
+                <p style={{ color: 'black' }}>Thai Creative Student Collective</p>
+                <p>CMS powered website, 2024 </p>
               </TextRow>
             </ImageText>
           </InteractiveLink>
@@ -678,8 +684,8 @@ const Home = () => {
             <ImageText to="">
             <img src="/assets/case-studies/cuddly.gif"></img>
             <TextRow>
-                <p>Motion Client Projects</p>
-                <p></p>
+                <p style={{ color: 'black' }}>Motion Client Projects</p>
+                <p>2023</p>
               </TextRow>
             </ImageText>
           </InteractiveLink>
@@ -690,7 +696,7 @@ const Home = () => {
               <img src="/assets/case-studies/grab_cs.png" />
             </ImageText>
             <TextRow>
-                <p>Grab Financial Group</p>
+                <p style={{ color: 'black' }}>Grab Financial Group</p>
                 <p>2022</p>
               </TextRow>
           </InteractiveLink>
@@ -700,8 +706,8 @@ const Home = () => {
             <video src="/assets/case-studies/nam_lhai.mp4" autoPlay loop muted playsInline />
             </ImageText>
             <TextRow>
-              <p>Nam Lhai Weaving</p>
-              <p>Web, Custom Font</p>
+              <p style={{ color: 'black' }}>Nam Lhai Weaving</p>
+              <p>Web, Custom Font, 2024</p>
             </TextRow>
           </InteractiveLink>
         </ImageTextContainerGrid>
@@ -712,8 +718,8 @@ const Home = () => {
             <ImageText to="">
             <video src="/assets/case-studies/oracle_2.mov" autoPlay loop muted playsInline />
               <TextRow>
-                <p>oracle rock</p>
-                <p>Site specific website</p>
+                <p style={{ color: 'black' }}>oracle rock</p>
+                <p>2025</p>
               </TextRow>
             </ImageText>
           </InteractiveLink>
@@ -721,8 +727,8 @@ const Home = () => {
             <ImageText to="">
             <video src="/assets/case-studies/skipping_3.mov" autoPlay loop muted playsInline />
             <TextRow>
-            <p>skipping stones</p>
-            <p>Site specific website</p>
+            <p style={{ color: 'black' }}>skipping stones</p>
+            <p>2025</p>
               </TextRow>
             </ImageText>
           </InteractiveLink>
@@ -730,8 +736,8 @@ const Home = () => {
             <ImageText to="">
             <video src="/assets/case-studies/graveyard_2.mov" autoPlay loop muted playsInline />
             <TextRow>
-            <p>cemetery of the unanswered</p>
-            <p>Site specific website</p>
+            <p style={{ color: 'black' }}>cemetery of the unanswered</p>
+            <p>2025</p>
               </TextRow>
             </ImageText>
           </InteractiveLink>

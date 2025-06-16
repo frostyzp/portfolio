@@ -325,7 +325,7 @@ const Sidebar = () => {
             variants={fadeIn}
             initial="hidden"
             animate="visible"
-          >INTERACTION DESIGN</MotionHeaders>
+          >WORKS</MotionHeaders>
           <motion.ul
             style={{ listStyle: "none", padding: 0, margin: 0 }}
             variants={listVariants}
@@ -333,14 +333,14 @@ const Sidebar = () => {
             animate="visible"
           >
             <motion.li variants={itemVariants}>
-              <StyledLink to="/roster-monster">
-                <span className="link-text">Roster Monster</span>
+              <StyledLink to="/">
+                <span className="link-text">Interaction Design</span>
                 <span className="link-image">
                 <img src="/assets/doodles/arrowA.gif" alt="icon" style={{width: '36px', height: '36px'}} />
                 </span>
               </StyledLink>
             </motion.li>
-            <motion.li variants={itemVariants}>
+            {/* <motion.li variants={itemVariants}>
               <StyledLink to="/kura-kura">
                 <span className="link-text">Kura Kura</span>
                 <span className="link-image">
@@ -355,7 +355,7 @@ const Sidebar = () => {
                     <img src="/assets/doodles/arrowA.gif" alt="icon" style={{width: '36px', height: '36px'}} />
                 </span>
               </StyledLink>
-            </motion.li>
+            </motion.li> */}
           </motion.ul>
         </HideOnMobile>
 
@@ -397,12 +397,6 @@ const Sidebar = () => {
           </li> */}
 
         </ul>
-
-        <MotionHeaders
-          variants={fadeIn}
-          initial="hidden"
-          animate="visible"
-        >CREATIVE TECH</MotionHeaders>
         <motion.ul
           style={{ listStyle: "none", padding: 0, margin: 0 }}
           variants={listVariants}
@@ -411,7 +405,7 @@ const Sidebar = () => {
         >
           <motion.li variants={itemVariants}>
           <StyledLink to="/web-experiments">
-          <span className="link-text">Web Experiments</span>
+          <span className="link-text">Code / Creative Tech</span>
               <span className="link-image">
                 <img src="/assets/doodles/arrowA.gif" alt="icon" style={{width: '36px', height: '36px'}} />
               </span>
@@ -420,80 +414,90 @@ const Sidebar = () => {
 
         </motion.ul>
 
+        {/* <div className="divider sidebar" /> */}
 
-
-        <div style={{ marginTop: 'auto' }}>
-          <MotionHeaders
-            variants={fadeIn}
-            initial="hidden"
-            animate="visible"
-          >ETC.</MotionHeaders>
-          <motion.ul
+        <motion.ul
             style={{ listStyle: "none", padding: 0, marginBottom: '6vh' }}
             variants={listVariants}
             initial="hidden"
             animate="visible"
           >
+                       <MotionHeaders
+              variants={fadeIn}
+              initial="hidden"
+              animate="visible"
+            >ETC.</MotionHeaders>
                 <motion.li variants={itemVariants}>
                   <StyledLink to="/about">
-                        <span className="link-text">About Me</span>
+                        <span className="link-text">About</span>
                 <span className="link-image">
                   <img src="/assets/doodles/arrowA.gif" alt="icon" style={{width: '36px', height: '36px'}} />
                 </span>
               </StyledLink>
             </motion.li>
             <motion.li variants={itemVariants}>
-              <StyledAnchor href="https://drive.google.com/file/d/1Mqu3aYw48yhkVjQtHliizRWFxcKZJ36l/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+              <StyledAnchor href="https://drive.google.com/file/d/1URDkxdH8SXH0sh7qvnE0xUGTZ7eSMSU6/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
                 <span className="link-text">Resume</span>
                 <span className="link-image">
                   <img src="/assets/doodles/arrowA.gif" alt="icon" style={{width: '36px', height: '36px'}} />
                 </span>
               </StyledAnchor>
             </motion.li>
+          </motion.ul>
 
-
+          <div style={{ marginTop: 'auto' }}>
+            {/* <MotionHeaders
+              variants={fadeIn}
+              initial="hidden"
+              animate="visible"
+            >ETC.</MotionHeaders> */}
             <MotionHeaders
               variants={fadeIn}
               initial="hidden"
               animate="visible"
             >CONTACT</MotionHeaders>
 
-            <motion.li variants={itemVariants}>
-              <StyledAnchor href="https://www.linkedin.com/in/arin-pantja/" target="_blank" rel="noopener noreferrer">
-                <span className="link-text">Linkedin</span>
-                <span className="link-image">
-                  <img src="/assets/doodles/linkedinA.gif" alt="icon" style={{width: '36px', height: '36px'}} />
-                </span>
-              </StyledAnchor>
-            </motion.li>
-            <motion.li variants={itemVariants}>
-              <StyledAnchor href="mailto:arinpantja@gmail.com">
-                <span className="link-text">Email</span>
-                <span className="link-image">
-                  <img src="/assets/doodles/emailA.gif" alt="icon" style={{width: '36px', height: '36px'}} />
-                </span>
-              </StyledAnchor>
-            </motion.li>
-            <motion.li variants={itemVariants}>
-              <StyledAnchor href="https://x.com/arin_pantja" target="_blank" rel="noopener noreferrer">
-                <span className="link-text">Twitter/X</span>
-                <span className="link-image">
-                  <img src="/assets/doodles/x.gif" alt="icon" style={{width: '36px', height: '36px'}} />
-                </span>
-              </StyledAnchor>
-            </motion.li>
-            {/* <motion.li variants={itemVariants}>
-              <StyledAnchor href="https://www.are.na/arin-p/channels" target="_blank" rel="noopener noreferrer">
-                <span className="link-text">Are.na</span>
-                <span className="link-image">
-                  <img src="/assets/doodles/arena.gif" alt="icon" style={{width: '36px', height: '36px'}} />
-                </span>
-              </StyledAnchor>
-            </motion.li> */}
-          </motion.ul>
-        </div>
-
-
+            <motion.ul
+              style={{ listStyle: "none", padding: 0, marginBottom: '2rem' }}
+              variants={listVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.li variants={itemVariants}>
+                <StyledAnchor href="https://www.linkedin.com/in/arin-pantja/" target="_blank" rel="noopener noreferrer">
+                  <span className="link-text">Linkedin</span>
+                  <span className="link-image">
+                    <img src="/assets/doodles/linkedinA.gif" alt="icon" style={{width: '36px', height: '36px'}} />
+                  </span>
+                </StyledAnchor>
+              </motion.li>
+              <motion.li variants={itemVariants}>
+                <StyledAnchor href="mailto:arinpantja@gmail.com">
+                  <span className="link-text">Email</span>
+                  <span className="link-image">
+                    <img src="/assets/doodles/emailA.gif" alt="icon" style={{width: '36px', height: '36px'}} />
+                  </span>
+                </StyledAnchor>
+              </motion.li>
+              <motion.li variants={itemVariants}>
+                <StyledAnchor href="https://x.com/arin_pantja" target="_blank" rel="noopener noreferrer">
+                  <span className="link-text">Twitter/X</span>
+                  <span className="link-image">
+                    <img src="/assets/doodles/x.gif" alt="icon" style={{width: '36px', height: '36px'}} />
+                  </span>
+                </StyledAnchor>
+              </motion.li>
+              <motion.li variants={itemVariants}>
+                <StyledAnchor href="https://www.are.na/arin-p/channels" target="_blank" rel="noopener noreferrer">
+                  <span className="link-text">Are.na</span>
+                  <span className="link-image">
+                    <img src="/assets/doodles/arena.gif" alt="icon" style={{width: '36px', height: '36px'}} />
+                  </span>
+                </StyledAnchor>
+              </motion.li>
+            </motion.ul>
+          </div>
+        {/* </motion.ul> */}
 
         {/* Draggable lined paper at the very bottom of the sidebar */}
         {/* <HidePaperOnMobile>
