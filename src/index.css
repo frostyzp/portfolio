@@ -400,12 +400,12 @@ footer p {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 340px;
+  /* max-width: 340px; */
 }
 
 .design-intervention-phone {
   width: 100%;
-  max-width: 220px;
+  max-width: 320px;
   height: auto;
   display: block;
   margin-bottom: 0.7rem;
@@ -474,3 +474,6 @@ footer p {
   filter: url(#distort);
 }
 
+.hover-cancel {
+  cursor: not-allowed !important;
+}

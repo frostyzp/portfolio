@@ -159,18 +159,18 @@ const itemVariants = {
           title: "wandering wondering",
           description: "Rocks as interfaces to dreaming through site specific web(sites)",
           mediaType: "video",
-          mediaSrc: "/assets/creative/capstone_cs.mp4"
+          mediaSrc: "/assets/creative/capstone_cs.mp4",
         },
         {
           to: "",
-          title: "Haiku Chatroom",
+          title: "Haiku Chatroom", 
           description: "A collaborative, generative chatroom and poem generator with people",
           mediaType: "video",
-          mediaSrc: "/assets/creative/haiku_chatroom.mp4"
+          mediaSrc: "/assets/creative/haiku_chatroom.mp4",
         }
       ].map((props, idx) => (
         <FadeInWhenVisible key={props.to} delay={0.08 * idx}>
-          <ResponsiveCaseStudyRow {...props} />
+          <ResponsiveCaseStudyRow {...props} style={{ cursor: 'not-allowed' }} />
         </FadeInWhenVisible>
       ))}
 
