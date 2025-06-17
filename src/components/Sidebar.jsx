@@ -263,7 +263,7 @@ const Sidebar = () => {
   const [kaomojiHovered, setKaomojiHovered] = useState(false);
   return (
     <>
-      {/* SVG filter for text distortion
+      {/* SVG filter for text distortion */}
       <svg width="0" height="0" style={{ position: 'absolute' }}>
         <defs>
           <filter id="distort">
@@ -280,7 +280,7 @@ const Sidebar = () => {
             <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G" />
           </filter>
         </defs>
-      </svg> */}
+      </svg>
       <SidebarContainer>
       <div style={{ position: 'relative', display: 'inline-block' }}>
           <KaomojiLink
