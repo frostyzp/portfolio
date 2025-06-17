@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@emotion/styled": "^11.14.0",
+    "@rive-app/react-canvas": "^4.21.3",
     "cli-spinners": "^3.2.0",
     "framer-motion": "^12.15.0",
     "react": "^19.1.0",

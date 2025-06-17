@@ -125,7 +125,7 @@ const SidebarContainer = styled.div`
   left: 0;
   top: 0;
   width: 18vw;
-  min-width: 220px;
+  min-width: 200px;
   max-width: 320px;
   height: 100vh;
   padding: 2rem;

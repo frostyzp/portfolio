@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import LoadingOverlay from '../components/LoadingOverlay';
 import FadeInWhenVisible from '../components/FadeInWhenVisible';
+import { Simple } from "../components/Footer";
 
 const SIDEBAR_WIDTH = '18vw';
 
@@ -624,14 +625,13 @@ const Home = () => {
               variants={fadeIn}
               initial="hidden"
               animate="visible" 
-              style={{ fontSize: "1rem", height: isMobile ? "5vh" : "20vh", width: isMobile ? "100%" : "30%" }}
-            >Crafting interfaces, interactions, and playful experiences. Currently based in NYC.</motion.p>
+              style={{ fontSize: "1rem", height: isMobile ? "5vh" : "20vh", width: isMobile ? "100%" : "100%" }}
+            >Crafting interfaces, interactions, and playful experiences. <br /> Currently based in NYC.</motion.p>
             {useIsMobile() && <MobileEtcLinks />}
           </div>
 
           {/* RIVE ANIMATION INTERACTIVE STUFF GOES HERE */}
-
-
+            {!isMobile && <Simple />}
 
           
           {/* <InlineDogImage src="/assets/doodles/connectTheDot01.png" alt="Connect the Dog" /> */}
