@@ -177,7 +177,7 @@ img, video {
 
 .info-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -222,6 +222,13 @@ img, video {
 
 .concept-cards.two {
   grid-template-columns: repeat(2, 1fr);
+}
+
+.concept-cards h4 {
+  color: black;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
 }
 
 .concept-card.supportingText {

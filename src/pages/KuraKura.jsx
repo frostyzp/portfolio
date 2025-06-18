@@ -30,10 +30,10 @@ const KuraKura = () => {
               <p className="supportingText">Collaborators</p>
               <p>Arif Woozeer / PM<br />Sebestian Seth / Eng</p>
             </div>
-            <div className="info-item">
+            {/* <div className="info-item">
               <p className="supportingText">Constraints</p>
               <p>User testing opportunities<br />Tech bandwidth</p>
-            </div>
+            </div> */}
           </div>
         </section>
       </FadeInWhenVisible>
@@ -135,7 +135,7 @@ const KuraKura = () => {
         <section className="section">
           <hr className="divider" />
           <p className="supportingText">Localising narratives, design iterations</p>
-          <p className="section-lead">How do we creeate a more localised and engaging narrative?<br />with kura!        </p>
+          <p className="section-lead">How do we create a more localised and engaging narrative with kura?       </p>
 
           <div className="concept-cards two">
             <div className="concept-card">
@@ -148,7 +148,7 @@ const KuraKura = () => {
             </div>
           </div>
 
-          <p className="section-lead">Make a local, ice kachang dessert through journaling <br />with kura!        </p>
+          <p className="section-lead">Make a local, ice kachang dessert through journaling with kura    </p>
           <p>Our users already liked the idea of feeding their kura by checking in their emotions, so I concepted the idea of creating an ice kachang – meaning "bean ice", a Malaysian dessert which is common in Malaysia, Singapore and Brunei.</p>
           <img src="/assets/kurakura/ice kachang 2.png" alt="Loading animation" className="solution-video rounded-img" />
           <img src="/assets/kurakura/ixd.png" alt="Loading animation" className="solution-video rounded-img" />

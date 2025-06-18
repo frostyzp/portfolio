@@ -30,10 +30,10 @@ const Byos = () => {
               <p className="supportingText">Collaborators</p>
               <p>Rachel Tan (Design systems)</p>
             </div>
-            <div className="info-item">
+            {/* <div className="info-item">
               <p className="supportingText">Constraints</p>
               <p>Systemising different visual languages<br /> <br />Applicability across different use cases</p>
-            </div>
+            </div> */}
           </div>
         </section>
       </FadeInWhenVisible>
