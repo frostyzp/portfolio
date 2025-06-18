@@ -49,6 +49,7 @@ const TextRow = styled.div`
     font-size: 0.9rem;
     // flex: 0 0 40%;
     margin-bottom: 0.4rem;
+    color: #888;
 
   }
 `;
@@ -676,7 +677,7 @@ const Home = () => {
               <video src="/assets/case-studies/tcsc.mp4" autoPlay loop muted playsInline />
               <TextRow>
                 <p style={{ color: 'black' }}>Thai Creative Student Collective</p>
-                <p>CMS powered website, 2024 </p>
+                <p>CMS Powered Website, 2024 </p>
               </TextRow>
             </ImageText>
           </InteractiveLink>
@@ -685,7 +686,7 @@ const Home = () => {
             <img src="/assets/case-studies/cuddly.gif"></img>
             <TextRow>
                 <p style={{ color: 'black' }}>Motion Client Projects</p>
-                <p>2023</p>
+                <p>After Effects, 2023</p>
               </TextRow>
             </ImageText>
           </InteractiveLink>
@@ -697,7 +698,7 @@ const Home = () => {
             </ImageText>
             <TextRow>
                 <p style={{ color: 'black' }}>Grab Financial Group</p>
-                <p>2022</p>
+                <p>Card Designs, 2022</p>
               </TextRow>
           </InteractiveLink>
           <InteractiveLink>
@@ -719,7 +720,7 @@ const Home = () => {
             <video src="/assets/case-studies/oracle_2.mov" autoPlay loop muted playsInline />
               <TextRow>
                 <p style={{ color: 'black' }}>oracle rock</p>
-                <p>2025</p>
+                <p>Website, 2025</p>
               </TextRow>
             </ImageText>
           </InteractiveLink>
@@ -728,7 +729,7 @@ const Home = () => {
             <video src="/assets/case-studies/skipping_3.mov" autoPlay loop muted playsInline />
             <TextRow>
             <p style={{ color: 'black' }}>skipping stones</p>
-            <p>2025</p>
+            <p>Website, 2025</p>
               </TextRow>
             </ImageText>
           </InteractiveLink>
@@ -737,7 +738,7 @@ const Home = () => {
             <video src="/assets/case-studies/graveyard_2.mov" autoPlay loop muted playsInline />
             <TextRow>
             <p style={{ color: 'black' }}>cemetery of the unanswered</p>
-            <p>2025</p>
+            <p>Website, 2025</p>
               </TextRow>
             </ImageText>
           </InteractiveLink>

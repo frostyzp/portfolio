@@ -484,3 +484,11 @@ footer p {
 .hover-cancel {
   cursor: not-allowed !important;
 }
+
+.rive-hover-effect {
+  transition: transform 0.2s ease;
+  transform: scale(1);
+}
+.rive-hover-effect:hover {
+  transform: scale(1.05) rotate(2deg);
+}

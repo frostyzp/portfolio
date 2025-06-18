@@ -72,7 +72,7 @@ const gridItems = [
     to: '',
     key: 'graveyard',
     labelLeft: 'Materiality of paper',
-    labelRight: 'web, 2025',
+    labelRight: 'Website, 2025',
   },
   {
     type: 'img',

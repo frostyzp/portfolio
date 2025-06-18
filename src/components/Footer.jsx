@@ -29,12 +29,12 @@ export const Simple = () => {
 
   return (
     <div style={{ width: '50%', padding: '1rem 2vh' }}>
-      <RiveComponent
+      <RiveComponent 
         style={{
           // width: '100%',
           height: '50vh',
           display: 'block',
-          transform: 'rotate(2deg)',
+          transform: 'rotate(3deg)',
           cursor: 'pointer',
         }}
         fit="cover"
