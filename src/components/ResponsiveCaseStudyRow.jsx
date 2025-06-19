@@ -66,16 +66,21 @@ const CaseStudyCell = styled.div`
 
 function ResponsiveCaseStudyRow({ to, title, description, mediaType, mediaSrc }) {
   const isMobile = useIsMobile();
+  const [imgLoaded, setImgLoaded] = React.useState(false);
+  
+  // Helper to handle image load
+  const handleImgLoad = () => setImgLoaded(true);
+
   return (
     <CaseStudyRowContainer to={to}>
       {isMobile ? (
         <>
           {/* Media first */}
-          <div>
+          <div className={imgLoaded ? 'case-study-animate' : ''}>
             {mediaType === 'video' ? (
               <video src={mediaSrc} autoPlay loop muted />
             ) : (
-              <img src={mediaSrc} alt={title} />
+              <img src={mediaSrc} alt={title} onLoad={handleImgLoad} style={{ opacity: imgLoaded ? 1 : 0, transition: 'opacity 0.5s' }} />
             )}
           </div>
           {/* Text below */}
@@ -91,11 +96,11 @@ function ResponsiveCaseStudyRow({ to, title, description, mediaType, mediaSrc })
             <p className="case-study-title">{title}</p>
             <p className="case-study-desc" style={{ fontSize: '1rem' }}>{description}</p>
           </CaseStudyCell>
-          <div>
+          <div className={imgLoaded ? 'case-study-animate' : ''}>
             {mediaType === 'video' ? (
               <video src={mediaSrc} autoPlay loop muted />
             ) : (
-              <img src={mediaSrc} alt={title} />
+              <img src={mediaSrc} alt={title} onLoad={handleImgLoad} style={{ opacity: imgLoaded ? 1 : 0, transition: 'opacity 0.5s' }} />
             )}
           </div>
         </>
