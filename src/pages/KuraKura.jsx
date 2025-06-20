@@ -102,6 +102,11 @@ const KuraKura = () => {
               </div>
             </div>
           </div>
+          <hr className="divider" />
+          <p className="supportingText">EDSIGN SYSTEM</p>
+          <p className="section-lead">The kura mascot and character design system</p>
+          {/* <p>The RULER framework is an evidence-based approach to social and emotional learning that focuses on key steps to regulate emotions in order to promote emotional intelligence and well-being.</p> */}
+          <img src="/assets/kurakura/kura_characters.png" alt="Kura Characters pic" className="solution-video rounded-img" />
         </section>
       </FadeInWhenVisible>
 
