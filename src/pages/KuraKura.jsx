@@ -8,10 +8,6 @@ const KuraKura = () => {
 
   return (
     <div className="content">
-      <Link to="/" className="sticky-back-btn" aria-label="Back to home">
-        ← Back
-      </Link>
-
       <FadeInWhenVisible>
         <section className="section hero-section">
           <img src="/assets/kurakura/main.png" autoPlay loop muted playsInline />
@@ -20,7 +16,8 @@ const KuraKura = () => {
 
       <FadeInWhenVisible>
         <section className="section project-info">
-          <p className="section-lead">A playful, localised AI-driven journaling tool for emotional wellness amongst youths</p>
+          <div className="section-text">
+            <p className="section-lead">A playful, localised AI-driven journaling tool for emotional wellness amongst youths</p>
           <div className="info-grid">
             <div className="info-item">
               <p className="supportingText">Timeline</p>
@@ -30,6 +27,8 @@ const KuraKura = () => {
               <p className="supportingText">Collaborators</p>
               <p>Arif Woozeer / PM<br />Sebestian Seth / Eng</p>
             </div>
+            </div>
+
             {/* <div className="info-item">
               <p className="supportingText">Constraints</p>
               <p>User testing opportunities<br />Tech bandwidth</p>
@@ -40,32 +39,44 @@ const KuraKura = () => {
 
       <FadeInWhenVisible>
         <section className="section role-section">
-          <hr className="divider" />
-          <p className="supportingText">My Role</p>
-          <p className="section-lead">Leading feature design, product strategy, and visual craft direction</p>
-          <p>As the sole designer for kura kura, I worked closely with the founder to lead the product roadmap and design direction of various features for the past year.</p>
+          {/* <hr className="divider" /> */}
+          <div className="section-text">
+            <p className="supportingText">My Role</p>
+            <p className="section-lead">Leading feature design, product strategy, and visual craft direction</p>
+            <p>As the sole designer for kura kura, I worked closely with the founder to lead the product roadmap and design direction of various features for the past year.</p>
+            {/* <img src="/assets/kurakura/main.png" autoPlay loop muted playsInline /> */}
+
+          </div>
+
         </section>
       </FadeInWhenVisible>
       <hr className="divider" />
 
       <FadeInWhenVisible>
         <section className="section context-section">
-          <p className="supportingText">Higher Level Problem</p>
-          <p className="section-lead">A lack of foundational mental health support systems for Singaporean youths        </p>
-          <p>In Singaporean schools and Asian cultures, we're not specifically encouraged to open up – suppressing, hiding, and stifling your emotions are very common. When we open up, it can also be difficult to navigate such situations.</p>
-          <img src="/assets/kurakura/kura_problem.png" alt="Problem statement" className="rounded-img" />
-          <p>76% of youths are not comfortable being vulnerable in their current digital support channels, and efforts to build external support systems don't directly support youths themselves.</p>
+          <div className="section-text">
+            <p className="supportingText">Higher Level Problem</p>
+            <p className="section-lead">A lack of foundational mental health support systems for Singaporean youths        </p>
+            <p>In Singaporean schools and Asian cultures, we're not specifically encouraged to open up – suppressing, hiding, and stifling your emotions are very common. When we open up, it can also be difficult to navigate such situations.</p>
+            <img src="/assets/kurakura/kura_problem.png" alt="Problem statement" className="rounded-img" />
 
+          </div>
+          <div className="section-text">
+            <p className="section-lead">76% of youths are not comfortable being vulnerable in their current digital support channels.</p>
+          <p>Efforts to build external support systems don't directly support youths themselves.</p>
+          </div>
         </section>
       </FadeInWhenVisible>
 
       <FadeInWhenVisible>
         <section className="section design-intervention-section">
           <hr className="divider" />
-          <p className="supportingText">DESIGN INTERVENTION</p>
-          <p className="section-lead">
-            Kura, your turtle companion that brings you a playful journaling and narrative driven experience
-          </p>
+          <div className="section-text">
+            <p className="supportingText">DESIGN INTERVENTION</p>
+            <p className="section-lead">
+              Kura, your turtle companion that brings you a playful journaling and narrative driven experience
+            </p>
+          </div>
 
           <div className="design-intervention-grid">
             <div className="design-intervention-left">
@@ -102,25 +113,38 @@ const KuraKura = () => {
               </div>
             </div>
           </div>
-          <hr className="divider" />
-          <p className="supportingText">EDSIGN SYSTEM</p>
-          <p className="section-lead">The kura mascot and character design system</p>
-          {/* <p>The RULER framework is an evidence-based approach to social and emotional learning that focuses on key steps to regulate emotions in order to promote emotional intelligence and well-being.</p> */}
-          <img src="/assets/kurakura/kura_characters.png" alt="Kura Characters pic" className="solution-video rounded-img" />
+          {/* <hr className="divider" /> */}
+
         </section>
+
+        <section className="section">
+        <hr className="divider" />
+
+          <div className="section-text">
+            <p className="supportingText">DESIGN SYSTEM</p>
+            <p className="section-lead">The kura mascot and character design system</p>
+            <p>Visual assets from our various mascots and in game assets.</p>
+
+          </div>
+          <img src="/assets/kurakura/kura_characters.png" alt="Kura Characters pic" className="solution-video rounded-img" />
+          </section>
       </FadeInWhenVisible>
 
 
       <FadeInWhenVisible>
         <section className="section">
           <hr className="divider" />
-          <p className="supportingText">Research & Process</p>
-          <p className="section-lead">RULER framework for unpacking emotions        </p>
-          <p>The RULER framework is an evidence-based approach to social and emotional learning that focuses on key steps to regulate emotions in order to promote emotional intelligence and well-being.</p>
-          <img src="/assets/kurakura/ruler.png" alt="RULER Framework pic" className="solution-video rounded-img" />
-          <p className="section-lead"> Interaction design explorations for emotion identification with kura!        </p>
-          <p>We explored different ways of interacting with kura to identify emotions, thinking about how we can make it more engaging and fun.</p> 
+          <div className="section-text">
+            <p className="supportingText">Research & Process</p>
+            <p className="section-lead">RULER framework for unpacking emotions        </p>
+            <p>The RULER framework is an evidence-based approach to social and emotional learning that focuses on key steps to regulate emotions in order to promote emotional intelligence and well-being.</p>
+            <img src="/assets/kurakura/ruler.png" alt="RULER Framework pic" className="solution-video rounded-img" />
 
+          </div>
+          <div className="section-text">
+            <p className="section-lead"> Interaction design explorations for emotion identification with kura!        </p>
+            <p>We explored different ways of interacting with kura to identify emotions, thinking about how we can make it more engaging and fun.</p> 
+          </div>
           <div className="design-intervention-grid">
               <div className="design-intervention-image-block">
                 <img src="/assets/kurakura/taphold.gif" alt="Kura Kura phone UI" className="design-intervention-phone" />
@@ -139,23 +163,26 @@ const KuraKura = () => {
       <FadeInWhenVisible>
         <section className="section">
           <hr className="divider" />
-          <p className="supportingText">Localising narratives, design iterations</p>
-          <p className="section-lead">How do we create a more localised and engaging narrative with kura?       </p>
-
-          <div className="concept-cards two">
-            <div className="concept-card">
-              <p className="supportingText">CHALLENGE</p>
-              <h4>The concept of fruits as emotions was fun, but lackluster after a while</h4>
-            </div>
-            <div className="concept-card">
-              <p className="supportingText">INTERVENTION</p>
-              <h4>A more cohesive narrative built around local desserts</h4>
+          <div className="section-text">
+            <p className="supportingText">Localising narratives, design iterations</p>
+            <p className="section-lead">How do we create a more localised and engaging narrative with kura?       </p>
+            <div className="concept-cards two">
+              <div className="concept-card">
+                <p className="supportingText">CHALLENGE</p>
+                <h4>The concept of fruits as emotions was fun, but lackluster after a while</h4>
+              </div>
+              <div className="concept-card">
+                <p className="supportingText">INTERVENTION</p>
+                <h4>A more cohesive narrative built around local desserts</h4>
+              </div>
             </div>
           </div>
 
-          <p className="section-lead">Make a local, ice kachang dessert through journaling with kura    </p>
-          <p>Our users already liked the idea of feeding their kura by checking in their emotions, so I concepted the idea of creating an ice kachang – meaning "bean ice", a Malaysian dessert which is common in Malaysia, Singapore and Brunei.</p>
-          <img src="/assets/kurakura/ice kachang 2.png" alt="Loading animation" className="solution-video rounded-img" />
+          <div className="section-text">
+            <p className="section-lead">Make a local, ice kachang dessert through journaling with kura    </p>
+            <p>Our users already liked the idea of feeding their kura by checking in their emotions, so I concepted the idea of creating an ice kachang – meaning "bean ice", a Malaysian dessert which is common in Malaysia, Singapore and Brunei.</p>
+          </div>
+          <img src="/assets/kurakura/ice_kachang.png" alt="Loading animation" className="solution-video rounded-img" />
           <img src="/assets/kurakura/ixd.png" alt="Loading animation" className="solution-video rounded-img" />
         </section>
       </FadeInWhenVisible>
@@ -163,14 +190,27 @@ const KuraKura = () => {
 
 
           
+      <hr className="divider" />
 
       <FadeInWhenVisible>
-        <hr className="divider" />
         <section className="section context-section">
-          <p className="supportingText">ROADBLOCKS, EDGE CASES, PIVOTS</p>
-          <p className="section-lead">Design directions/prototypes that didn't make the cut</p>
-          <p>We experimented a lot with different ways of interacting with kura, identifyingf emotions, and unpacking them. </p>
+          <div className="section-text">
+            <p className="supportingText">ROADBLOCKS, EDGE CASES, PIVOTS</p>
+            <p className="section-lead">Design directions/prototypes that didn't make the cut</p>
+            <p>We experimented a lot with different ways of interacting with kura, identifyingf emotions, and unpacking them. </p>
+          </div>
           <img src="/assets/kurakura/iterations.png" alt="Kura Kura chat system" className="rounded-img" />
+        </section>
+      </FadeInWhenVisible>
+
+      <FadeInWhenVisible>
+        <section className="section">
+          <div className="section-text" style={{ textAlign: 'left' }}>
+            <Link to="/ogp-illustration-guidelines" style={{ textDecoration: 'none' }}>
+            <p className="supportingText">Next project</p>
+              <p className="section-lead">BYOS Illustration Design System ↗</p>
+            </Link>
+          </div>
         </section>
       </FadeInWhenVisible>
 

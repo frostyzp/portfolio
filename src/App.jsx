@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
+import MobileNavigation from './components/MobileNavigation';
 import Home from './pages/Home';
 import About from './pages/About';
 import RosterMonster from './pages/RosterMonster';
@@ -71,6 +72,7 @@ function App() {
       <LoadingOverlay isVisible={isLoading} />
         <RoughPaperBg />
         <TopGradientOverlay />
+        <MobileNavigation />
         <AppContainer>
           <Sidebar />
           <Routes>

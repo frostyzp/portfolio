@@ -156,17 +156,41 @@ const itemVariants = {
       {[
         {
           to: "",
-          title: "wandering wondering",
-          description: "Rocks as interfaces to dreaming through site specific web(sites)",
-          mediaType: "video",
-          mediaSrc: "/assets/creative/capstone_cs.mp4",
+          title: "wandering, wondering",
+          description: "This project explores and re-interprets our intimate relationships to the material world of rocks – skipping stones, tombstones, oracles, and campfires – as interfaces to various facets of dreaming through site-specific web(sites). People are invited to discover hyperlinks to site specific websites embedded within rocks. ",
+          media: [
+            { type: "video", src: "/assets/creative/capstone_cs.mp4" },
+            { type: "img", src: "/assets/creative/campfire_closeup2.png" },
+            { type: "img", src: "/assets/creative/hold.png" },
+            { type: "video", src: "/assets/creative/tap.mov" },
+            { type: "video", src: "/assets/creative/tap2.mov" },
+            { type: "video", src: "/assets/creative/tap3.mov" }
+
+          ],
+          // year: "2025",
         },
         {
           to: "",
           title: "Haiku Chatroom", 
-          description: "A collaborative, generative chatroom and poem generator with people",
-          mediaType: "video",
-          mediaSrc: "/assets/creative/haiku_chatroom.mp4",
+          description: "A collaborative, generative chatroom and poem generator with people. The Haiku Chatroom book is an extension of this project, a curated and compiled list of haikus that emerged from each friend I chatted with based in the U.S. and Singapore, through haiku chatroom—a web-based project I created that allows you to chat in the syllable constraints and forms of an haiku.",
+          media: [
+            { type: "video", src: "/assets/creative/haiku_full.mp4" },
+            { type: "img", src: "/assets/creative/haiku_1.png" },
+            { type: "img", src: "/assets/creative/haiku_2.png" },
+            { type: "img", src: "/assets/creative/haiku_3.png" },
+
+          ],
+        },
+        {
+          to: "",
+          title: "Pha Lai Nam Lhai", 
+          description: "Nam Lhai is a traditional Thai weaving technique that creates flowing patterns reminiscent of water streams, inspired by the Nan rivers of the Chao Phraya River. I re-imagined the keyboard as a loom – where the website allows people to ‘weave’ patterns through their keyboard by laying down the colored fabric and adding patterns on top through specific keys. ",
+          media: [
+            { type: "video", src: "/assets/creative/nam_lhai/nam_lhai_final.mp4" },
+            // { type: "img", src: "/assets/creative/nam_lhai/pha_lai.png" },
+            { type: "img", src: "/assets/creative/nam_lhai/weaving_example.png" },
+
+          ],
         }
       ].map((props, idx) => (
         <FadeInWhenVisible key={props.to} delay={0.08 * idx}>

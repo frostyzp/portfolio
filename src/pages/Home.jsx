@@ -23,6 +23,7 @@ const Content = styled.div`
   @media (max-width: 900px) {
     margin-left: 1rem;
     margin-right: 1rem;
+    margin-top: 5rem; /* Account for fixed mobile navigation */
   }
 `;
 
@@ -154,11 +155,14 @@ const CaseStudyRowContainer = styled(Link)`
     // rotate: -1deg;
   }
 
-
-
   @media (max-width: 900px) {
     grid-template-columns: 1fr !important;
     grid-template-rows: auto auto;
+    
+    img, video {
+      height: auto !important;
+      object-fit: contain !important;
+    }
   }
 `;
 
@@ -632,7 +636,8 @@ const Home = () => {
           </div>
 
           {/* RIVE ANIMATION INTERACTIVE STUFF GOES HERE */}
-            {!isMobile && <Simple />}
+            {!isMobile && <Simple />
+            }
 
           
           {/* <InlineDogImage src="/assets/doodles/connectTheDot01.png" alt="Connect the Dog" /> */}

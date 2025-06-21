@@ -15,6 +15,52 @@ function useIsMobile() {
   return isMobile;
 }
 
+const MediaScroller = styled.div`
+  position: relative;
+  display: flex;
+  gap: 0.8rem;
+  overflow-x: auto;
+  padding-bottom: 1rem; // for scrollbar
+  -ms-overflow-style: none; // IE and Edge
+  scrollbar-width: none; // Firefox
+  &::-webkit-scrollbar {
+    display: none; // Chrome, Safari, Opera
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 60px; /* Adjust the width of the fade */
+    background: linear-gradient(to left, rgb(255, 255, 255) 20%, transparent 100%);
+    pointer-events: none; /* Allows clicking on content underneath */
+    
+    @media (max-width: 900px) {
+      display: none; /* Hide gradient on mobile */
+    }
+  }
+
+  img, video {
+    flex: 0 0 80%;
+    width: 80%;
+    height: auto; /* Let videos maintain aspect ratio */
+    
+    @media (max-width: 900px) {
+      flex: 0 0 90% !important;
+      width: 90% !important;
+      height: auto !important;
+      object-fit: contain !important;
+      border: none !important;
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      align-self: flex-start !important;
+      vertical-align: top !important;
+    }
+  }
+`;
+
 // Styled components
 const CaseStudyRowContainer = styled(Link)`
   display: grid;
@@ -29,32 +75,18 @@ const CaseStudyRowContainer = styled(Link)`
     height: 48vh;
     object-fit: cover;
     display: block;
-    border-radius: 8px;
+    border-radius: 4px;
     border: 1px solid var(--border-color);
-    scale: 1;
-    opacity: 1;
-    transition: 500ms cubic-bezier(0.1, 1, 0.2, 1);
   }
-  &:hover img,
-  &:hover video {
-    scale: 1.02;
-    opacity: 0.85;
-    rotate: 1deg;
-    box-shadow: 15px 0 15px rgba(191, 187, 197, 0.15),
-                -15px 0 15px rgba(233, 205, 255, 0.15);
-    transform: perspective(1000px)
-      rotateY(calc(var(--mouse-x, 0) * 2deg))
-      rotateX(calc(var(--mouse-y, 0) * -2deg))
-      skew(calc(var(--mouse-x, 0) * 1deg), calc(var(--mouse-y, 0) * 1deg));
-  }
-  &:hover .case-study-title,
-  &:hover .case-study-desc {
-    opacity: 0.55;
-    transition: 0.6s cubic-bezier(0.1, 1, 0.2, 1);
-  }
+
   @media (max-width: 900px) {
     grid-template-columns: 1fr !important;
     grid-template-rows: auto auto;
+    
+    img, video {
+      height: 100%;
+      object-fit: contain;
+    }
   }
 `;
 
@@ -64,45 +96,49 @@ const CaseStudyCell = styled.div`
   height: 100%;
 `;
 
-function ResponsiveCaseStudyRow({ to, title, description, mediaType, mediaSrc }) {
+function ResponsiveCaseStudyRow({ to, title, description, media, year, actionText }) {
   const isMobile = useIsMobile();
-  const [imgLoaded, setImgLoaded] = React.useState(false);
   
-  // Helper to handle image load
-  const handleImgLoad = () => setImgLoaded(true);
+  const MediaItems = () => (
+    <MediaScroller>
+      {media.map((item, index) => (
+        item.type === 'video' ? (
+          <video key={index} src={item.src} autoPlay loop muted playsInline />
+        ) : (
+          <img key={index} src={item.src} alt={`${title} media ${index + 1}`} />
+        )
+      ))}
+    </MediaScroller>
+  );
 
   return (
     <CaseStudyRowContainer to={to}>
       {isMobile ? (
         <>
-          {/* Media first */}
-          <div className={imgLoaded ? 'case-study-animate' : ''}>
-            {mediaType === 'video' ? (
-              <video src={mediaSrc} autoPlay loop muted />
-            ) : (
-              <img src={mediaSrc} alt={title} onLoad={handleImgLoad} style={{ opacity: imgLoaded ? 1 : 0, transition: 'opacity 0.5s' }} />
-            )}
-          </div>
-          {/* Text below */}
+          {/* Text first */}
           <CaseStudyCell>
-            <p className="case-study-title">{title}</p>
-            <p className="case-study-desc" style={{ fontSize: '1rem' }}>{description}</p>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+              <p className="case-study-title" style={{ margin: 0 }}>{title}</p>
+              {year && <p style={{ margin: 0, color: '#888' }}>{year}</p>}
+            </div>
+            <p className="case-study-desc" style={{ fontSize: '1rem', marginTop: '0.5rem', flexGrow: 1 }}>{description}</p>
+            {actionText && <p style={{ margin: 0, textAlign: 'right' }}>{actionText} →</p>}
           </CaseStudyCell>
+          {/* Media below */}
+          <MediaItems />
         </>
       ) : (
         <>
           {/* Text left, media right (desktop) */}
           <CaseStudyCell>
-            <p className="case-study-title">{title}</p>
-            <p className="case-study-desc" style={{ fontSize: '1rem' }}>{description}</p>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+              <p className="case-study-title" style={{ margin: 0, color: "black"}}>{title}</p>
+              {/* {year && <p style={{ margin: 0, color: '#888' }}>{year}</p>} */}
+            </div>
+            <p className="case-study-desc" style={{ fontSize: '1rem', marginTop: '0.5rem', flexGrow: 1, color: "var(--text-color)" }}>{description}</p>
+            {/* {actionText && <p style={{ margin: 0, textAlign: 'right' }}>{actionText} →</p>} */}
           </CaseStudyCell>
-          <div className={imgLoaded ? 'case-study-animate' : ''}>
-            {mediaType === 'video' ? (
-              <video src={mediaSrc} autoPlay loop muted />
-            ) : (
-              <img src={mediaSrc} alt={title} onLoad={handleImgLoad} style={{ opacity: imgLoaded ? 1 : 0, transition: 'opacity 0.5s' }} />
-            )}
-          </div>
+          <MediaItems />
         </>
       )}
     </CaseStudyRowContainer>
