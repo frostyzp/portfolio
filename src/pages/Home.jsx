@@ -162,6 +162,7 @@ const CaseStudyRowContainer = styled(Link)`
     img, video {
       height: auto !important;
       object-fit: contain !important;
+      margin-top: 2rem;
     }
   }
 `;

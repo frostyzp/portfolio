@@ -27,25 +27,10 @@ const MediaScroller = styled.div`
     display: none; // Chrome, Safari, Opera
   }
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 60px; /* Adjust the width of the fade */
-    background: linear-gradient(to left, rgb(255, 255, 255) 20%, transparent 100%);
-    pointer-events: none; /* Allows clicking on content underneath */
-    
-    @media (max-width: 900px) {
-      display: none; /* Hide gradient on mobile */
-    }
-  }
-
   img, video {
     flex: 0 0 80%;
     width: 80%;
-    height: auto; /* Let videos maintain aspect ratio */
+    // height: auto; /* Let videos maintain aspect ratio */
     
     @media (max-width: 900px) {
       flex: 0 0 90% !important;

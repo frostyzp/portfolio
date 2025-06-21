@@ -25,12 +25,10 @@ const ProfileImage = styled.img`
   width: 100%;
   max-width: 400px;
   @media (max-width: 900px) {
-    max-width: 80vw;
+    max-width: 100%;
   }
   height: auto;
   margin-bottom: 1rem;
-  margin-left: auto;
-  margin-right: auto;
   align-items: center;
 `;
 
@@ -89,15 +87,15 @@ const About = () => {
   return (
     <div className="content">
       <FadeInWhenVisible>
-        <section className="section hero-section">
-          <AboutDiv>
+        <section className="section-text">
+          {/* <AboutDiv> */}
             <HideOnMobile>
               <DraggablePaperPad 
                 imgSrc="/assets/doodles/connectTheDot01.png" 
                 style={{ left: '3rem', top: '22rem'}} 
               />
             </HideOnMobile>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1 }}>
+            <div>
               <ProfileImage 
                 src="/assets/about/profile.png"
                 alt="Arin's profile"
@@ -107,10 +105,10 @@ const About = () => {
             <HideOnMobile>
               {/* <DraggablePaperPad 
                 imgSrc="/assets/doodles/connectTheDot02.png" 
-                style={{ top: '30rem' }}
+                style={{ top: '75vh' }}
               /> */}
             </HideOnMobile>
-          </AboutDiv>
+          {/* </AboutDiv> */}
         </section>
       </FadeInWhenVisible>
 
