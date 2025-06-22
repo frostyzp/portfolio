@@ -5,21 +5,6 @@ import FadeInWhenVisible from '../components/FadeInWhenVisible';
 import DraggablePaperPad from '../components/DraggablePaperPad';
 import Footer from '../components/Footer';
 
-const AboutDiv = styled.div`
-  max-width: 100%;
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 2rem;
-`;
-
-const GridIllustration = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
-`;
-
 const ProfileImage = styled.img`
   display: block;
   width: 100%;

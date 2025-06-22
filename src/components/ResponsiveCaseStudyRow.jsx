@@ -20,6 +20,8 @@ const MediaScroller = styled.div`
   display: flex;
   gap: 0.8rem;
   overflow-x: auto;
+  cursor: default !important;
+
   padding-bottom: 1rem; // for scrollbar
   -ms-overflow-style: none; // IE and Edge
   scrollbar-width: none; // Firefox
@@ -42,6 +44,8 @@ const MediaScroller = styled.div`
       margin-bottom: 0 !important;
       align-self: flex-start !important;
       vertical-align: top !important;
+      cursor: default !important;
+
     }
   }
 `;

@@ -575,6 +575,7 @@ const Home = () => {
     return true;
   });
   const [canAnimateRows, setCanAnimateRows] = useState(false);
+  const [headerAnimationComplete, setHeaderAnimationComplete] = useState(false);
   const isMobile = useIsMobile();
   const [kaomojiHovered, setKaomojiHovered] = useState(false);
   
@@ -612,6 +613,15 @@ const Home = () => {
     }
   }, [isLoading]);
 
+  // Track when header animation completes
+  useEffect(() => {
+    if (!isLoading) {
+      // Header animation duration is 0.6s, add small buffer
+      const timer = setTimeout(() => setHeaderAnimationComplete(true), 800);
+      return () => clearTimeout(timer);
+    }
+  }, [isLoading]);
+
   return (
     <>
       <Global styles={waveTextStyles} />
@@ -625,6 +635,7 @@ const Home = () => {
               variants={fadeIn}
               initial="hidden"
               animate="visible"
+              onAnimationComplete={() => setHeaderAnimationComplete(true)}
               style={{ fontSize: "1rem", marginBottom: "0.5rem" }}
             ><span style={{ color: "black" }}>Arin Pantja –– </span> Product Design, Motion & Code  ツ</motion.p>
             <motion.p
@@ -668,7 +679,10 @@ const Home = () => {
             mediaSrc: "/assets/byos/byos_main.png"
           }
         ].map((props, idx) => (
-          <FadeInWhenVisible key={props.to} delay={0.08 * idx}>
+          <FadeInWhenVisible 
+            key={props.to} 
+            delay={headerAnimationComplete ? 0.2 + (0.14 * idx) : 0}
+          >
             <ResponsiveCaseStudyRow {...props} />
           </FadeInWhenVisible>
         ))}
@@ -678,76 +692,90 @@ const Home = () => {
 
         {/* WEB / CODE sections always visible, but force single column on mobile */}
         <ImageTextContainerGrid columns={isMobile ? "1fr" : "2fr 1fr"} noHover>
-          <InteractiveLink>
-            <ImageText to="">
-              <video src="/assets/case-studies/tcsc.mp4" autoPlay loop muted playsInline />
+          <FadeInWhenVisible delay={0.08 * 1}>
+            <InteractiveLink>
+              <ImageText to="">
+                <video src="/assets/case-studies/tcsc.mp4" autoPlay loop muted playsInline />
+                <TextRow>
+                  <p style={{ color: 'black' }}>Thai Creative Student Collective</p>
+                  <p>CMS Website, 2024 </p>
+                </TextRow>
+              </ImageText>
+            </InteractiveLink>
+          </FadeInWhenVisible>
+          <FadeInWhenVisible delay={0.08 * 0}>
+            <InteractiveLink>
+              <ImageText to="">
+              <img src="/assets/case-studies/cuddly.gif"></img>
               <TextRow>
-                <p style={{ color: 'black' }}>Thai Creative Student Collective</p>
-                <p>CMS Powered Website, 2024 </p>
-              </TextRow>
-            </ImageText>
-          </InteractiveLink>
-          <InteractiveLink>
-            <ImageText to="">
-            <img src="/assets/case-studies/cuddly.gif"></img>
-            <TextRow>
-                <p style={{ color: 'black' }}>Motion Client Projects</p>
-                <p>After Effects, 2023</p>
-              </TextRow>
-            </ImageText>
-          </InteractiveLink>
+                  <p style={{ color: 'black' }}>Motion Client Projects</p>
+                  <p>After Effects, 2023</p>
+                </TextRow>
+              </ImageText>
+            </InteractiveLink>
+          </FadeInWhenVisible>
         </ImageTextContainerGrid>
         <ImageTextContainerGrid columns={isMobile ? "1fr" : "1fr 2fr"} noHover>
-          <InteractiveLink>
-            <ImageText to="">
-              <img src="/assets/case-studies/grab_cs.png" />
-            </ImageText>
-            <TextRow>
-                <p style={{ color: 'black' }}>Grab Financial Group</p>
-                <p>Card Designs, 2022</p>
+          <FadeInWhenVisible delay={0.08 * 3}>
+            <InteractiveLink>
+              <ImageText to="">
+                <img src="/assets/case-studies/grab_cs.png" />
+              </ImageText>
+              <TextRow>
+                  <p style={{ color: 'black' }}>Grab Financial Group</p>
+                  <p>Card Designs, 2022</p>
+                </TextRow>
+            </InteractiveLink>
+          </FadeInWhenVisible>
+          <FadeInWhenVisible delay={0.08 * 2}>
+            <InteractiveLink>
+          
+              <ImageText to="">
+              <video src="/assets/case-studies/nam_lhai.mp4" autoPlay loop muted playsInline />
+              </ImageText>
+              <TextRow>
+                <p style={{ color: 'black' }}>Nam Lhai Weaving</p>
+                <p>Web, Custom Font, 2024</p>
               </TextRow>
-          </InteractiveLink>
-          <InteractiveLink>
-        
-            <ImageText to="">
-            <video src="/assets/case-studies/nam_lhai.mp4" autoPlay loop muted playsInline />
-            </ImageText>
-            <TextRow>
-              <p style={{ color: 'black' }}>Nam Lhai Weaving</p>
-              <p>Web, Custom Font, 2024</p>
-            </TextRow>
-          </InteractiveLink>
+            </InteractiveLink>
+          </FadeInWhenVisible>
         </ImageTextContainerGrid>
 
         
         <ImageTextContainerGrid columns={isMobile ? "1fr" : "1fr 1fr 1fr"} noHover>
-          <InteractiveLink>
-            <ImageText to="">
-            <video src="/assets/case-studies/oracle_2.mov" autoPlay loop muted playsInline />
+          <FadeInWhenVisible delay={0.08 * 6}>
+            <InteractiveLink>
+              <ImageText to="">
+              <video src="/assets/case-studies/oracle_2.mov" autoPlay loop muted playsInline />
+                <TextRow>
+                  <p style={{ color: 'black' }}>oracle rock</p>
+                  <p>Website, 2025</p>
+                </TextRow>
+              </ImageText>
+            </InteractiveLink>
+          </FadeInWhenVisible>
+          <FadeInWhenVisible delay={0.08 * 5}>
+            <InteractiveLink>
+              <ImageText to="">
+              <video src="/assets/case-studies/skipping_3.mov" autoPlay loop muted playsInline />
               <TextRow>
-                <p style={{ color: 'black' }}>oracle rock</p>
-                <p>Website, 2025</p>
-              </TextRow>
-            </ImageText>
-          </InteractiveLink>
-          <InteractiveLink>
-            <ImageText to="">
-            <video src="/assets/case-studies/skipping_3.mov" autoPlay loop muted playsInline />
-            <TextRow>
-            <p style={{ color: 'black' }}>skipping stones</p>
-            <p>Website, 2025</p>
-              </TextRow>
-            </ImageText>
-          </InteractiveLink>
-          <InteractiveLink>
-            <ImageText to="">
-            <video src="/assets/case-studies/graveyard_2.mov" autoPlay loop muted playsInline />
-            <TextRow>
-            <p style={{ color: 'black' }}>cemetery of the unanswered</p>
-            <p>Website, 2025</p>
-              </TextRow>
-            </ImageText>
-          </InteractiveLink>
+              <p style={{ color: 'black' }}>skipping stones</p>
+              <p>Website, 2025</p>
+                </TextRow>
+              </ImageText>
+            </InteractiveLink>
+          </FadeInWhenVisible>
+          <FadeInWhenVisible delay={0.08 * 4}>
+            <InteractiveLink>
+              <ImageText to="">
+              <video src="/assets/case-studies/graveyard_2.mov" autoPlay loop muted playsInline />
+              <TextRow>
+              <p style={{ color: 'black' }}>cemetery of the unanswered</p>
+              <p>Website, 2025</p>
+                </TextRow>
+              </ImageText>
+            </InteractiveLink>
+          </FadeInWhenVisible>
         </ImageTextContainerGrid>
 
         <Footer />

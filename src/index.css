@@ -142,7 +142,12 @@ img, video {
   line-height: 1.2;
   font-family: 'CommitMono';
   text-transform: uppercase;     /* optional, for heading style */
-  
+}
+
+@media (max-width: 900px) {
+  .supportingText {
+    font-size: 0.7rem;
+  }
 }
 
 .section-lead {
@@ -318,6 +323,12 @@ img, video {
   padding: 6rem;
 }
 
+@media (max-width: 1920px) {
+  .solution-video {
+    /* margin: 0.5rem 0; */
+  }
+}
+
 .learning-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -387,8 +398,25 @@ footer {
   text-transform: uppercase;
 }
 
+@media (max-width: 900px) {
+  footer {
+    display: block;
+    /* font-size: 0.6rem; */
+  }
+}
+
 footer p {
   font-size: 0.7rem;
+}
+
+.footer-last-updated {
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  .footer-last-updated {
+    text-align: left;
+  }
 }
 
 .sticky-back-btn {

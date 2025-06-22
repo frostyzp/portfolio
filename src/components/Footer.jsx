@@ -6,8 +6,8 @@ const Footer = () => {
   return (
     <footer> 
       <p>Arin Pantja 2025</p>
-      <p>⸜( ´ ꒳ ` )⸝ Coded with care</p>
-      <p style={{ textAlign: 'right' }}>Last updated June 2025</p>
+      <p>Coded with care ⸜( ´ ꒳ ` )⸝ </p>
+      <p className="footer-last-updated">Last updated June 2025</p>
     </footer>
   );
 };

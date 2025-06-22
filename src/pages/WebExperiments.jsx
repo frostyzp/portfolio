@@ -127,7 +127,7 @@ const LabelRow = styled.div`
 const LabelLeft = styled.span`
   text-align: left;
   // font-family: 'CommitMono', monospace;
-  color: black;
+  color: #888;
 `;
 
 const LabelRight = styled.span`
@@ -189,7 +189,6 @@ const itemVariants = {
             { type: "video", src: "/assets/creative/nam_lhai/nam_lhai_final.mp4" },
             // { type: "img", src: "/assets/creative/nam_lhai/pha_lai.png" },
             { type: "img", src: "/assets/creative/nam_lhai/weaving_example.png" },
-
           ],
         }
       ].map((props, idx) => (
@@ -203,6 +202,12 @@ const itemVariants = {
           <MasonryItem key={item.key}>
             <FadeInWhenVisible delay={0.08 * (total - 1 - idx)}>
               <InteractiveLink to={item.to} style={{display: 'block'}}>
+                {isMobile && (
+                  <LabelRow>
+                    <LabelLeft>{item.labelLeft}</LabelLeft>
+                    <LabelRight>{item.labelRight}</LabelRight>
+                  </LabelRow>
+                )}
                 <ImageText>
                   {item.type === 'video' ? (
                     <video src={item.src} autoPlay loop muted playsInline />
@@ -210,10 +215,12 @@ const itemVariants = {
                     <img src={item.src} alt={item.key} />
                   )}
                 </ImageText>
-                <LabelRow>
-                  <LabelLeft>{item.labelLeft}</LabelLeft>
-                  <LabelRight>{item.labelRight}</LabelRight>
-                </LabelRow>
+                {!isMobile && (
+                  <LabelRow>
+                    <LabelLeft>{item.labelLeft}</LabelLeft>
+                    <LabelRight>{item.labelRight}</LabelRight>
+                  </LabelRow>
+                )}
               </InteractiveLink>
             </FadeInWhenVisible>
           </MasonryItem>
