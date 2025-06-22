@@ -31,6 +31,11 @@ const ItemRow = styled.div`
     opacity: 0.7;
     cursor: pointer;
   }
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 const ItemLeft = styled.div`
@@ -38,6 +43,12 @@ const ItemLeft = styled.div`
   align-items: baseline;
   gap: 0.5rem;
   white-space: nowrap;
+
+  @media (max-width: 900px) {
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+  }
 `;
 
 const ItemTitle = styled.span`
@@ -46,6 +57,10 @@ const ItemTitle = styled.span`
 
 const ItemDesc = styled.span`
   color: #888;
+
+  @media (max-width: 900px) {
+    white-space: nowrap;
+  }
 `;
 
 const ItemDivider = styled.div`
@@ -58,6 +73,13 @@ const ItemDivider = styled.div`
 const ItemYear = styled.div`
   white-space: nowrap;
   color: #888;
+  font-size: 0.8rem;
+
+  @media (max-width: 900px) {
+    align-self: flex-start;
+    margin-top: 0.2rem;
+    margin-left: 0;
+  }
 `;
 
 const HideOnMobile = styled.div`

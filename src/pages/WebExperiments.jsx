@@ -167,7 +167,7 @@ const itemVariants = {
             { type: "video", src: "/assets/creative/tap3.mov" }
 
           ],
-          // year: "2025",
+          // year: "Website, Site-specific,2025",
         },
         {
           to: "",
@@ -180,6 +180,7 @@ const itemVariants = {
             { type: "img", src: "/assets/creative/haiku_3.png" },
 
           ],
+          // year: "Website, Print, 2024",
         },
         {
           to: "",
@@ -190,6 +191,7 @@ const itemVariants = {
             // { type: "img", src: "/assets/creative/nam_lhai/pha_lai.png" },
             { type: "img", src: "/assets/creative/nam_lhai/weaving_example.png" },
           ],
+          // year: "Website, 2024",
         }
       ].map((props, idx) => (
         <FadeInWhenVisible key={props.to} delay={0.08 * idx}>

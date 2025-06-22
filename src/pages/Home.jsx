@@ -73,14 +73,14 @@ const getHoverStyles = (noHover) => {
       a:hover video {
         scale: 1.02;
         opacity: 0.85;
-        rotate: 1deg;
-        box-shadow: 15px 0 15px rgba(191, 187, 197, 0.15),
+        // rotate: 1deg;
+        box-shadow: 15px 0 15px rgba(226, 235, 243, 0.15),
                     -15px 0 15px rgba(233, 205, 255, 0.15);
-        transform: perspective(1000px)
-          rotateY(calc(var(--mouse-x, 0) * 5deg))
-          rotateX(calc(var(--mouse-y, 0) * -5deg))
-          skew(calc(var(--mouse-x, 0) * 1deg), calc(var(--mouse-y, 0) * 1deg));
-      }
+      //   transform: perspective(1000px)
+      //     rotateY(calc(var(--mouse-x, 0) * 5deg))
+      //     rotateX(calc(var(--mouse-y, 0) * -5deg))
+      //     skew(calc(var(--mouse-x, 0) * 1deg), calc(var(--mouse-y, 0) * 1deg));
+      // }
     `;
   }
 };
@@ -97,8 +97,8 @@ const ImageTextContainerGrid = styled.div`
     height: 48vh;
     object-fit: cover;
     display: block;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    // border: 1px solid var(--border-color);
     scale: 1;
     opacity: 1;
     transition: 500ms cubic-bezier(0.1, 1, 0.2, 1);
@@ -129,7 +129,7 @@ const CaseStudyRowContainer = styled(Link)`
     object-fit: cover;
     display: block;
     border-radius: 8px;
-    border: 1px solid var(--border-color);
+    // border: 1px solid var(--border-color);
     scale: 1;
     opacity: 1;
     transition: 500ms cubic-bezier(0.1, 1, 0.2, 1);
@@ -139,7 +139,7 @@ const CaseStudyRowContainer = styled(Link)`
   &:hover video {
     scale: 1.02;
     opacity: 0.85;
-    rotate: 1deg;
+    // rotate: 1deg;
     box-shadow: 15px 0 15px rgba(191, 187, 197, 0.15),
                 -15px 0 15px rgba(233, 205, 255, 0.15);
     transform: perspective(1000px)

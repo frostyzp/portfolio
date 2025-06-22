@@ -108,7 +108,7 @@ function ResponsiveCaseStudyRow({ to, title, description, media, year, actionTex
           <CaseStudyCell>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
               <p className="case-study-title" style={{ margin: 0 }}>{title}</p>
-              {year && <p style={{ margin: 0, color: '#888' }}>{year}</p>}
+              {year && <p className="case-study-title" style={{ margin: 0, color: '#888' }}>{year}</p>}
             </div>
             <p className="case-study-desc" style={{ fontSize: '1rem', marginTop: '0.5rem', flexGrow: 1 }}>{description}</p>
             {actionText && <p style={{ margin: 0, textAlign: 'right' }}>{actionText} →</p>}
@@ -122,10 +122,10 @@ function ResponsiveCaseStudyRow({ to, title, description, media, year, actionTex
           <CaseStudyCell>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
               <p className="case-study-title" style={{ margin: 0, color: "black"}}>{title}</p>
-              {/* {year && <p style={{ margin: 0, color: '#888' }}>{year}</p>} */}
+              {year && <p className="case-study-title" style={{ margin: 0, color: '#888' }}>{year}</p>}
             </div>
             <p className="case-study-desc" style={{ fontSize: '1rem', marginTop: '0.5rem', flexGrow: 1, color: "var(--text-color)" }}>{description}</p>
-            {/* {actionText && <p style={{ margin: 0, textAlign: 'right' }}>{actionText} →</p>} */}
+            {actionText && <p style={{ margin: 0, textAlign: 'right' }}>{actionText} →</p>}
           </CaseStudyCell>
           <MediaItems />
         </>
