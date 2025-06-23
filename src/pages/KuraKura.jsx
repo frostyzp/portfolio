@@ -69,40 +69,52 @@ const KuraKura = () => {
       </FadeInWhenVisible>
 
       <FadeInWhenVisible>
-        <section className="section">
+        <section className="section design-intervention-section">
           <hr className="divider" />
           <div className="section-text">
-            <p className="supportingText">Key Insight</p>
-            <p className="section-lead">Youths would only be vulnerable with their kura (pets) before anyone else        </p>
+            <p className="supportingText">DESIGN INTERVENTION</p>
+            <p className="section-lead">
+              Kura, your turtle companion that brings you a playful journaling and narrative driven experience
+            </p>
+          </div>
 
-            <div className="design-intervention">
-              <img src="/assets/kurakura/final_nobg.gif" alt="Kura Kura phone UI" className="design-intervention-phone" loading="lazy" />
-              <div className="design-intervention-text">
-                <p>
-                  Our core intervention is creating a pet character (kura) that acts as a safe companion and emotional confidant for journaling with youths. We developed an non-judgemental companion with GPT-4o mini, which responds as an emotionally-aware companion and prompts journaling amongst youths.
-                </p>
+          <div className="design-intervention-grid">
+            <div className="design-intervention-left">
+              <div className="design-intervention-image-block grid">
+                <img src="/assets/kurakura/final_nobg.gif" alt="Kura Kura phone UI" className="design-intervention-phone" loading="lazy" />
+                <div className="design-intervention-caption">Checking in your emotions</div>
+              </div>
+            </div>
+            <div className="design-intervention-right">
+              <div className="design-intervention-feature">
+                <h3>Granular identification of emotions</h3>
+                <p>With definitions of emotions and intentional friction for interactive journaling</p>
+              </div>
+              <div className="design-intervention-feature">
+                <h3>Play through a local and familiar narrative</h3>
+                <p>Add fruits and flavours to your dessert to feed your digital companion, kura</p>
               </div>
             </div>
           </div>
         </section>
-      </FadeInWhenVisible>
 
-      {/* Add more sections as needed */}
-
-      <FadeInWhenVisible>
-        <section className="section">
-          <div className="section-text">
-            <p className="section-lead">With an AI companion that learns your communication patterns, and responds accordingly       </p>
-
-            <div className="design-intervention">
-              <img src="/assets/kurakura/ai.gif" alt="Kura Kura phone UI" className="design-intervention-phone" loading="lazy" />
-              <div className="design-intervention-text">
-                <p>
-                  Our AI component learns communication and journaling patterns, and responds according to users over time. Since everyone expresses their emotions differently, we wanted to make sure kura responds differently to each user based on their communication patterns.
-                </p>
+        <section className="section design-intervention-section">
+          <div className="design-intervention-grid">
+            <div className="design-intervention-left">
+              <div className="design-intervention-image-block grid">
+                <img src="/assets/kurakura/ai.gif" alt="Kura Kura phone UI" className="design-intervention-phone" loading="lazy" />
+                <div className="design-intervention-caption">Voice to text, AI suggestions</div>
+              </div>
+            </div>
+            <div className="design-intervention-right">
+              <div className="design-intervention-feature">
+                <h3>Multi-modal journaling and AI suggestions</h3>
+                <p>Leveraging AI to suggests labels for how you might be feeling</p>
               </div>
             </div>
           </div>
+          {/* <hr className="divider" /> */}
+
         </section>
       </FadeInWhenVisible>
 
