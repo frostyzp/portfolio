@@ -185,9 +185,9 @@ function ResponsiveCaseStudyRow({ to, title, description, mediaType, mediaSrc })
           {/* Media first */}
           <div>
             {mediaType === 'video' ? (
-              <video src={mediaSrc} autoPlay loop muted playsInline />
+              <video src={mediaSrc} autoPlay loop muted playsInline preload="none" />
             ) : (
-              <img src={mediaSrc} alt={title} />
+              <img src={mediaSrc} alt={title} loading="lazy" />
             )}
           </div>
           {/* Text below */}
@@ -205,9 +205,9 @@ function ResponsiveCaseStudyRow({ to, title, description, mediaType, mediaSrc })
           </CaseStudyCell>
           <div>
             {mediaType === 'video' ? (
-              <video src={mediaSrc} autoPlay loop muted playsInline />
+              <video src={mediaSrc} autoPlay loop muted playsInline preload="none" />
             ) : (
-              <img src={mediaSrc} alt={title} />
+              <img src={mediaSrc} alt={title} loading="lazy" />
             )}
           </div>
         </>
@@ -512,15 +512,15 @@ function MobileEtcLinks() {
       margin: '2rem 0 1.5rem 0',
     }}>
       <a href="https://www.linkedin.com/in/arin-pantja/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '0.95rem' }}>
-        <img src="/assets/doodles/linkedinA.gif" alt="Linkedin" style={{ width: 28, height: 28, marginBottom: 4 }} />
+                  <img src="/assets/doodles/linkedinA.gif" alt="Linkedin" style={{ width: 28, height: 28, marginBottom: 4 }} loading="lazy" />
         Linkedin
       </a>
       <a href="mailto:your@email.com" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '0.95rem' }}>
-        <img src="/assets/doodles/emailA.gif" alt="Email" style={{ width: 28, height: 28, marginBottom: 4 }} />
+                  <img src="/assets/doodles/emailA.gif" alt="Email" style={{ width: 28, height: 28, marginBottom: 4 }} loading="lazy" />
         Email
       </a>
       <a href="https://x.com/arin_pantja" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '0.95rem' }}>
-        <img src="/assets/doodles/x.gif" alt="Twitter/X" style={{ width: 28, height: 28, marginBottom: 4 }} />
+                  <img src="/assets/doodles/x.gif" alt="Twitter/X" style={{ width: 28, height: 28, marginBottom: 4 }} loading="lazy" />
         Twitter/X
       </a>
 
@@ -695,7 +695,7 @@ const Home = () => {
           <FadeInWhenVisible delay={0.08 * 1}>
             <InteractiveLink>
               <ImageText to="">
-                <video src="/assets/case-studies/tcsc.mp4" autoPlay loop muted playsInline />
+                <video src="/assets/case-studies/tcsc.mp4" autoPlay loop muted playsInline preload="none" />
                 <TextRow>
                   <p style={{ color: 'black' }}>Thai Creative Student Collective</p>
                   <p>CMS Website, 2024 </p>
@@ -706,7 +706,7 @@ const Home = () => {
           <FadeInWhenVisible delay={0.08 * 0}>
             <InteractiveLink>
               <ImageText to="">
-              <img src="/assets/case-studies/cuddly.gif"></img>
+              <img src="/assets/case-studies/cuddly.gif" loading="lazy"></img>
               <TextRow>
                   <p style={{ color: 'black' }}>Motion Client Projects</p>
                   <p>After Effects, 2023</p>
@@ -719,7 +719,7 @@ const Home = () => {
           <FadeInWhenVisible delay={0.08 * 3}>
             <InteractiveLink>
               <ImageText to="">
-                <img src="/assets/case-studies/grab_cs.png" />
+                <img src="/assets/case-studies/grab_cs.png" loading="lazy" />
               </ImageText>
               <TextRow>
                   <p style={{ color: 'black' }}>Grab Financial Group</p>
@@ -731,7 +731,7 @@ const Home = () => {
             <InteractiveLink>
           
               <ImageText to="">
-              <video src="/assets/case-studies/nam_lhai.mp4" autoPlay loop muted playsInline />
+              <video src="/assets/case-studies/nam_lhai.mp4" autoPlay loop muted playsInline preload="none" />
               </ImageText>
               <TextRow>
                 <p style={{ color: 'black' }}>Nam Lhai Weaving</p>
@@ -746,7 +746,7 @@ const Home = () => {
           <FadeInWhenVisible delay={0.08 * 6}>
             <InteractiveLink>
               <ImageText to="">
-              <video src="/assets/case-studies/oracle_2.mov" autoPlay loop muted playsInline />
+              <video src="/assets/case-studies/oracle_2.mov" autoPlay loop muted playsInline preload="none" />
                 <TextRow>
                   <p style={{ color: 'black' }}>oracle rock</p>
                   <p>Website, 2025</p>
@@ -757,7 +757,7 @@ const Home = () => {
           <FadeInWhenVisible delay={0.08 * 5}>
             <InteractiveLink>
               <ImageText to="">
-              <video src="/assets/case-studies/skipping_3.mov" autoPlay loop muted playsInline />
+              <video src="/assets/case-studies/skipping_3.mov" autoPlay loop muted playsInline preload="none" />
               <TextRow>
               <p style={{ color: 'black' }}>skipping stones</p>
               <p>Website, 2025</p>
@@ -768,7 +768,7 @@ const Home = () => {
           <FadeInWhenVisible delay={0.08 * 4}>
             <InteractiveLink>
               <ImageText to="">
-              <video src="/assets/case-studies/graveyard_2.mov" autoPlay loop muted playsInline />
+              <video src="/assets/case-studies/graveyard_2.mov" autoPlay loop muted playsInline preload="none" />
               <TextRow>
               <p style={{ color: 'black' }}>cemetery of the unanswered</p>
               <p>Website, 2025</p>

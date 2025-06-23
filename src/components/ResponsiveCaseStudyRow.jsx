@@ -92,9 +92,9 @@ function ResponsiveCaseStudyRow({ to, title, description, media, year, actionTex
     <MediaScroller>
       {media.map((item, index) => (
         item.type === 'video' ? (
-          <video key={index} src={item.src} autoPlay loop muted playsInline />
+          <video key={index} src={item.src} autoPlay loop muted playsInline preload="none" />
         ) : (
-          <img key={index} src={item.src} alt={`${title} media ${index + 1}`} />
+          <img key={index} src={item.src} alt={`${title} media ${index + 1}`} loading="lazy" />
         )
       ))}
     </MediaScroller>

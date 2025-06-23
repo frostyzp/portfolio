@@ -212,9 +212,9 @@ const itemVariants = {
                 )}
                 <ImageText>
                   {item.type === 'video' ? (
-                    <video src={item.src} autoPlay loop muted playsInline />
+                    <video src={item.src} autoPlay loop muted playsInline preload="none" />
                   ) : (
-                    <img src={item.src} alt={item.key} />
+                    <img src={item.src} alt={item.key} loading="lazy" />
                   )}
                 </ImageText>
                 {!isMobile && (

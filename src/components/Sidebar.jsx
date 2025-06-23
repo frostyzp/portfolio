@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { keyframes, Global, css } from '@emotion/react';
 import { useState } from 'react';
@@ -336,7 +336,7 @@ const Sidebar = () => {
               <StyledLink to="/">
                 <span className="link-text">Interaction Design</span>
                 <span className="link-image">
-                <img src="/assets/doodles/arrowA.gif" alt="icon" style={{width: '36px', height: '36px'}} />
+                <img src="/assets/doodles/arrowA.gif" alt="icon" style={{width: '36px', height: '36px'}} loading="lazy" />
                 </span>
               </StyledLink>
             </motion.li>
@@ -407,7 +407,7 @@ const Sidebar = () => {
           <StyledLink to="/web-experiments">
           <span className="link-text">Code / Creative Tech</span>
               <span className="link-image">
-                <img src="/assets/doodles/arrowA.gif" alt="icon" style={{width: '36px', height: '36px'}} />
+                <img src="/assets/doodles/arrowA.gif" alt="icon" style={{width: '36px', height: '36px'}} loading="lazy" />
               </span>
             </StyledLink>
           </motion.li>
@@ -431,7 +431,7 @@ const Sidebar = () => {
                   <StyledLink to="/about">
                         <span className="link-text">About</span>
                 <span className="link-image">
-                  <img src="/assets/doodles/arrowA.gif" alt="icon" style={{width: '36px', height: '36px'}} />
+                  <img src="/assets/doodles/arrowA.gif" alt="icon" style={{width: '36px', height: '36px'}} loading="lazy" />
                 </span>
               </StyledLink>
             </motion.li>
@@ -439,7 +439,7 @@ const Sidebar = () => {
               <StyledAnchor href="https://drive.google.com/file/d/1URDkxdH8SXH0sh7qvnE0xUGTZ7eSMSU6/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
                 <span className="link-text">Resume</span>
                 <span className="link-image">
-                  <img src="/assets/doodles/arrowA.gif" alt="icon" style={{width: '36px', height: '36px'}} />
+                  <img src="/assets/doodles/arrowA.gif" alt="icon" style={{width: '36px', height: '36px'}} loading="lazy" />
                 </span>
               </StyledAnchor>
             </motion.li>
@@ -467,7 +467,7 @@ const Sidebar = () => {
                 <StyledAnchor href="https://www.linkedin.com/in/arin-pantja/" target="_blank" rel="noopener noreferrer">
                   <span className="link-text">Linkedin</span>
                   <span className="link-image">
-                    <img src="/assets/doodles/linkedinA.gif" alt="icon" style={{width: '36px', height: '36px'}} />
+                    <img src="/assets/doodles/linkedinA.gif" alt="icon" style={{width: '36px', height: '36px'}} loading="lazy" />
                   </span>
                 </StyledAnchor>
               </motion.li>
@@ -475,7 +475,7 @@ const Sidebar = () => {
                 <StyledAnchor href="mailto:arinpantja@gmail.com">
                   <span className="link-text">Email</span>
                   <span className="link-image">
-                    <img src="/assets/doodles/emailA.gif" alt="icon" style={{width: '36px', height: '36px'}} />
+                    <img src="/assets/doodles/emailA.gif" alt="icon" style={{width: '36px', height: '36px'}} loading="lazy" />
                   </span>
                 </StyledAnchor>
               </motion.li>
@@ -483,7 +483,7 @@ const Sidebar = () => {
                 <StyledAnchor href="https://x.com/arin_pantja" target="_blank" rel="noopener noreferrer">
                   <span className="link-text">Twitter/X</span>
                   <span className="link-image">
-                    <img src="/assets/doodles/x.gif" alt="icon" style={{width: '36px', height: '36px'}} />
+                    <img src="/assets/doodles/x.gif" alt="icon" style={{width: '36px', height: '36px'}} loading="lazy" />
                   </span>
                 </StyledAnchor>
               </motion.li>
@@ -491,7 +491,7 @@ const Sidebar = () => {
                 <StyledAnchor href="https://www.are.na/arin-p/channels" target="_blank" rel="noopener noreferrer">
                   <span className="link-text">Are.na</span>
                   <span className="link-image">
-                    <img src="/assets/doodles/arena.gif" alt="icon" style={{width: '36px', height: '36px'}} />
+                    <img src="/assets/doodles/arena.gif" alt="icon" style={{width: '36px', height: '36px'}} loading="lazy" />
                   </span>
                 </StyledAnchor>
               </motion.li>
