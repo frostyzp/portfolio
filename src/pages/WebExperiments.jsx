@@ -6,6 +6,7 @@ import { Content } from './Home';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
 import ResponsiveCaseStudyRow from '../components/ResponsiveCaseStudyRow';
+import MediaWithLoading from '../components/MediaWithLoading';
 
 const canAnimateRows = true;
           
@@ -46,6 +47,7 @@ const ImageText = styled.div`
     border-radius: 4px;
     width: 100%;
     display: block;
+    // max-height: 300px;
   }
 `;
 
@@ -133,7 +135,7 @@ const LabelLeft = styled.span`
 const LabelRight = styled.span`
   text-align: right;
   // font-family: 'CommitMono', monospace;
-  color: #888;
+  color: #888;'
 `;
 
 const containerVariants = {
@@ -184,6 +186,20 @@ const itemVariants = {
         },
         {
           to: "",
+          title: "Speculative Theatre", 
+          description: "Inspired by the archives of August Wilson and his legacy, Speculative Theatre is a co-participatory,  living theatrical experience where memory, agency, and storytelling converge. 'Recollections,' our first act, draws from letters found in the archive – voices of those transformed by Wilson's words – forming a cascade of collective remembrance.",
+          media: [
+            { type: "video", src: "/assets/creative/ttta/spec_theatre.mov" },
+            { type: "img", src: "/assets/creative/ttta/peephole.gif" },
+            { type: "img", src: "/assets/creative/ttta/19.jpg" },
+            { type: "img", src: "/assets/creative/ttta/25.jpg" }
+            // { type: "video", src: "/assets/creative/ttta/computer.mov" }
+
+          ],
+          // year: "Website, 2024",
+        },
+        {
+          to: "",
           title: "Pha Lai Nam Lhai", 
           description: "Nam Lhai is a traditional Thai weaving technique that creates flowing patterns reminiscent of water streams, inspired by the Nan rivers of the Chao Phraya River. I re-imagined the keyboard as a loom – where the website allows people to ‘weave’ patterns through their keyboard by laying down the colored fabric and adding patterns on top through specific keys. ",
           media: [
@@ -212,9 +228,22 @@ const itemVariants = {
                 )}
                 <ImageText>
                   {item.type === 'video' ? (
-                    <video src={item.src} autoPlay loop muted playsInline preload="none" />
+                    <MediaWithLoading 
+                      type="video" 
+                      src={item.src} 
+                      autoPlay 
+                      loop 
+                      muted 
+                      playsInline 
+                      preload="none" 
+                    />
                   ) : (
-                    <img src={item.src} alt={item.key} loading="lazy" />
+                    <MediaWithLoading 
+                      type="img" 
+                      src={item.src} 
+                      alt={item.key} 
+                      loading="lazy" 
+                    />
                   )}
                 </ImageText>
                 {!isMobile && (

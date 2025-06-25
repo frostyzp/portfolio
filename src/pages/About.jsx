@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import FadeInWhenVisible from '../components/FadeInWhenVisible';
 import DraggablePaperPad from '../components/DraggablePaperPad';
 import Footer from '../components/Footer';
+import MediaWithLoading from '../components/MediaWithLoading';
 
 const ProfileImage = styled.img`
   display: block;
@@ -81,10 +82,18 @@ const About = () => {
               />
             </HideOnMobile>
             <div>
-              <ProfileImage 
+              <MediaWithLoading 
+                type="img"
                 src="/assets/about/profile.png"
                 alt="Arin's profile"
                 loading="lazy"
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  maxWidth: '400px',
+                  height: 'auto',
+                  marginBottom: '1rem'
+                }}
               />
             </div>
             <HideOnMobile>

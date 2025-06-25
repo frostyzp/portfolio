@@ -60,9 +60,10 @@ const Byos = () => {
           <div className="section-text">
             <p className="supportingText">Design Research</p>
             <p className="section-lead">Auditing existing illustration usage across OGP products</p>
-            <p>We conducted a comprehensive audit of existing illustrations to understand patterns, inconsistencies, and user needs across different government services.</p>
-            <img src="/assets/byos/Frame copy.png" alt="Illustration system usage" className="rounded-img" loading="lazy" />
+            <p>I conducted a comprehensive audit of existing illustrations to understand patterns, inconsistencies, and user needs across different government services.</p>
           </div>
+          <img src="/assets/byos/Frame copy.png" alt="Illustration system usage" className="rounded-img" loading="lazy" />
+
         </section>
       </FadeInWhenVisible>
 
@@ -71,38 +72,60 @@ const Byos = () => {
           <div className="section-text">
             <p className="section-lead">Mapping illustration use cases across government touchpoints</p>
             <p>Understanding how illustrations serve different purposes - from explaining complex processes to providing emotional reassurance during government interactions.</p>
-            <img src="/assets/byos/byos-1.png" alt="Illustration Guidelines process" className="rounded-img" loading="lazy" />
           </div>
+          <img src="/assets/byos/byos-1.png" alt="Illustration Guidelines process" className="rounded-img" loading="lazy" />
+
         </section>
       </FadeInWhenVisible>
 
+    
       <FadeInWhenVisible>
         <section className="section">
-          <hr className="divider" />
+          
           <div className="section-text">
-            <p className="supportingText">Key Insights</p>
-            <p className="section-lead">Government services need illustrations that build trust and clarity</p>
-            <p>Citizens interacting with government services are often in stressful situations and need visual communication that is clear, trustworthy, and accessible to diverse audiences.</p>
-          </div>
-        </section>
-      </FadeInWhenVisible>
+          <h4>Synthesised challenges and opportunities from my design jam</h4>
 
-      <FadeInWhenVisible>
-        <section className="section">
-          <div className="section-text">
-            <p className="section-lead">Establishing principles for government illustration</p>
-            <p>Our guidelines prioritize inclusivity, accessibility, and cultural sensitivity while maintaining visual consistency across all OGP products.</p>
+          <section className="section audit-section">
+
+          <div className="concept-cards two">
+
+            <div className="concept-card">
+              <p className="supportingText">CHALLENGE</p>
+              <h4>Inconsistent usage of illustrations</h4>
+              <p>Illustrations used across screens and touchpoints for various products appear inconsistent</p>
+            </div>
+            <div className="concept-card">
+              <p className="supportingText">CHALLENGE</p>
+              <h4>Customising illustrations is time consuming</h4>
+              <p>Especially for designers with no illustration background</p>
+            </div>
+            <br />
+            <div className="divider" />
+            <div className="concept-card green">  
+              <p className="supportingText">OPPORTUNITY</p>
+              <h4>Modular illustration compositions in common screen states</h4>
+              <p>Scalable, modular illustrated composition + objects in Success, Error, Empty states etc.</p>
+            </div>
+            <div className="concept-card green">  
+              <p className="supportingText">OPPORTUNITY</p>
+              <h4>Guidelines for key touchpoints</h4>
+              <p>To help streamline the process of creating custom illustrations</p>
+            </div>
           </div>
+          </section>
+          </div>
+      
+
         </section>
-      </FadeInWhenVisible>
+        </FadeInWhenVisible>
 
       <FadeInWhenVisible>
         <section className="section">
           <hr className="divider" />
           <div className="section-text">
             <p className="supportingText">Design Solution</p>
-            <p className="section-lead">A comprehensive illustration system with clear guidelines and reusable components</p>
-            <p>We developed a systematic approach to illustration that teams across OGP could easily adopt and implement consistently.</p>
+            <p className="section-lead">A comprehensive illustration system with guidelines on best practices and usage</p>
+            <p>I developed a systematic approach to illustration that teams across OGP could easily adopt and implement consistently.</p>
           </div>
         </section>
       </FadeInWhenVisible>
@@ -110,8 +133,6 @@ const Byos = () => {
       <FadeInWhenVisible>
         <section className="section">
           <div className="section-text">
-            <p className="section-lead">Style guide and component library</p>
-            <p>Creating modular illustration components that can be mixed and matched while maintaining visual coherence across different government services.</p>
             <img src="/assets/byos/byos_prev.png" alt="Design solution overview" className="rounded-img" loading="lazy" />
             <img src="/assets/byos/byos00.png" alt="Illustration guidelines" className="rounded-img" loading="lazy" />
           </div>
@@ -121,21 +142,14 @@ const Byos = () => {
       <FadeInWhenVisible>
         <section className="section">
           <div className="section-text">
-            <p className="section-lead">Accessibility and inclusion considerations</p>
-            <p>Ensuring illustrations meet accessibility standards and represent Singapore's diverse population appropriately.</p>
+            <p className="section-lead">Revamping existing illustrations to align with the new guidelines</p>
+            <p>I worked on revampign some of the public facing illustrations with the lead designers of the product</p>
+            
           </div>
-        </section>
-      </FadeInWhenVisible>
-
-      <FadeInWhenVisible>
-        <section className="section">
-          <div className="section-text">
-            <p className="section-lead">Implementation guidelines for design teams</p>
-            <p>Providing clear documentation and examples for how teams should apply the illustration system in their specific contexts.</p>
-            <img src="/assets/byos/byos01.png" alt="Illustration guidelines" className="rounded-img" loading="lazy" />
+          <img src="/assets/byos/byos01.png" alt="Illustration guidelines" className="rounded-img" loading="lazy" />
             <img src="/assets/byos/byos02.png" alt="Illustration guidelines" className="rounded-img" loading="lazy" />
-          </div>
         </section>
+        
       </FadeInWhenVisible>
 
       <FadeInWhenVisible>
@@ -153,7 +167,7 @@ const Byos = () => {
           <div className="section-text">
             <p className="supportingText">Impact and Results</p>
             <p className="section-lead">Improved visual consistency across 15+ government products</p>
-            <p>The illustration guidelines were adopted across multiple OGP teams, leading to more cohesive user experiences across government digital services.</p>
+            <p>The illustration guidelines were well received and adopted across multiple OGP teams, and designers found it helpful to have a reference to work with.</p>
           </div>
         </section>
       </FadeInWhenVisible>

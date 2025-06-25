@@ -2,6 +2,7 @@ import usePageTitle from '../hooks/usePageTitle';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import FadeInWhenVisible from '../components/FadeInWhenVisible';
+import MediaWithLoading from '../components/MediaWithLoading';
 
 const KuraKura = () => {
   usePageTitle('Kura Kura');
@@ -10,7 +11,11 @@ const KuraKura = () => {
     <div className="content">
       <FadeInWhenVisible>
         <section className="section hero-section">
-          <img src="/assets/kurakura/main.png" autoPlay loop muted playsInline loading="lazy" />
+          <MediaWithLoading 
+            type="img" 
+            src="/assets/kurakura/main.png" 
+            loading="lazy" 
+          />
         </section>
       </FadeInWhenVisible>
 
@@ -58,7 +63,13 @@ const KuraKura = () => {
             <p className="supportingText">Higher Level Problem</p>
             <p className="section-lead">A lack of foundational mental health support systems for Singaporean youths        </p>
             <p>In Singaporean schools and Asian cultures, we're not specifically encouraged to open up – suppressing, hiding, and stifling your emotions are very common. When we open up, it can also be difficult to navigate such situations.</p>
-            <img src="/assets/kurakura/kura_problem.png" alt="Problem statement" className="rounded-img" loading="lazy" />
+            <MediaWithLoading 
+              type="img" 
+              src="/assets/kurakura/kura_problem.png" 
+              alt="Problem statement" 
+              className="rounded-img" 
+              loading="lazy" 
+            />
 
           </div>
           <div className="section-text">
@@ -69,40 +80,52 @@ const KuraKura = () => {
       </FadeInWhenVisible>
 
       <FadeInWhenVisible>
-        <section className="section">
+        <section className="section design-intervention-section">
           <hr className="divider" />
           <div className="section-text">
-            <p className="supportingText">Key Insight</p>
-            <p className="section-lead">Youths would only be vulnerable with their kura (pets) before anyone else        </p>
+            <p className="supportingText">DESIGN INTERVENTION</p>
+            <p className="section-lead">
+              Kura, your turtle companion that brings you a playful journaling and narrative driven experience
+            </p>
+          </div>
 
-            <div className="design-intervention">
-              <img src="/assets/kurakura/final_nobg.gif" alt="Kura Kura phone UI" className="design-intervention-phone" loading="lazy" />
-              <div className="design-intervention-text">
-                <p>
-                  Our core intervention is creating a pet character (kura) that acts as a safe companion and emotional confidant for journaling with youths. We developed an non-judgemental companion with GPT-4o mini, which responds as an emotionally-aware companion and prompts journaling amongst youths.
-                </p>
+          <div className="design-intervention-grid">
+            <div className="design-intervention-left">
+              <div className="design-intervention-image-block grid">
+                <img src="/assets/kurakura/final_nobg.gif" alt="Kura Kura phone UI" className="design-intervention-phone" loading="lazy" />
+                <div className="design-intervention-caption">Checking in your emotions</div>
+              </div>
+            </div>
+            <div className="design-intervention-right">
+              <div className="design-intervention-feature">
+                <h3>Granular identification of emotions</h3>
+                <p>With definitions of emotions and intentional friction for interactive journaling</p>
+              </div>
+              <div className="design-intervention-feature">
+                <h3>Play through a local and familiar narrative</h3>
+                <p>Add fruits and flavours to your dessert to feed your digital companion, kura</p>
               </div>
             </div>
           </div>
         </section>
-      </FadeInWhenVisible>
 
-      {/* Add more sections as needed */}
-
-      <FadeInWhenVisible>
-        <section className="section">
-          <div className="section-text">
-            <p className="section-lead">With an AI companion that learns your communication patterns, and responds accordingly       </p>
-
-            <div className="design-intervention">
-              <img src="/assets/kurakura/ai.gif" alt="Kura Kura phone UI" className="design-intervention-phone" loading="lazy" />
-              <div className="design-intervention-text">
-                <p>
-                  Our AI component learns communication and journaling patterns, and responds according to users over time. Since everyone expresses their emotions differently, we wanted to make sure kura responds differently to each user based on their communication patterns.
-                </p>
+        <section className="section design-intervention-section">
+          <div className="design-intervention-grid">
+            <div className="design-intervention-left">
+              <div className="design-intervention-image-block grid">
+                <img src="/assets/kurakura/ai.gif" alt="Kura Kura phone UI" className="design-intervention-phone" loading="lazy" />
+                <div className="design-intervention-caption">Voice to text, AI suggestions</div>
+              </div>
+            </div>
+            <div className="design-intervention-right">
+              <div className="design-intervention-feature">
+                <h3>Multi-modal journaling and AI suggestions</h3>
+                <p>Leveraging AI to suggests labels for how you might be feeling</p>
               </div>
             </div>
           </div>
+          {/* <hr className="divider" /> */}
+
         </section>
       </FadeInWhenVisible>
 
@@ -112,11 +135,17 @@ const KuraKura = () => {
           <div className="section-text">
             <p className="supportingText">Emotional learning framework</p>
             <p className="section-lead">Building an emotional chatbot around the RULER framework       </p>
-            <p>We adapted the RULER framework, an evidence-based approach for understanding and managing emotions originally developed by Yale. The acronym stands for: Recognizing emotions, Understanding emotions, Labeling emotions, Expressing emotions, and Regulating emotions. From our user interviews, we found that youths need most help with recognizing, understanding, and expressing emotions, so we've built our chatbot conversations around these key areas.</p>
+            <p>We adapted the RULER framework, an evidence-based approach for understanding and managing emotions originally developed by Yale.</p>
           </div>
 
           <div className="section-text">
-            <img src="/assets/kurakura/kura_characters.png" alt="Kura Characters pic" className="solution-video rounded-img" loading="lazy" />
+            <MediaWithLoading 
+              type="img" 
+              src="/assets/kurakura/kura_characters.png" 
+              alt="Kura Characters pic" 
+              className="solution-video rounded-img" 
+              loading="lazy" 
+            />
           </div>
           
           <div className="section-text">
@@ -135,15 +164,25 @@ const KuraKura = () => {
           <hr className="divider" />
           <div className="section-text">
             <p className="supportingText">Design interactions</p>
-            <p className="section-lead">How do we make journaling playful and interactive through touch interactions?       </p>
-
-            <div className="double-phone-ui">
-              <img src="/assets/kurakura/taphold.gif" alt="Kura Kura phone UI" className="design-intervention-phone" loading="lazy" />
-              <img src="/assets/kurakura/taptap.gif" alt="Kura Kura phone UI" className="design-intervention-phone" loading="lazy" />
-            </div>
+            <p className="section-lead">Previous concepts and explorations on specifying emotion intensity through gestural interactions</p>
+            <h4>Integrating the concept of fruits as emotions, swiping and holding gestures</h4>
           </div>
         </section>
+
       </FadeInWhenVisible>
+
+      <div className="design-intervention-grid">
+        <div className="design-intervention-left">   
+          <div className="design-intervention-image-block grid">
+          <img src="/assets/kurakura/taphold.gif" alt="Kura Kura phone UI" className="design-intervention-phone" loading="lazy" />
+          </div>
+        </div>
+        <div className="design-intervention-left"> 
+          <div className="design-intervention-image-block grid">
+          <img src="/assets/kurakura/taptap.gif" alt="Kura Kura phone UI" className="design-intervention-phone" loading="lazy" />
+          </div>
+        </div>
+      </div>
 
       <FadeInWhenVisible>
         <section className="section">
@@ -183,8 +222,9 @@ const KuraKura = () => {
             <p className="supportingText">Design System</p>
             <p className="section-lead">Maintaining visual consistency across all kura interactions</p>
             <p>Creating a cohesive design language that feels approachable and comforting while maintaining the playful character of the kura companion.</p>
-            <img src="/assets/kurakura/iterations.png" alt="Kura Kura chat system" className="rounded-img" loading="lazy" />
           </div>
+          <img src="/assets/kurakura/iterations.png" alt="Kura Kura chat system" className="rounded-img" loading="lazy" />
+
         </section>
       </FadeInWhenVisible>
 

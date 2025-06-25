@@ -2,6 +2,7 @@ import usePageTitle from '../hooks/usePageTitle';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import FadeInWhenVisible from '../components/FadeInWhenVisible';
+import MediaWithLoading from '../components/MediaWithLoading';
 
 const RosterMonster = () => {
   usePageTitle('Roster Monster');
@@ -10,7 +11,15 @@ const RosterMonster = () => {
     <div className="content">
       <FadeInWhenVisible>
         <section className="section hero-section">
-          <video src="/assets/case-studies/ogp_cs.mp4" autoPlay loop muted playsInline preload="none" />
+          <MediaWithLoading 
+            type="video" 
+            src="/assets/case-studies/ogp_cs.mp4" 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            preload="none" 
+          />
         </section>
       </FadeInWhenVisible>
 
@@ -106,7 +115,16 @@ const RosterMonster = () => {
             <p className="section-lead">A generated roster summary view of rule violations</p>
             <p>Roster planners can now look, identify, and assess the severity of roster planner defined rules (constraints) that have not been met in the generated roster.</p>
           </div>
-          <video src="/assets/ogp/ogp_solution.mov" autoPlay loop muted playsInline preload="none" className="solution-video rounded-img vid-background" />
+          <MediaWithLoading 
+            type="video" 
+            src="/assets/ogp/ogp_solution.mov" 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            preload="none" 
+            className="solution-video rounded-img vid-background" 
+          />
         </section>
       </FadeInWhenVisible>
       
