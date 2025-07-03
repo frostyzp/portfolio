@@ -487,14 +487,15 @@ const Sidebar = () => {
                   </span>
                 </StyledAnchor>
               </motion.li>
-              <motion.li variants={itemVariants}>
+              
+              {/* <motion.li variants={itemVariants}>
                 <StyledAnchor href="https://www.are.na/arin-p/channels" target="_blank" rel="noopener noreferrer">
-                  {/* <span className="link-text">Are.na</span> */}
-                  {/* <span className="link-image">
+                  <span className="link-text">Are.na</span>
+                  <span className="link-image">
                     <img src="/assets/doodles/arena.gif" alt="icon" style={{width: '36px', height: '36px'}} loading="lazy" />
-                  </span> */}
+                  </span>
                 </StyledAnchor>
-              </motion.li>
+              </motion.li> */}
             </motion.ul>
           </div>
         {/* </motion.ul> */}
