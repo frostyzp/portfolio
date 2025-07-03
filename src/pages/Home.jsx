@@ -73,13 +73,11 @@ const getHoverStyles = (noHover) => {
       a:hover video {
         scale: 1.02;
         opacity: 0.85;
-        // rotate: 1deg;
+        rotate: 1deg;
         box-shadow: 15px 0 15px rgba(226, 235, 243, 0.15),
                     -15px 0 15px rgba(233, 205, 255, 0.15);
-      //   transform: perspective(1000px)
-      //     rotateY(calc(var(--mouse-x, 0) * 5deg))
-      //     rotateX(calc(var(--mouse-y, 0) * -5deg))
-      //     skew(calc(var(--mouse-x, 0) * 1deg), calc(var(--mouse-y, 0) * 1deg));
+        transform: perspective(1000px)
+      
       // }
     `;
   }
@@ -139,7 +137,7 @@ const CaseStudyRowContainer = styled(Link)`
   &:hover video {
     scale: 1.02;
     opacity: 0.85;
-    // rotate: 1deg;
+    rotate: 1deg;
     box-shadow: 15px 0 15px rgba(191, 187, 197, 0.15),
                 -15px 0 15px rgba(233, 205, 255, 0.15);
     transform: perspective(1000px)
@@ -719,11 +717,11 @@ const Home = () => {
           <FadeInWhenVisible delay={0.08 * 3}>
             <InteractiveLink>
               <ImageText to="">
-                <img src="/assets/case-studies/grab_cs.png" loading="lazy" />
+                <video src="/assets/case-studies/jia.mp4" autoPlay loop muted playsInline preload="none" />
               </ImageText>
               <TextRow>
-                  <p style={{ color: 'black' }}>Grab Financial Group</p>
-                  <p>Card Designs, 2022</p>
+                  <p style={{ color: 'black' }}>Jia</p>
+                  <p>[WIP] App, 2025</p>
                 </TextRow>
             </InteractiveLink>
           </FadeInWhenVisible>

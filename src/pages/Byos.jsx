@@ -155,8 +155,9 @@ const Byos = () => {
       <FadeInWhenVisible>
         <section className="section">
           <div className="section-text">
-            <img src="/assets/byos/byos04.png" alt="Illustration guidelines" className="rounded-img" loading="lazy" />
             <img src="/assets/byos/byos05.png" alt="Illustration guidelines" className="rounded-img" loading="lazy" />
+            {/* <img src="/assets/byos/byos_bg.png" alt="Illustration guidelines" className="rounded-img" loading="lazy" /> */}
+
           </div>
         </section>
       </FadeInWhenVisible>
@@ -168,6 +169,8 @@ const Byos = () => {
             <p className="supportingText">Impact and Results</p>
             <p className="section-lead">Improved visual consistency across 15+ government products</p>
             <p>The illustration guidelines were well received and adopted across multiple OGP teams, and designers found it helpful to have a reference to work with.</p>
+            <img src="/assets/byos/byos_feedback.png" alt="Illustration guidelines" className="rounded-img" loading="lazy" />
+
           </div>
         </section>
       </FadeInWhenVisible>
