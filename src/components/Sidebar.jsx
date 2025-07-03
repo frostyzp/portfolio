@@ -405,7 +405,7 @@ const Sidebar = () => {
         >
           <motion.li variants={itemVariants}>
           <StyledLink to="/web-experiments">
-          <span className="link-text">Code / Creative Tech</span>
+          <span className="link-text">Creative Tech</span>
               <span className="link-image">
                 <img src="/assets/doodles/arrowA.gif" alt="icon" style={{width: '36px', height: '36px'}} loading="lazy" />
               </span>

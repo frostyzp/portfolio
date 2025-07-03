@@ -194,6 +194,52 @@ const About = () => {
         </section>
       </FadeInWhenVisible>
 
+
+      <FadeInWhenVisible>
+        <section className="section">
+          <hr className="divider" />
+          <div className="section-text">
+            <p className="supportingText">EXHIBITIONS</p>
+
+            <ItemRow className="distort-hover">
+              <ItemLeft>
+                <ItemTitle><a href="" target="_blank" rel="noopener noreferrer">ATSA Expo</a></ItemTitle>
+                <ItemDesc>Central World / Bangkok, Thailand</ItemDesc>
+              </ItemLeft>
+              <ItemDivider />
+              <ItemYear>2025</ItemYear>
+            </ItemRow>
+
+            <ItemRow className="distort-hover">
+              <ItemLeft>
+                <ItemTitle><a href="" target="_blank" rel="noopener noreferrer">Unbound</a></ItemTitle>
+                <ItemDesc>Coiffeur / New York, NY</ItemDesc>
+              </ItemLeft>
+              <ItemDivider />
+              <ItemYear>2025</ItemYear>
+            </ItemRow>
+            
+            <ItemRow className="distort-hover">
+              <ItemLeft>
+                <ItemTitle><a href="" target="_blank" rel="noopener noreferrer">Rapid Eye Movement</a></ItemTitle>
+                <ItemDesc>Tomayko Gallery / Pittsburgh, PA</ItemDesc>
+              </ItemLeft>
+              <ItemDivider />
+              <ItemYear>2025</ItemYear>
+            </ItemRow>
+
+            <ItemRow className="distort-hover">
+              <ItemLeft>
+                <ItemTitle><a href="" target="_blank" rel="noopener noreferrer">Frame Opening</a></ItemTitle>
+                <ItemDesc>Frame Gallery / Pittsburgh, PA</ItemDesc>
+              </ItemLeft>
+              <ItemDivider />
+              <ItemYear>2024</ItemYear>
+            </ItemRow>
+          </div>
+        </section>
+      </FadeInWhenVisible>
+
       <Footer />
     </div>
   );
