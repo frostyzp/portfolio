@@ -162,11 +162,17 @@ const itemVariants = {
           description: "This project explores and re-interprets our intimate relationships to the material world of rocks – skipping stones, tombstones, oracles, and campfires – as interfaces to various facets of dreaming through site-specific web(sites). People are invited to discover hyperlinks to site specific websites embedded within rocks. ",
           media: [
             { type: "video", src: "/assets/creative/capstone_cs.mp4" },
-            { type: "img", src: "/assets/creative/campfire_closeup2.png" },
+            { type: "video", src: "/assets/case-studies/oracle_2.mov" },
+
             { type: "img", src: "/assets/creative/hold.png" },
-            { type: "video", src: "/assets/creative/tap.mov" },
+          
+
+            { type: "img", src: "/assets/creative/campfire_closeup2.png" },
+            { type: "video", src: "/assets/creative/tap3.mov" },
+
             { type: "video", src: "/assets/creative/tap2.mov" },
-            { type: "video", src: "/assets/creative/tap3.mov" }
+            { type: "video", src: "/assets/case-studies/skipping_3.mov" }
+
 
           ],
           // year: "Website, Site-specific,2025",
