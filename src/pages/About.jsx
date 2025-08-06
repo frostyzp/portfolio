@@ -130,11 +130,20 @@ const About = () => {
 
             <ItemRow className="distort-hover">
               <ItemLeft>
+                <ItemTitle><a href="" target="_blank" rel="noopener noreferrer">OC Network</a></ItemTitle>
+                <ItemDesc>Founding Designer</ItemDesc>
+              </ItemLeft>
+              <ItemDivider />
+              <ItemYear>Present</ItemYear>
+            </ItemRow>
+
+            <ItemRow className="distort-hover">
+              <ItemLeft>
                 <ItemTitle><a href="" target="_blank" rel="noopener noreferrer">Kura Kura</a></ItemTitle>
                 <ItemDesc>Product Lead + Designer</ItemDesc>
               </ItemLeft>
               <ItemDivider />
-              <ItemYear>Present</ItemYear>
+              <ItemYear>2024</ItemYear>
             </ItemRow>
 
             <ItemRow className="distort-hover">
