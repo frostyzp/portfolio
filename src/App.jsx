@@ -19,18 +19,21 @@ const AppContainer = styled.div`
   padding-top: 4vh;
   background: none;
   z-index: 0;
+
+  @media (max-width: 900px) {
+    padding-top: 0;
+  }
 `;
 
 const RoughPaperBg = styled.div`
   position: fixed;
-  opacity: 0.4;
+  opacity: 1;
   inset: 0;
   width: 100vw;
   height: 100vh;
   z-index: -1000;
   pointer-events: none;
-  background: linear-gradient(180deg, white 100%, rgba(0,0,0,0.08) 90%);
-  filter: url(#roughpaper);
+  background: white;
 `;
 
 const TopGradientOverlay = styled.div`

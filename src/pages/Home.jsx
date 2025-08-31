@@ -74,8 +74,8 @@ const getHoverStyles = (noHover) => {
         scale: 1.02;
         opacity: 0.85;
         rotate: 1deg;
-        box-shadow: 15px 0 15px rgba(226, 235, 243, 0.15),
-                    -15px 0 15px rgba(233, 205, 255, 0.15);
+        // box-shadow: 15px 0 15px rgba(226, 235, 243, 0.15),
+        //             -15px 0 15px rgba(233, 205, 255, 0.15);
         transform: perspective(1000px)
       
       // }
@@ -96,7 +96,7 @@ const ImageTextContainerGrid = styled.div`
     object-fit: cover;
     display: block;
     border-radius: 4px;
-    // border: 1px solid var(--border-color);
+    border: 1px solid #ddd;
     scale: 1;
     opacity: 1;
     transition: 500ms cubic-bezier(0.1, 1, 0.2, 1);
@@ -127,7 +127,7 @@ const CaseStudyRowContainer = styled(Link)`
     object-fit: cover;
     display: block;
     border-radius: 8px;
-    // border: 1px solid var(--border-color);
+    border: 1px solid #ddd;
     scale: 1;
     opacity: 1;
     transition: 500ms cubic-bezier(0.1, 1, 0.2, 1);
@@ -137,9 +137,9 @@ const CaseStudyRowContainer = styled(Link)`
   &:hover video {
     scale: 1.02;
     opacity: 0.85;
-    rotate: 1deg;
-    box-shadow: 15px 0 15px rgba(191, 187, 197, 0.15),
-                -15px 0 15px rgba(233, 205, 255, 0.15);
+    // rotate: 1deg;
+    // box-shadow: 15px 0 15px rgba(191, 187, 197, 0.15),
+    //             -15px 0 15px rgba(233, 205, 255, 0.15);
     transform: perspective(1000px)
       rotateY(calc(var(--mouse-x, 0) * 2deg))
       rotateX(calc(var(--mouse-y, 0) * -2deg))
@@ -541,11 +541,13 @@ function useIsMobile() {
 
 // Add a new styled flex container for the heading/intro and image
 const HeadingIntroFlex = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 0.8rem;
   align-items: flex-start;
-  gap: 2.5rem;
   margin-bottom: 1.5rem;
   @media (max-width: 900px) {
+    display: flex;
     flex-direction: column;
     gap: 1rem;
     align-items: flex-start;
@@ -641,7 +643,7 @@ const Home = () => {
               initial="hidden"
               animate="visible" 
               style={{ fontSize: "1rem", height: isMobile ? "5vh" : "20vh", width: isMobile ? "100%" : "100%" }}
-            >Crafting interfaces, interactions, and playful experiences. <br /> Currently based in NYC.</motion.p>
+            >Crafting interfaces, interactions, and playful experiences. Currently based in NYC.</motion.p>
             {useIsMobile() && <MobileEtcLinks />}
           </div>
 

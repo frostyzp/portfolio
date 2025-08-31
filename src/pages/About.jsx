@@ -52,7 +52,7 @@ const ItemDesc = styled.span`
 const ItemDivider = styled.div`
   flex: 1;
   margin: 0 1rem;
-  border-bottom: 3px dotted #666;
+  // border-bottom: 3px dotted #666;
   opacity: 0.3;
 `;
 
@@ -130,11 +130,11 @@ const About = () => {
 
             <ItemRow className="distort-hover">
               <ItemLeft>
-                <ItemTitle><a href="" target="_blank" rel="noopener noreferrer">OC Network</a></ItemTitle>
+                <ItemTitle><a href="" target="_blank" rel="noopener noreferrer">OC Social Network</a></ItemTitle>
                 <ItemDesc>Founding Designer</ItemDesc>
               </ItemLeft>
               <ItemDivider />
-              <ItemYear>Present</ItemYear>
+              <ItemYear>– Present</ItemYear>
             </ItemRow>
 
             <ItemRow className="distort-hover">
@@ -213,7 +213,7 @@ const About = () => {
             <ItemRow className="distort-hover">
               <ItemLeft>
                 <ItemTitle><a href="" target="_blank" rel="noopener noreferrer">ATSA Expo</a></ItemTitle>
-                <ItemDesc>Central World / Bangkok, Thailand</ItemDesc>
+                <ItemDesc>Central World / BKK, TH</ItemDesc>
               </ItemLeft>
               <ItemDivider />
               <ItemYear>2025</ItemYear>
@@ -222,7 +222,7 @@ const About = () => {
             <ItemRow className="distort-hover">
               <ItemLeft>
                 <ItemTitle><a href="" target="_blank" rel="noopener noreferrer">Unbound</a></ItemTitle>
-                <ItemDesc>Coiffeur / New York, NY</ItemDesc>
+                <ItemDesc>Coiffeur / NY, NY</ItemDesc>
               </ItemLeft>
               <ItemDivider />
               <ItemYear>2025</ItemYear>
@@ -231,7 +231,7 @@ const About = () => {
             <ItemRow className="distort-hover">
               <ItemLeft>
                 <ItemTitle><a href="" target="_blank" rel="noopener noreferrer">Rapid Eye Movement</a></ItemTitle>
-                <ItemDesc>Tomayko Gallery / Pittsburgh, PA</ItemDesc>
+                <ItemDesc>Tomayko Gallery / PGH, PA</ItemDesc>
               </ItemLeft>
               <ItemDivider />
               <ItemYear>2025</ItemYear>
@@ -240,7 +240,7 @@ const About = () => {
             <ItemRow className="distort-hover">
               <ItemLeft>
                 <ItemTitle><a href="" target="_blank" rel="noopener noreferrer">Frame Opening</a></ItemTitle>
-                <ItemDesc>Frame Gallery / Pittsburgh, PA</ItemDesc>
+                <ItemDesc>Frame Gallery / PGH, PA</ItemDesc>
               </ItemLeft>
               <ItemDivider />
               <ItemYear>2024</ItemYear>

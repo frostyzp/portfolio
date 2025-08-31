@@ -29,11 +29,18 @@ export const Simple = () => {
   }, [rive]);
 
   return (
-    <div style={{ width: '50%', padding: '1rem 2vh' }}>
+    <div style={{ 
+      width: '100%', 
+      height: '100%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '1rem'
+    }}>
       <RiveComponent 
         style={{
-          // width: '100%',
-          height: '50vh',
+          width: '80%',
+          height: '60vh',
           display: 'block',
           transform: 'rotate(3deg)',
           cursor: 'pointer',
