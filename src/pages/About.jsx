@@ -28,7 +28,7 @@ const ItemRow = styled.div`
 
   &:hover {
     transform: translateX(6px);
-    border-radius: 4px;
+    border-radius: 8px;
     opacity: 0.7;
     cursor: pointer;
   }

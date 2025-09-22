@@ -325,7 +325,7 @@ const Sidebar = () => {
             variants={fadeIn}
             initial="hidden"
             animate="visible"
-          >WORKS</MotionHeaders>
+          >INTERACTION DESIGN</MotionHeaders>
           <motion.ul
             style={{ listStyle: "none", padding: 0, margin: 0 }}
             variants={listVariants}
@@ -333,8 +333,24 @@ const Sidebar = () => {
             animate="visible"
           >
             <motion.li variants={itemVariants}>
-              <StyledLink to="/">
-                <span className="link-text">Interaction Design</span>
+              <StyledLink to="/roster-monster">
+                <span className="link-text">Roster Monster</span>
+                <span className="link-image">
+                <img src="/assets/doodles/arrowA.gif" alt="icon" style={{width: '36px', height: '36px'}} loading="lazy" />
+                </span>
+              </StyledLink>
+            </motion.li>
+            <motion.li variants={itemVariants}>
+              <StyledLink to="/kura-kura">
+                <span className="link-text">Kura Kura</span>
+                <span className="link-image">
+                <img src="/assets/doodles/arrowA.gif" alt="icon" style={{width: '36px', height: '36px'}} loading="lazy" />
+                </span>
+              </StyledLink>
+            </motion.li>
+            <motion.li variants={itemVariants}>
+              <StyledLink to="/ogp-illustration-guidelines">
+                <span className="link-text">Illustration Systems</span>
                 <span className="link-image">
                 <img src="/assets/doodles/arrowA.gif" alt="icon" style={{width: '36px', height: '36px'}} loading="lazy" />
                 </span>
@@ -359,62 +375,28 @@ const Sidebar = () => {
           </motion.ul>
         </HideOnMobile>
 
-        {/* <Headers>WEB / CODE</Headers> */}
-        <ul
-          style={{ listStyle: "none", padding: 0, margin: 0 }}
-        >
-          {/* <li>
-            <StyledLink to="/">
-              TCSC
-              <span className="link-image">
-                <img src="https://placehold.co/24x24" alt="icon" style={{width: '24px', height: '24px'}} />
-              </span>
-            </StyledLink>
-          </li>
-          <li>
-            <StyledLink to="/ogp-illustration-guidelines">
-              DDR Face
-              <span className="link-image">
-                <img src="https://placehold.co/24x24" alt="icon" style={{width: '24px', height: '24px'}} />
-              </span>
-            </StyledLink>
-          </li>
-          <li>
-            <StyledLink to="/ogp-illustration-guidelines">
-              Pha Lai Nam Lhai
-              <span className="link-image">
-                <img src="https://placehold.co/24x24" alt="icon" style={{width: '24px', height: '24px'}} />
-              </span>
-            </StyledLink>
-          </li>
-          <li>
-            <StyledLink to="/kura-kura">
-              wandering wondering
-              <span className="link-image">
-                <img src="https://placehold.co/24x24" alt="icon" style={{width: '24px', height: '24px'}} />
-              </span>
-            </StyledLink>
-          </li> */}
-
-        </ul>
-        <motion.ul
-          style={{ listStyle: "none", padding: 0, margin: 0 }}
-          variants={listVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.li variants={itemVariants}>
-          <StyledLink to="/web-experiments">
-          <span className="link-text">Creative Tech</span>
-              <span className="link-image">
-                <img src="/assets/doodles/arrowA.gif" alt="icon" style={{width: '36px', height: '36px'}} loading="lazy" />
-              </span>
-            </StyledLink>
-          </motion.li>
-
-        </motion.ul>
-
-        {/* <div className="divider sidebar" /> */}
+        <HideOnMobile>
+          <MotionHeaders
+            variants={fadeIn}
+            initial="hidden"
+            animate="visible"
+          >PLAY</MotionHeaders>
+          <motion.ul
+            style={{ listStyle: "none", padding: 0, margin: 0 }}
+            variants={listVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.li variants={itemVariants}>
+              <StyledLink to="/web-experiments">
+                <span className="link-text">Creative Tech</span>
+                <span className="link-image">
+                  <img src="/assets/doodles/arrowA.gif" alt="icon" style={{width: '36px', height: '36px'}} loading="lazy" />
+                </span>
+              </StyledLink>
+            </motion.li>
+          </motion.ul>
+        </HideOnMobile>
 
         <motion.ul
             style={{ listStyle: "none", padding: 0, marginBottom: '6vh' }}
@@ -458,7 +440,7 @@ const Sidebar = () => {
             >CONTACT</MotionHeaders>
 
             <motion.ul
-              style={{ listStyle: "none", padding: 0, marginBottom: '2rem' }}
+              style={{ listStyle: "none", padding: 0, marginBottom: '4rem' }}
               variants={listVariants}
               initial="hidden"
               animate="visible"

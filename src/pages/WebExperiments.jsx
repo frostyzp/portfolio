@@ -44,7 +44,7 @@ const ImageText = styled.div`
   width: 100%;
   height: 100%;
   img, video {
-    border-radius: 4px;
+    border-radius: 8px;
     width: 100%;
     display: block;
     // max-height: 300px;

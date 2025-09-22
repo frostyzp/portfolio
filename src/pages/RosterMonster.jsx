@@ -300,10 +300,10 @@ const RosterMonster = () => {
       </FadeInWhenVisible>
       <FadeInWhenVisible>
         <section className="section">
-          <div className="section-text" style={{ textAlign: 'left'}}>
+          <div className="section-text" style={{ textAlign: 'left !important', display: 'block' }}>
             <Link to="/kura-kura" style={{ textDecoration: 'none' }}>
-            <p className="supportingText">Next project</p>
-              <p className="section-lead">Kura Kura ↗</p>
+            <p className="supportingText" style={{ textAlign: 'left' }}>Next project</p>
+              <p className="section-lead" style={{ textAlign: 'left' }}>Kura Kura ↗</p>
             </Link>
           </div>
         </section>

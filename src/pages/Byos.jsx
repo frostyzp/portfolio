@@ -177,10 +177,10 @@ const Byos = () => {
 
       <FadeInWhenVisible>
         <section className="section">
-          <div className="section-text" style={{ textAlign: 'left' }}>
+          <div className="section-text" style={{ textAlign: 'left !important', display: 'block' }}>
             <Link to="/roster-monster" style={{ textDecoration: 'none' }}>
-              <p className="supportingText">Next project</p>
-              <p className="section-lead">Roster Monster ↗</p>
+              <p className="supportingText" style={{ textAlign: 'left' }}>Next project</p>
+              <p className="section-lead" style={{ textAlign: 'left' }}>Roster Monster ↗</p>
             </Link>
           </div>
         </section>

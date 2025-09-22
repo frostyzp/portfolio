@@ -230,10 +230,10 @@ const KuraKura = () => {
 
       <FadeInWhenVisible>
         <section className="section">
-          <div className="section-text" style={{ textAlign: 'left' }}>
+          <div className="section-text" style={{ textAlign: 'left !important', display: 'block' }}>
             <Link to="/ogp-illustration-guidelines" style={{ textDecoration: 'none' }}>
-            <p className="supportingText">Next project</p>
-              <p className="section-lead">BYOS Illustration Design System ↗</p>
+            <p className="supportingText" style={{ textAlign: 'left' }}>Next project</p>
+              <p className="section-lead" style={{ textAlign: 'left' }}>BYOS Illustration Design System ↗</p>
             </Link>
           </div>
         </section>

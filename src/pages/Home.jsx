@@ -95,7 +95,7 @@ const ImageTextContainerGrid = styled.div`
     height: 48vh;
     object-fit: cover;
     display: block;
-    border-radius: 4px;
+    border-radius: 8px;
     border: 1px solid #ddd;
     scale: 1;
     opacity: 1;
@@ -146,10 +146,14 @@ const CaseStudyRowContainer = styled(Link)`
       skew(calc(var(--mouse-x, 0) * 1deg), calc(var(--mouse-y, 0) * 1deg));
   }
 
+  .case-study-title,
+  .case-study-desc {
+    transition: opacity 0.6s cubic-bezier(0.1, 1, 0.2, 1);
+  }
+
   &:hover .case-study-title,
   &:hover .case-study-desc {
     opacity: 0.55;
-    transition: 0.6s cubic-bezier(0.1, 1, 0.2, 1);
     // rotate: -1deg;
   }
 
@@ -637,13 +641,15 @@ const Home = () => {
               animate="visible"
               onAnimationComplete={() => setHeaderAnimationComplete(true)}
               style={{ fontSize: "1rem", marginBottom: "0.5rem" }}
-            ><span style={{ color: "black" }}>Arin Pantja –– </span> Product Design, Motion & Code  ツ</motion.p>
+            ><span style={{ color: "black" }}>Arin Pantja –– </span> Product & Motion Designer in NYC  ツ</motion.p>
             <motion.p
               variants={fadeIn}
               initial="hidden"
               animate="visible" 
-              style={{ fontSize: "1rem", height: isMobile ? "5vh" : "20vh", width: isMobile ? "100%" : "100%" }}
-            >Crafting interfaces, interactions, and playful experiences. Currently based in NYC.</motion.p>
+              style={{ fontSize: "1rem", height: isMobile ? "1vh" : "1vh", width: isMobile ? "100%" : "100%" }}
+            > Currently designing the next social network for roleplaying 0 → 1
+            </motion.p>
+           
             {useIsMobile() && <MobileEtcLinks />}
           </div>
 
@@ -654,7 +660,7 @@ const Home = () => {
           
           {/* <InlineDogImage src="/assets/doodles/connectTheDot01.png" alt="Connect the Dog" /> */}
         </HeadingIntroFlex>
-        <hr className="divider2" />
+        {/* <hr className="divider2" /> */}
         {/* Case Study Rows with consistent fade-in animation */}
         {[
           {
@@ -686,7 +692,7 @@ const Home = () => {
             <ResponsiveCaseStudyRow {...props} />
           </FadeInWhenVisible>
         ))}
-        <hr className="divider2" />
+        {/* <hr className="divider2" /> */}
 
 
 
@@ -742,7 +748,7 @@ const Home = () => {
         </ImageTextContainerGrid>
 
         
-        <ImageTextContainerGrid columns={isMobile ? "1fr" : "1fr 1fr 1fr"} noHover>
+        {/* <ImageTextContainerGrid columns={isMobile ? "1fr" : "1fr 1fr 1fr"} noHover>
           <FadeInWhenVisible delay={0.08 * 6}>
             <InteractiveLink>
               <ImageText to="">
@@ -776,7 +782,7 @@ const Home = () => {
               </ImageText>
             </InteractiveLink>
           </FadeInWhenVisible>
-        </ImageTextContainerGrid>
+        </ImageTextContainerGrid> */}
 
         <Footer />
       </Content>

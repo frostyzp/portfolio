@@ -64,7 +64,7 @@ const CaseStudyRowContainer = styled(Link)`
     height: 48vh;
     object-fit: cover;
     display: block;
-    border-radius: 4px;
+    border-radius: 8px;
     border: 1px solid var(--border-color);
   }
 
