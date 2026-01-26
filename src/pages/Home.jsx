@@ -647,7 +647,7 @@ const Home = () => {
               initial="hidden"
               animate="visible" 
               style={{ fontSize: "1rem", height: isMobile ? "1vh" : "1vh", width: isMobile ? "100%" : "100%" }}
-            > Currently designing the next social network for roleplaying 0 → 1
+            > Currently Founding Designer at OCSN ᕙ(  •̀ ᗜ •́  )ᕗ
             </motion.p>
            
             {useIsMobile() && <MobileEtcLinks />}
@@ -663,6 +663,13 @@ const Home = () => {
         {/* <hr className="divider2" /> */}
         {/* Case Study Rows with consistent fade-in animation */}
         {[
+            {
+              to: "/",
+              title: "OCSN",
+              description: "Designing a social network and community for roleplaying",
+              mediaType: "video",
+              mediaSrc: "/assets/case-studies/ocsn.mp4"
+            },
           {
             to: "/roster-monster",
             title: "Roster Monster",

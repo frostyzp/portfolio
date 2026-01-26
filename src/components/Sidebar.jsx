@@ -395,6 +395,14 @@ const Sidebar = () => {
                 </span>
               </StyledLink>
             </motion.li>
+            <motion.li variants={itemVariants}>
+              <StyledLink to="/dream">
+                <span className="link-text">Dream</span>
+                <span className="link-image">
+                  <img src="/assets/doodles/arrowA.gif" alt="icon" style={{width: '36px', height: '36px'}} loading="lazy" />
+                </span>
+              </StyledLink>
+            </motion.li>
           </motion.ul>
         </HideOnMobile>
 
