@@ -7,7 +7,6 @@ import RosterMonster from './pages/RosterMonster';
 import KuraKura from './pages/KuraKura';
 import Byos from './pages/Byos';
 import WebExperiments from './pages/WebExperiments';
-import Dream from './pages/Dream';
 import styled from '@emotion/styled';
 import ScrollToTop from './components/ScrollToTop';
 import { useState, useEffect } from "react";
@@ -86,7 +85,6 @@ function App() {
             <Route path="/kura-kura" element={<KuraKura />} />
             <Route path="/ogp-illustration-guidelines" element={<Byos />} />
             <Route path="/web-experiments" element={<WebExperiments />} />
-            <Route path="/dream" element={<Dream />} />
             {/* Add more routes here as we create more pages */}
           </Routes>
 

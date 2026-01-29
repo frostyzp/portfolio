@@ -647,7 +647,7 @@ const Home = () => {
               initial="hidden"
               animate="visible" 
               style={{ fontSize: "1rem", height: isMobile ? "1vh" : "1vh", width: isMobile ? "100%" : "100%" }}
-            > Currently Founding Designer at OCSN ᕙ(  •̀ ᗜ •́  )ᕗ
+            > Currently @ OCSN ᕙ(  •̀ ᗜ •́  )ᕗ
             </motion.p>
            
             {useIsMobile() && <MobileEtcLinks />}

@@ -78,15 +78,9 @@ const MobileNavigation = () => {
         </NavLink>
         <NavLink 
           to="/web-experiments" 
-          isActive={isActivePage(['/web-experiments', '/dream'])}
+          isActive={isActivePage(['/web-experiments'])}
         >
           Creative Tech
-        </NavLink>
-        <NavLink 
-          to="/dream" 
-          isActive={isActivePage(['/dream'])}
-        >
-          Dream
         </NavLink>
         <NavLink style={{ marginLeft: 'auto' }}
           to="/about" 

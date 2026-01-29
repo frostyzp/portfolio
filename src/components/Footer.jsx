@@ -7,7 +7,7 @@ const Footer = () => {
     <footer> 
       <p>Arin Pantja 2025</p>
       <p>Coded with care ⸜( ´ ꒳ ` )⸝ </p>
-      <p className="footer-last-updated">Last updated June 2025</p>
+      <p className="footer-last-updated">Last updated January 2026</p>
     </footer>
   );
 };
