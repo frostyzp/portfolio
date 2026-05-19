@@ -1,10 +1,41 @@
 import styled from '@emotion/styled';
+import { motion } from 'framer-motion';
 import usePageTitle from '../hooks/usePageTitle';
 import { Link } from 'react-router-dom';
 import FadeInWhenVisible from '../components/FadeInWhenVisible';
 import DraggablePaperPad from '../components/DraggablePaperPad';
 import Footer from '../components/Footer';
+import { Simple } from '../components/Footer';
 import MediaWithLoading from '../components/MediaWithLoading';
+
+const AboutIntroWrapper = styled.div`
+  position: relative;
+`;
+
+const AboutIntroRow = styled.div`
+  display: block;
+  margin-bottom: 0;
+`;
+
+/* First column: doodle + profile. Doodle is absolute within this column (left: 3rem, top: 22rem). */
+const FirstColumn = styled.div`
+  position: relative;
+  max-width: 400px;
+`;
+
+const RiveColumn = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  min-height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 900px) {
+    display: none;
+  }
+`;
 
 const ProfileImage = styled.img`
   display: block;
@@ -74,14 +105,23 @@ const About = () => {
     <div className="content">
       <FadeInWhenVisible>
         <section className="section-text">
-          {/* <AboutDiv> */}
-            <HideOnMobile>
-              <DraggablePaperPad 
-                imgSrc="/assets/doodles/connectTheDot01.png" 
-                style={{ left: '3rem', top: '22rem'}} 
-              />
-            </HideOnMobile>
-            <div>
+          <AboutIntroWrapper>
+          <AboutIntroRow>
+            <FirstColumn>
+              <HideOnMobile>
+                <motion.div
+                  initial={{ opacity: 0, x: -24, y: 16, rotate: -8 }}
+                  whileInView={{ opacity: 1, x: 0, y: 0, rotate: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.6, ease: 'easeOut' }}
+                  style={{ position: 'absolute', left: 0, top: 0 }}
+                >
+                  <DraggablePaperPad 
+                    imgSrc="/assets/doodles/connectTheDot01.png" 
+                    style={{ left: '-15vw', top: '2rem', zIndex: 2 }} 
+                  />
+                </motion.div>
+              </HideOnMobile>
               <MediaWithLoading 
                 type="img"
                 src="/assets/about/profile.png"
@@ -95,14 +135,18 @@ const About = () => {
                   marginBottom: '1rem'
                 }}
               />
-            </div>
-            <HideOnMobile>
-              {/* <DraggablePaperPad 
-                imgSrc="/assets/doodles/connectTheDot02.png" 
-                style={{ top: '75vh' }}
-              /> */}
-            </HideOnMobile>
-          {/* </AboutDiv> */}
+              <HideOnMobile>
+                {/* <DraggablePaperPad 
+                  imgSrc="/assets/doodles/connectTheDot02.png" 
+                  style={{ top: '75vh' }}
+                /> */}
+              </HideOnMobile>
+            </FirstColumn>
+            <RiveColumn>
+              <Simple />
+            </RiveColumn>
+          </AboutIntroRow>
+          </AboutIntroWrapper>
         </section>
       </FadeInWhenVisible>
 

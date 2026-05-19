@@ -1,26 +1,20 @@
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 import { Link } from 'react-router-dom';
-import React from 'react';
-
-// Standalone useIsMobile hook
-function useIsMobile() {
-  const [isMobile, setIsMobile] = React.useState(() => typeof window !== 'undefined' ? window.innerWidth <= 900 : false);
-  React.useEffect(() => {
-    function handleResize() {
-      setIsMobile(window.innerWidth <= 900);
-    }
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-  return isMobile;
-}
 
 const MediaScroller = styled.div`
   position: relative;
   display: flex;
   gap: 0.8rem;
   overflow-x: auto;
-  cursor: default !important;
+  cursor: ${(p) => (p.$noHover ? 'default' : 'pointer')};
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding-left: clamp(1.5rem, 14vw, 14rem);
+  padding-right: clamp(1.5rem, 14vw, 14rem);
+  box-sizing: border-box;
+  scroll-padding-left: clamp(1.5rem, 14vw, 14rem);
+  scroll-padding-right: clamp(1.5rem, 14vw, 14rem);
 
   padding-bottom: 1rem; // for scrollbar
   -ms-overflow-style: none; // IE and Edge
@@ -29,108 +23,154 @@ const MediaScroller = styled.div`
     display: none; // Chrome, Safari, Opera
   }
 
-  img, video {
-    flex: 0 0 80%;
-    width: 80%;
-    // height: auto; /* Let videos maintain aspect ratio */
-    
-    @media (max-width: 900px) {
-      flex: 0 0 90% !important;
-      width: 90% !important;
-      height: auto !important;
-      object-fit: contain !important;
-      border: none !important;
-      margin-top: 0 !important;
-      margin-bottom: 0 !important;
-      align-self: flex-start !important;
-      vertical-align: top !important;
-      cursor: default !important;
+  @media (max-width: 900px) {
+    padding-left: clamp(1rem, 5vw, 2rem);
+    padding-right: clamp(1rem, 5vw, 2rem);
+    scroll-padding-left: clamp(1rem, 5vw, 2rem);
+    scroll-padding-right: clamp(1rem, 5vw, 2rem);
+  }
 
-    }
+  /* Media fills fixed-size card to keep row heights consistent */
+  img, video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    cursor: ${(p) => (p.$noHover ? 'default' : 'pointer')};
   }
 `;
 
-// Styled components
-const CaseStudyRowContainer = styled(Link)`
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 0.8rem;
-  align-items: stretch;
+const TitleWithDoodle = styled.span`
+  position: relative;
+  display: inline-block;
+`;
+
+const caseStudyRowBase = css`
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
   width: 100%;
   margin-bottom: 1rem;
+  text-decoration: none;
+`;
+
+const caseStudyRowHover = css`
   cursor: pointer;
-  img, video {
-    width: 100%;
-    height: 48vh;
-    object-fit: cover;
-    display: block;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
+
+  .case-study-title {
+    transition: color 180ms ease, filter 180ms ease, transform 180ms ease;
   }
 
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr !important;
-    grid-template-rows: auto auto;
-    
-    img, video {
-      height: 100%;
-      object-fit: contain;
-    }
+  .case-study-title-row {
+    transition: transform 0.2s ease;
   }
+
+  &:hover .case-study-title-row {
+    transform: translateX(5px);
+  }
+
+  &:hover .link-text {
+    filter: url(#distort-nav);
+    color: rgb(27, 27, 27);
+  }
+
+  .link-image {
+    position: absolute;
+    right: -36px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-10px) rotate(-1deg);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+  }
+
+  &:hover .link-image {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0) rotate(16deg);
+  }
+`;
+
+const CaseStudyRowContainer = styled(Link)`
+  ${caseStudyRowBase}
+  ${caseStudyRowHover}
+`;
+
+const CaseStudyRowStatic = styled.div`
+  ${caseStudyRowBase}
+  cursor: default;
 `;
 
 const CaseStudyCell = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+  margin-bottom: 0.25rem;
 `;
 
-function ResponsiveCaseStudyRow({ to, title, description, media, year, actionText }) {
-  const isMobile = useIsMobile();
-  
+const MediaCard = styled.div`
+  flex: 0 0 ${(p) => (p.$single ? '100%' : 'min(560px, 72vw)')};
+  width: ${(p) => (p.$single ? '100%' : 'min(560px, 72vw)')};
+  height: clamp(220px, 34vw, 380px);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  background: #f3f3f3;
+  cursor: ${(p) => (p.$noHover ? 'default' : 'pointer')};
+
+  @media (max-width: 900px) {
+    flex: 0 0 ${(p) => (p.$single ? '100%' : '84vw')} !important;
+    width: ${(p) => (p.$single ? '100%' : '84vw')} !important;
+    height: clamp(180px, 56vw, 360px);
+    border: none !important;
+  }
+`;
+
+function ResponsiveCaseStudyRow({ to, title, description, media, year, actionText, noLink }) {
+  const single = media.length === 1;
+  const RowContainer = noLink ? CaseStudyRowStatic : CaseStudyRowContainer;
+
   const MediaItems = () => (
-    <MediaScroller>
+    <MediaScroller $single={single} $noHover={noLink}>
       {media.map((item, index) => (
-        item.type === 'video' ? (
-          <video key={index} src={item.src} autoPlay loop muted playsInline preload="none" />
-        ) : (
-          <img key={index} src={item.src} alt={`${title} media ${index + 1}`} loading="lazy" />
-        )
+        <MediaCard key={index} $single={single} $noHover={noLink}>
+          {item.type === 'video' ? (
+            <video src={item.src} autoPlay loop muted playsInline preload="none" />
+          ) : (
+            <img src={item.src} alt={`${title} media ${index + 1}`} loading="lazy" />
+          )}
+        </MediaCard>
       ))}
     </MediaScroller>
   );
 
   return (
-    <CaseStudyRowContainer to={to}>
-      {isMobile ? (
-        <>
-          {/* Text first */}
-          <CaseStudyCell>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-              <p className="case-study-title" style={{ margin: 0 }}>{title}</p>
-              {year && <p className="case-study-title" style={{ margin: 0, color: '#888' }}>{year}</p>}
-            </div>
-            <p className="case-study-desc" style={{ fontSize: '1rem', marginTop: '0.5rem', flexGrow: 1 }}>{description}</p>
-            {actionText && <p style={{ margin: 0, textAlign: 'right' }}>{actionText} →</p>}
-          </CaseStudyCell>
-          {/* Media below */}
-          <MediaItems />
-        </>
-      ) : (
-        <>
-          {/* Text left, media right (desktop) */}
-          <CaseStudyCell>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-              <p className="case-study-title" style={{ margin: 0, color: "black"}}>{title}</p>
-              {year && <p className="case-study-title" style={{ margin: 0, color: '#888' }}>{year}</p>}
-            </div>
-            <p className="case-study-desc" style={{ fontSize: '1rem', marginTop: '0.5rem', flexGrow: 1, color: "var(--text-color)" }}>{description}</p>
-            {actionText && <p style={{ margin: 0, textAlign: 'right' }}>{actionText} →</p>}
-          </CaseStudyCell>
-          <MediaItems />
-        </>
-      )}
-    </CaseStudyRowContainer>
+    <RowContainer {...(noLink ? {} : { to })}>
+      <CaseStudyCell>
+        <div className="case-study-title-row" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+          <p style={{ margin: 0 }}>
+            {noLink ? (
+              <span className="case-study-title" style={{ color: 'black' }}>{title}</span>
+            ) : (
+              <TitleWithDoodle>
+                <span className="link-text case-study-title" style={{ color: 'black' }}>{title}</span>
+                <span className="link-image">
+                  <img src="/assets/doodles/arrowA.gif" alt="" style={{ width: '36px', height: '36px' }} loading="lazy" />
+                </span>
+              </TitleWithDoodle>
+            )}
+          </p>
+          {year && <p className="case-study-title" style={{ margin: 0, color: '#888' }}>{year}</p>}
+        </div>
+        <p className="case-study-desc" style={{ fontSize: '1rem', marginTop: '0.5rem', flexGrow: 1, color: 'var(--text-color)' }}>{description}</p>
+        {actionText && <p style={{ margin: 0, textAlign: 'right' }}>{actionText} →</p>}
+      </CaseStudyCell>
+      <MediaItems />
+    </RowContainer>
   );
 }
 

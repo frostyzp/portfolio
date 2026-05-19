@@ -158,6 +158,17 @@ const itemVariants = {
       {[
         {
           to: "",
+          title: "Pha Lai Nam Lhai", 
+          description: "Nam Lhai is a traditional Thai weaving technique that creates flowing patterns reminiscent of water streams, inspired by the Nan rivers of the Chao Phraya River. I re-imagined the keyboard as a loom – where the website allows people to ‘weave’ patterns through their keyboard by laying down the colored fabric and adding patterns on top through specific keys. ",
+          media: [
+            { type: "video", src: "/assets/creative/nam_lhai/pha_lai.mp4" },
+            // { type: "img", src: "/assets/creative/nam_lhai/pha_lai.png" },
+            { type: "img", src: "/assets/creative/nam_lhai/weaving_example.png" },
+          ],
+          // year: "Website, 2024",
+        },
+        {
+          to: "",
           title: "wandering, wondering",
           description: "This project explores and re-interprets our intimate relationships to the material world of rocks – skipping stones, tombstones, oracles, and campfires – as interfaces to various facets of dreaming through site-specific web(sites). People are invited to discover hyperlinks to site specific websites embedded within rocks. ",
           media: [
@@ -203,66 +214,57 @@ const itemVariants = {
 
           ],
           // year: "Website, 2024",
-        },
-        {
-          to: "",
-          title: "Pha Lai Nam Lhai", 
-          description: "Nam Lhai is a traditional Thai weaving technique that creates flowing patterns reminiscent of water streams, inspired by the Nan rivers of the Chao Phraya River. I re-imagined the keyboard as a loom – where the website allows people to ‘weave’ patterns through their keyboard by laying down the colored fabric and adding patterns on top through specific keys. ",
-          media: [
-            { type: "video", src: "/assets/creative/nam_lhai/nam_lhai_final.mp4" },
-            // { type: "img", src: "/assets/creative/nam_lhai/pha_lai.png" },
-            { type: "img", src: "/assets/creative/nam_lhai/weaving_example.png" },
-          ],
-          // year: "Website, 2024",
         }
       ].map((props, idx) => (
         <FadeInWhenVisible key={props.to} delay={0.08 * idx}>
-          <ResponsiveCaseStudyRow {...props} style={{ cursor: 'not-allowed' }} />
+          <ResponsiveCaseStudyRow {...props} noLink />
         </FadeInWhenVisible>
       ))}
 
-      <MasonryGrid columns={columns}>
-        {gridItems.map((item, idx) => (
-          <MasonryItem key={item.key}>
-            <FadeInWhenVisible delay={0.08 * (total - 1 - idx)}>
-              <InteractiveLink to={item.to} style={{display: 'block'}}>
-                {isMobile && (
-                  <LabelRow>
-                    <LabelLeft>{item.labelLeft}</LabelLeft>
-                    <LabelRight>{item.labelRight}</LabelRight>
-                  </LabelRow>
-                )}
-                <ImageText>
-                  {item.type === 'video' ? (
-                    <MediaWithLoading 
-                      type="video" 
-                      src={item.src} 
-                      autoPlay 
-                      loop 
-                      muted 
-                      playsInline 
-                      preload="none" 
-                    />
-                  ) : (
-                    <MediaWithLoading 
-                      type="img" 
-                      src={item.src} 
-                      alt={item.key} 
-                      loading="lazy" 
-                    />
+      {false && (
+        <MasonryGrid columns={columns}>
+          {gridItems.map((item, idx) => (
+            <MasonryItem key={item.key}>
+              <FadeInWhenVisible delay={0.08 * (total - 1 - idx)}>
+                <InteractiveLink to={item.to} style={{display: 'block'}}>
+                  {isMobile && (
+                    <LabelRow>
+                      <LabelLeft>{item.labelLeft}</LabelLeft>
+                      <LabelRight>{item.labelRight}</LabelRight>
+                    </LabelRow>
                   )}
-                </ImageText>
-                {!isMobile && (
-                  <LabelRow>
-                    <LabelLeft>{item.labelLeft}</LabelLeft>
-                    <LabelRight>{item.labelRight}</LabelRight>
-                  </LabelRow>
-                )}
-              </InteractiveLink>
-            </FadeInWhenVisible>
-          </MasonryItem>
-        ))}
-      </MasonryGrid>
+                  <ImageText>
+                    {item.type === 'video' ? (
+                      <MediaWithLoading 
+                        type="video" 
+                        src={item.src} 
+                        autoPlay 
+                        loop 
+                        muted 
+                        playsInline 
+                        preload="none" 
+                      />
+                    ) : (
+                      <MediaWithLoading 
+                        type="img" 
+                        src={item.src} 
+                        alt={item.key} 
+                        loading="lazy" 
+                      />
+                    )}
+                  </ImageText>
+                  {!isMobile && (
+                    <LabelRow>
+                      <LabelLeft>{item.labelLeft}</LabelLeft>
+                      <LabelRight>{item.labelRight}</LabelRight>
+                    </LabelRow>
+                  )}
+                </InteractiveLink>
+              </FadeInWhenVisible>
+            </MasonryItem>
+          ))}
+        </MasonryGrid>
+      )}
       <Footer />
     </Content>
   );

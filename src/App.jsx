@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
 import MobileNavigation from './components/MobileNavigation';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -13,15 +12,25 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import LoadingOverlay from "./components/LoadingOverlay";
 
+/* Site-wide padding: tweak the clamp(min, preferred, max) values below to change horizontal/vertical spacing */
 const AppContainer = styled.div`
   display: flex;
+  flex-direction: column;
   min-height: 100vh;
   padding-top: 4vh;
+  padding-left: clamp(1.5rem, 14vw, 14rem);
+  padding-right: clamp(1.5rem, 14vw, 14rem);
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
   background: none;
   z-index: 0;
 
   @media (max-width: 900px) {
     padding-top: 0;
+    padding-left: clamp(1rem, 5vw, 2rem);
+    padding-right: clamp(1rem, 5vw, 2rem);
   }
 `;
 
@@ -75,9 +84,8 @@ function App() {
       <LoadingOverlay isVisible={isLoading} />
         <RoughPaperBg />
         <TopGradientOverlay />
-        <MobileNavigation />
         <AppContainer>
-          <Sidebar />
+          <MobileNavigation />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -87,7 +95,6 @@ function App() {
             <Route path="/web-experiments" element={<WebExperiments />} />
             {/* Add more routes here as we create more pages */}
           </Routes>
-
         </AppContainer>
         
     </Router>

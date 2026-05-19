@@ -8,21 +8,16 @@ import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import LoadingOverlay from '../components/LoadingOverlay';
 import FadeInWhenVisible from '../components/FadeInWhenVisible';
+import ResponsiveCaseStudyRow from '../components/ResponsiveCaseStudyRow';
 import { Simple } from "../components/Footer";
 
-const SIDEBAR_WIDTH = '18vw';
-
 const Content = styled.div`
-  margin-left: calc(${SIDEBAR_WIDTH} + 2rem);
-  margin-right: 2rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
   width: 100%;
   box-sizing: border-box;
 
   @media (max-width: 900px) {
-    margin-left: 1rem;
-    margin-right: 1rem;
     margin-top: 5rem; /* Account for fixed mobile navigation */
   }
 `;
@@ -111,112 +106,6 @@ const ImageTextContainerGrid = styled.div`
     grid-template-columns: 1fr;
   }
 `;
-
-const CaseStudyRowContainer = styled(Link)`
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 0.8rem;
-  align-items: stretch;
-  width: 100%;
-  margin-bottom: 1rem;
-  cursor: pointer;
-
-  img, video {
-    width: 100%;
-    height: 48vh;
-    object-fit: cover;
-    display: block;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    scale: 1;
-    opacity: 1;
-    transition: 500ms cubic-bezier(0.1, 1, 0.2, 1);
-  }
-
-  &:hover img,
-  &:hover video {
-    scale: 1.02;
-    opacity: 0.85;
-    // rotate: 1deg;
-    // box-shadow: 15px 0 15px rgba(191, 187, 197, 0.15),
-    //             -15px 0 15px rgba(233, 205, 255, 0.15);
-    transform: perspective(1000px)
-      rotateY(calc(var(--mouse-x, 0) * 2deg))
-      rotateX(calc(var(--mouse-y, 0) * -2deg))
-      skew(calc(var(--mouse-x, 0) * 1deg), calc(var(--mouse-y, 0) * 1deg));
-  }
-
-  .case-study-title,
-  .case-study-desc {
-    transition: opacity 0.6s cubic-bezier(0.1, 1, 0.2, 1);
-  }
-
-  &:hover .case-study-title,
-  &:hover .case-study-desc {
-    opacity: 0.55;
-    // rotate: -1deg;
-  }
-
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr !important;
-    grid-template-rows: auto auto;
-    
-    img, video {
-      height: auto !important;
-      object-fit: contain !important;
-      margin-top: 2rem;
-    }
-  }
-`;
-
-const CaseStudyCell = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-`;
-
-const CaseStudyRow = ({ to, children }) => <CaseStudyRowContainer to={to}>{children}</CaseStudyRowContainer>;
-
-// Responsive CaseStudyRow for mobile: text below image/video
-function ResponsiveCaseStudyRow({ to, title, description, mediaType, mediaSrc }) {
-  const isMobile = useIsMobile();
-  return (
-    <CaseStudyRowContainer to={to}>
-      {isMobile ? (
-        <>
-          {/* Media first */}
-          <div>
-            {mediaType === 'video' ? (
-              <video src={mediaSrc} autoPlay loop muted playsInline preload="none" />
-            ) : (
-              <img src={mediaSrc} alt={title} loading="lazy" />
-            )}
-          </div>
-          {/* Text below */}
-          <CaseStudyCell>
-            <p className="case-study-title">{title}</p>
-            <p className="case-study-desc" style={{ fontSize: '1rem' }}>{description}</p>
-          </CaseStudyCell>
-        </>
-      ) : (
-        <>
-          {/* Text left, media right (desktop) */}
-          <CaseStudyCell>
-            <p className="case-study-title">{title}</p>
-            <p className="case-study-desc" style={{ fontSize: '1rem' }}>{description}</p>
-          </CaseStudyCell>
-          <div>
-            {mediaType === 'video' ? (
-              <video src={mediaSrc} autoPlay loop muted playsInline preload="none" />
-            ) : (
-              <img src={mediaSrc} alt={title} loading="lazy" />
-            )}
-          </div>
-        </>
-      )}
-    </CaseStudyRowContainer>
-  );
-}
 
 // Helper HOC for interactive links
 function InteractiveLink({ children }) {
@@ -502,31 +391,108 @@ const KaomojiLink = styled(Link)`
   }
 `;
 
+const EtcLinksContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: left;
+  gap: 1.2rem;
+  margin: 2rem 0 1.5rem 0;
+`;
+
+const StatusLink = styled.a`
+  text-decoration: underline dashed;
+  text-decoration-color: #888;
+  color: inherit;
+  display: inline-block;
+  position: relative;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+
+  &:hover {
+    color: black;
+    text-decoration-color: black;
+  }
+
+  .link-text {
+    transition: filter 0.2s ease;
+  }
+
+  &:hover .link-text {
+    filter: url(#distort-nav);
+  }
+
+  .link-image {
+    position: absolute;
+    right: -26px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-10px) rotate(-1deg);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    pointer-events: none;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+  }
+
+  &:hover .link-image {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0) rotate(16deg);
+  }
+`;
+
+const EtcLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.95rem;
+  position: relative;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateX(3px);
+  }
+
+  .link-text {
+    transition: filter 0.2s ease;
+  }
+
+  &:hover .link-text {
+    filter: url(#distort-nav);
+  }
+
+  img {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  &:hover img {
+    opacity: 1;
+  }
+`;
+
 // Add MobileEtcLinks component for mobile view
 function MobileEtcLinks() {
   return (
-    <div style={{
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'left',
-      alignItems: 'left',
-      gap: '1.2rem',
-      margin: '2rem 0 1.5rem 0',
-    }}>
-      <a href="https://www.linkedin.com/in/arin-pantja/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '0.95rem' }}>
-                  <img src="/assets/doodles/linkedinA.gif" alt="Linkedin" style={{ width: 28, height: 28, marginBottom: 4 }} loading="lazy" />
-        Linkedin
-      </a>
-      <a href="mailto:your@email.com" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '0.95rem' }}>
-                  <img src="/assets/doodles/emailA.gif" alt="Email" style={{ width: 28, height: 28, marginBottom: 4 }} loading="lazy" />
-        Email
-      </a>
-      <a href="https://x.com/arin_pantja" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', alignItems: 'center', fontSize: '0.95rem' }}>
-                  <img src="/assets/doodles/x.gif" alt="Twitter/X" style={{ width: 28, height: 28, marginBottom: 4 }} loading="lazy" />
-        Twitter/X
-      </a>
-
-    </div>
+    <EtcLinksContainer>
+      <EtcLink href="mailto:your@email.com">
+        <img src="/assets/doodles/emailA.gif" alt="Email" style={{ width: 28, height: 28, marginBottom: 4 }} loading="lazy" />
+        <span className="link-text">Email</span>
+      </EtcLink>
+      {/* <EtcLink href="https://www.linkedin.com/in/arin-pantja/" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/doodles/linkedinA.gif" alt="Linkedin" style={{ width: 28, height: 28, marginBottom: 4 }} loading="lazy" />
+        <span className="link-text">Linkedin</span>
+      </EtcLink> */}
+      <EtcLink href="https://x.com/arin_pantja" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/doodles/x.gif" alt="Twitter/X" style={{ width: 28, height: 28, marginBottom: 4 }} loading="lazy" />
+        <span className="link-text">Twitter/X</span>
+      </EtcLink>
+      <EtcLink href="https://www.are.na/arin-p/channels" target="_blank" rel="noopener noreferrer">
+        <img src="/assets/doodles/arena.gif" alt="Are.na" style={{ width: 28, height: 28, marginBottom: 4 }} loading="lazy" />
+        <span className="link-text">Are.na</span>
+      </EtcLink>
+    </EtcLinksContainer>
   );
 }
 
@@ -549,7 +515,7 @@ const HeadingIntroFlex = styled.div`
   grid-template-columns: 1fr 2fr;
   gap: 0.8rem;
   align-items: flex-start;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   @media (max-width: 900px) {
     display: flex;
     flex-direction: column;
@@ -641,21 +607,41 @@ const Home = () => {
               animate="visible"
               onAnimationComplete={() => setHeaderAnimationComplete(true)}
               style={{ fontSize: "1rem", marginBottom: "0.5rem" }}
-            ><span style={{ color: "black" }}>Arin Pantja –– </span> Product & Motion Designer in NYC  ツ</motion.p>
+            ><span style={{ color: "black" }}>Arin is a product designer and motion designer based in NYC </span>ツ</motion.p>
             <motion.p
               variants={fadeIn}
               initial="hidden"
               animate="visible" 
               style={{ fontSize: "1rem", height: isMobile ? "1vh" : "1vh", width: isMobile ? "100%" : "100%" }}
-            > Currently @ OCSN ᕙ(  •̀ ᗜ •́  )ᕗ
+            > Currently Founding Designer at {' '}
+            <StatusLink href="https://www.statusai.com/" target="_blank" rel="noopener noreferrer">
+              <span className="link-text">Status</span>
+              <span className="link-image">
+                <img src="/assets/doodles/arrowA.gif" alt="" style={{ width: '24px', height: '24px' }} loading="lazy" />
+              </span>
+            </StatusLink>
+            <br />
+            {/* Previously at Open Gov Proucts.  */}
             </motion.p>
            
-            {useIsMobile() && <MobileEtcLinks />}
+            <FadeInWhenVisible>
+              <MobileEtcLinks />
+            </FadeInWhenVisible>
           </div>
 
-          {/* RIVE ANIMATION INTERACTIVE STUFF GOES HERE */}
-            {!isMobile && <Simple />
-            }
+          {/* RIVE ANIMATION – set to true to show again */}
+            {false && !isMobile && (
+              <div style={{
+                width: '100%',
+                minHeight: '40vh',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                alignSelf: 'center',
+              }}>
+                <Simple />
+              </div>
+            )}
 
           
           {/* <InlineDogImage src="/assets/doodles/connectTheDot01.png" alt="Connect the Dog" /> */}
@@ -664,36 +650,44 @@ const Home = () => {
         {/* Case Study Rows with consistent fade-in animation */}
         {[
             {
-              to: "/",
-              title: "OCSN",
-              description: "Designing a social network and community for roleplaying",
-              mediaType: "video",
-              mediaSrc: "/assets/case-studies/ocsn.mp4"
+              noLink: true,
+              title: "OC Social Network",
+              description: "Designing a social network for roleplaying",
+              media: [
+                { type: "video", src: "/assets/case-studies/ocsn.mp4" },
+                { type: "img", src: "/assets/ocsn/ocsn_product.gif" },
+                { type: "img", src: "/assets/ocsn/ocsn_product_02.png" },
+                { type: "img", src: "/assets/ocsn/ocsn_product_03.png" },
+              ],
             },
-          {
-            to: "/roster-monster",
-            title: "Roster Monster",
-            description: "Reducing 1 week's worth of effort into hours of roster planning through automation feedback",
-            mediaType: "video",
-            mediaSrc: "/assets/case-studies/ogp_main.mp4"
-          },
           {
             to: "/kura-kura",
             title: "Kura Kura",
             description: "A playful, localised AI-driven journaling tool for emotional wellness amongst youths",
-            mediaType: "video",
-            mediaSrc: "/assets/case-studies/kurakura_main.mp4"
+            media: [
+              { type: "video", src: "/assets/case-studies/kurakura_main.mp4" },
+              { type: "img", src: "/assets/kurakura/kura_characters.png" },
+              { type: "img", src: "/assets/kurakura/ice kachang 2.png" },
+            ],
           },
           {
-            to: "/ogp-illustration-guidelines",
-            title: "Open Government Products",
-            description: "Streamlining illustration craft for Singapore Government products",
-            mediaType: "image",
-            mediaSrc: "/assets/byos/byos_main.png"
-          }
+            to: "/roster-monster",
+            title: "Roster Monster",
+            description: "Reducing 1 week's worth of effort into hours of roster planning through automation feedback",
+            media: [
+              { type: "video", src: "/assets/case-studies/ogp_main.mp4" },
+              { type: "img", src: "/assets/byos/byos_main.png" },
+            ],
+          },
+          // {
+          //   to: "/ogp-illustration-guidelines",
+          //   title: "Open Government Products",
+          //   description: "Streamlining illustration craft for Singapore Government products",
+          //   media: [{ type: "img", src: "/assets/byos/byos_main.png" }]
+          // }
         ].map((props, idx) => (
           <FadeInWhenVisible 
-            key={props.to} 
+            key={props.to || props.title} 
             delay={headerAnimationComplete ? 0.2 + (0.14 * idx) : 0}
           >
             <ResponsiveCaseStudyRow {...props} />
@@ -704,7 +698,7 @@ const Home = () => {
 
 
         {/* WEB / CODE sections always visible, but force single column on mobile */}
-        <ImageTextContainerGrid columns={isMobile ? "1fr" : "2fr 1fr"} noHover>
+        {/* <ImageTextContainerGrid columns={isMobile ? "1fr" : "2fr 1fr"} noHover>
           <FadeInWhenVisible delay={0.08 * 1}>
             <InteractiveLink>
               <ImageText to="">
@@ -752,7 +746,7 @@ const Home = () => {
               </TextRow>
             </InteractiveLink>
           </FadeInWhenVisible>
-        </ImageTextContainerGrid>
+        </ImageTextContainerGrid> */}
 
         
         {/* <ImageTextContainerGrid columns={isMobile ? "1fr" : "1fr 1fr 1fr"} noHover>

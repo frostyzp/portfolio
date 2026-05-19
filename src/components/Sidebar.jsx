@@ -1,22 +1,9 @@
 import { Link, useLocation } from 'react-router-dom';
 import styled from '@emotion/styled';
-import { keyframes, Global, css } from '@emotion/react';
-import { useState } from 'react';
+import { keyframes } from '@emotion/react';
 import { motion } from "framer-motion";
 import DraggablePaperPad from './DraggablePaperPad';
 
-
-const glowAnimation = keyframes`
-  0% {
-    text-shadow: 0 0 5px rgba(237, 74, 255, 0.32);
-  }
-  50% {
-    text-shadow: 0 0 20px rgba(255, 180, 240, 0.97);
-  }
-  100% {
-    text-shadow: 0 0 5px rgba(237, 74, 255, 0.43);
-  }
-`;
 
 const typingAnimation = keyframes`
   from { width: 0 }
@@ -27,96 +14,11 @@ const blinkAnimation = keyframes`
   50% { border-color: transparent }
 `;
 
-const shakeAnimation = keyframes`
-  0% { transform: translate(0, 0); }
-  10% { transform: translate(-8px, 4px); }
-  20% { transform: translate(8px, -4px); }
-  30% { transform: translate(-8px, 4px); }
-  40% { transform: translate(8px, -4px); }
-  50% { transform: translate(-8px, 4px); }
-  60% { transform: translate(8px, -4px); }
-  70% { transform: translate(-8px, 4px); }
-  80% { transform: translate(8px, -4px); }
-  90% { transform: translate(-8px, 4px); }
-  100% { transform: translate(0, 0); }
-`;
-
-// Add wave keyframes globally
-const waveKeyframes = css`
-  @keyframes wave {
-    0%, 100% { transform: translateY(0); }
-    20% { transform: translateY(-8px); }
-    40% { transform: translateY(8px); }
-    60% { transform: translateY(-8px); }
-    80% { transform: translateY(8px); }
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-`;
-
-const waveTextStyles = css`
-  .wave-text {
-    font-family: 'CommitMono', monospace;
-    font-size: 1.1em;
-    color: rgb(238, 176, 204);
-    text-shadow: 0 0 20px rgba(255, 180, 240, 0.97);
-
-    
-    white-space: nowrap;
-    display: inline-block;
-  }
-  .wave-char {
-    display: inline-block;
-    opacity: 0;
-    animation: wave 1.5s infinite, fadeIn 0.4s forwards, ${shakeAnimation} 1s infinite;
-  }
-  @keyframes wave {
-    0%, 100% { transform: translateY(0); }
-    20% { transform: translateY(-8px); }
-    40% { transform: translateY(8px); }
-    60% { transform: translateY(-8px); }
-    80% { transform: translateY(8px); }
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-`;
-
-function WaveText({ text }) {
-  return (
-    <span className="wave-text">
-      {text.split('').map((char, i) => (
-        <span
-          className="wave-char"
-          key={i}
-          style={{
-            animationDelay: `${i * 0.06}s, ${i * 0.06}s`
-          }}
-        >
-          {char}
-        </span>
-      ))}
-    </span>
-  );
-}
-
 const KaomojiLink = styled(Link)`
   display: inline-block;
   // margin-bottom: 1rem;
   text-decoration: none;
-  color: black  ;
-  transition: all 0.3s ease;
-  position: relative;
-  animation: ${glowAnimation} 2s infinite;
-
-  &:hover {
-    transform: scale(1.9);
-    animation: ${glowAnimation} 2s infinite, ${shakeAnimation} 0.6s infinite;
-    color: rgb(238, 176, 204);
-  }
+  color: black;
 `;
 
 const SidebarContainer = styled.div`
@@ -260,7 +162,6 @@ const HidePaperOnMobile = styled.div`
 `;
 
 const Sidebar = () => {
-  const [kaomojiHovered, setKaomojiHovered] = useState(false);
   return (
     <>
       {/* SVG filter for text distortion */}
@@ -282,44 +183,10 @@ const Sidebar = () => {
         </defs>
       </svg>
       <SidebarContainer>
-      <div style={{ position: 'relative', display: 'inline-block' }}>
-          <KaomojiLink
-            to="/"
-            onMouseEnter={() => setKaomojiHovered(true)}
-            onMouseLeave={() => setKaomojiHovered(false)}
-          >
-            <span style={{ opacity: kaomojiHovered ? 0 : 1, transition: 'opacity 0.1s' }}>( ദ്ദി ˙ᗜ˙ )' \\ ←</span>
-            <span style={{
-              position: 'absolute',
-              left: 0,
-              top: 0,
-              opacity: kaomojiHovered ? 1 : 0,
-              transition: 'opacity 0.1s',
-              pointerEvents: 'none',
-              width: '100%',
-              textAlign: 'left',
-            }}>(‧̣̥̇꒪ᗜ꒪)=͟͟͞͞</span>
-          </KaomojiLink>
-          {kaomojiHovered && (
-            <span
-              style={{
-                position: 'absolute',
-                left: '50%',
-                top: '50%',
-                transform: 'translateY(-50%)',
-                marginLeft: '-0.1rem',
-                whiteSpace: 'nowrap',
-                pointerEvents: 'none',
-                zIndex: 10,
-              }}
-            >
-              <WaveText text="!@$#%@!!!$!%#@#^!!!#&#@*!! " />
-            </span>
-          )}
+      <div>
+          <KaomojiLink to="/">( ദ്ദി ˙ᗜ˙ )' \\ ←</KaomojiLink>
         </div>
 
-        <Global styles={waveTextStyles} />
-        <Global styles={waveKeyframes} />
         <HideOnMobile>
           <MotionHeaders
             variants={fadeIn}
@@ -380,6 +247,7 @@ const Sidebar = () => {
             variants={fadeIn}
             initial="hidden"
             animate="visible"
+            style={{ marginTop: '1.75rem' }}
           >PLAY</MotionHeaders>
           <motion.ul
             style={{ listStyle: "none", padding: 0, margin: 0 }}
@@ -469,15 +337,14 @@ const Sidebar = () => {
                   </span>
                 </StyledAnchor>
               </motion.li>
-              
-              {/* <motion.li variants={itemVariants}>
+              <motion.li variants={itemVariants}>
                 <StyledAnchor href="https://www.are.na/arin-p/channels" target="_blank" rel="noopener noreferrer">
                   <span className="link-text">Are.na</span>
                   <span className="link-image">
                     <img src="/assets/doodles/arena.gif" alt="icon" style={{width: '36px', height: '36px'}} loading="lazy" />
                   </span>
                 </StyledAnchor>
-              </motion.li> */}
+              </motion.li>
             </motion.ul>
           </div>
         {/* </motion.ul> */}

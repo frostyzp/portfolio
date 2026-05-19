@@ -5,9 +5,9 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer> 
-      <p>Arin Pantja 2025</p>
-      <p>Coded with care ⸜( ´ ꒳ ` )⸝ </p>
-      <p className="footer-last-updated">Last updated January 2026</p>
+      <p className="footer-name">Arin Pantja</p>
+      <p className="footer-coded">Coded with care ⸜( ´ ꒳ ` )⸝ </p>
+      <p className="footer-last-updated">Last updated May 2026</p>
     </footer>
   );
 };
@@ -30,19 +30,22 @@ export const Simple = () => {
 
   return (
     <div style={{ 
-      width: '100%', 
-      height: '100%',
+      width: '200%', 
+      minHeight: '40vh',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      padding: '1rem'
+      padding: '1rem',
+      boxSizing: 'border-box',
     }}>
       <RiveComponent 
         style={{
-          width: '80%',
+          width: '120%',
+          maxWidth: 'none',
           height: '60vh',
           display: 'block',
-          transform: 'rotate(3deg)',
+          margin: '0 auto',
+          transform: 'rotate(8deg)',
           cursor: 'pointer',
         }}
         fit="cover"
