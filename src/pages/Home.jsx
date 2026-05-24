@@ -401,16 +401,14 @@ const EtcLinksContainer = styled.div`
 `;
 
 const StatusLink = styled.a`
-  text-decoration: underline dashed;
-  text-decoration-color: #888;
+  text-decoration: none;
   color: inherit;
   display: inline-block;
   position: relative;
-  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  transition: color 0.2s ease;
 
   &:hover {
     color: black;
-    text-decoration-color: black;
   }
 
   .link-text {
